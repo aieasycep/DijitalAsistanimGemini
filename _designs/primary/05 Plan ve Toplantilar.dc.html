@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Lora:ital,wght@0,400..600;1,400..600&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..600,0..1,0&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#ECEAE4;font-family:Geist,-apple-system,"SF Pro Text",system-ui,sans-serif;color:#1A1917;-webkit-font-smoothing:antialiased}a{color:#4547C9;text-decoration:none}a:hover{color:#5B5CE2;text-decoration:underline}button{font-family:inherit}</style>
+</helmet>
+<div style="padding:40px 44px 80px;display:flex;flex-direction:column;gap:44px">
+  <div style="display:flex;flex-direction:column;gap:12px">
+    <div style="display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:#6B6860"><a href="Dijital%20Asistan.dc.html">← Prototip ve IA</a><a href="01%20Tasarim%20Sistemi.dc.html">01 Sistem</a><a href="02%20Onboarding.dc.html">02 Onboarding</a><a href="03%20Bugun%20ve%20Brifingler.dc.html">03 Bugün</a><a href="04%20Akis%20ve%20Mail.dc.html">04 Akış</a><b style="color:#1A1917">05 Plan</b><a href="06%20Asistan%20Hafiza%20Kisiler.dc.html">06 Asistan</a><a href="07%20Hesap%20Gizlilik%20Pro.dc.html">07 Hesap</a><a href="08%20Durumlar%20Widgetlar%20Etkilesimler.dc.html">08 Durumlar</a><a href="09%20Pazarlama.dc.html">09 Pazarlama</a></div>
+    <h1 style="margin:0;font-size:30px;line-height:36px;font-weight:600;letter-spacing:-.02em">05 · Plan ve Toplantılar</h1>
+    <p style="margin:0;max-width:720px;font-size:14px;line-height:21px;color:#6B6860">Plan takvimi göstermez, anlar. Zaman çizelgesi tek sütun; etkinlik, AI görev bloğu (kesik çerçeve) ve yaşam etkinliği (sıcak yüzey) üç ayrı yüzeyle ayrılır; sol renk şeridi kullanılmaz. Toplantı hazırlığı ürünün imza ekranıdır: koyu “3 şey” kartı her zaman ilk görünen öğedir.</p>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start">
+    <div style="display:flex;flex-direction:column;gap:10px;width:390px">
+      <div style="font-size:12px;color:#6B6860;display:flex;gap:8px;align-items:baseline"><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);border-radius:5px;color:#1A1917">5.1</span>Plan · Gün</div>
+      <div style="width:390px;min-height:844px;background:#F5F4F0;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px rgba(27,25,23,.08),0 20px 50px rgba(27,25,23,.10);position:relative;display:flex;flex-direction:column">
+        <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 8px;font-size:15px;font-weight:600"><span>9:41</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:17px"><span>signal_cellular_alt</span><span>wifi</span><span>battery_full</span></span></div>
+        <div style="padding:14px 20px 0;display:flex;flex-direction:column;gap:16px;flex:1">
+          <div style="display:flex;align-items:center;justify-content:space-between"><div style="font-size:28px;line-height:34px;font-weight:600;letter-spacing:-.02em">Plan</div><div style="display:flex;background:#E9E7E1;border-radius:999px;padding:3px;font-size:13px;font-weight:600"><span style="height:30px;padding:0 14px;border-radius:999px;background:#fff;color:#1A1917;display:flex;align-items:center;box-shadow:0 1px 3px rgba(27,25,23,.12)">Gün</span><span style="height:30px;padding:0 14px;border-radius:999px;color:#6B6860;display:flex;align-items:center">Hafta</span></div></div>
+          <div style="display:flex;justify-content:space-between">
+            <sc-for list="{{ days }}" as="d" hint-placeholder-count="7"><div style="width:42px;height:60px;border-radius:14px;background:{{ d.bg }};color:{{ d.fg }};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><span style="font-size:11px;font-weight:500;opacity:.8">{{ d.d }}</span><span style="font-size:17px;font-weight:600">{{ d.n }}</span><span style="width:4px;height:4px;border-radius:2px;background:{{ d.dot }}"></span></div></sc-for>
+          </div>
+          <div style="background:radial-gradient(140% 100% at 0% 0%,#E4E4FA 0%,#FFFFFF 60%);border-radius:20px;padding:16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)">
+            <div style="display:flex;align-items:center;gap:6px;color:#5B5CE2;font-size:12px;font-weight:600;letter-spacing:.06em"><span style="font-family:'Material Symbols Rounded';font-size:16px;font-variation-settings:'FILL' 1">auto_awesome</span>TAKVİM ZEKÂSI</div>
+            <div style="margin-top:8px;font-size:16px;line-height:23px;font-weight:600;letter-spacing:-.01em;text-wrap:pretty">Yarın 14:00–16:30 arasında 2,5 saat boşluğun var.</div>
+            <div style="margin-top:4px;font-size:14px;line-height:20px;color:#6B6860">Teklif hazırlama görevini buraya yerleştirebilirim.</div>
+            <div style="margin-top:12px;display:flex;gap:8px"><span style="height:40px;padding:0 16px;border-radius:12px;background:#5B5CE2;color:#fff;font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px"><span style="font-family:'Material Symbols Rounded';font-size:18px">event_available</span>Planla</span><span style="height:40px;padding:0 14px;border-radius:12px;color:#6B6860;font-size:14px;font-weight:600;display:flex;align-items:center">Başka zaman</span></div>
+          </div>
+          <div style="display:flex;flex-direction:column;padding-bottom:16px">
+            <sc-for list="{{ day }}" as="e" hint-placeholder-count="6">
+              <div style="display:flex;gap:12px;min-height:68px">
+                <div style="width:44px;flex:none;font-size:12px;font-weight:500;color:#9B978E;padding-top:8px;text-align:right">{{ e.t }}</div>
+                <div style="flex:1;min-width:0;padding:4px 0;border-top:1px solid rgba(27,25,23,.07)">
+                  <div style="border-radius:14px;padding:10px 14px;background:{{ e.bg }};border:{{ e.border }};color:{{ e.fg }};display:flex;flex-direction:column;gap:2px">
+                    <div style="display:flex;align-items:center;gap:6px;font-size:15px;font-weight:600;letter-spacing:-.01em"><span style="font-family:'Material Symbols Rounded';font-size:16px;color:{{ e.ic }}">{{ e.icon }}</span>{{ e.title }}</div>
+                    <div style="font-size:12px;color:{{ e.mc }}">{{ e.meta }}</div>
+                  </div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="position:sticky;bottom:0;height:90px;padding:8px 8px 28px;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-top:1px solid rgba(27,25,23,.06);display:flex;font-size:11px;font-weight:500">
+          <span style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#9B978E"><span style="font-family:'Material Symbols Rounded';font-size:26px">sunny</span>Bugün</span>
+          <span style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#9B978E"><span style="font-family:'Material Symbols Rounded';font-size:26px">dynamic_feed</span>Akış</span>
+          <span style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#5B5CE2"><span style="font-family:'Material Symbols Rounded';font-size:26px;font-variation-settings:'FILL' 1">calendar_today</span>Plan</span>
+          <span style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#9B978E"><span style="font-family:'Material Symbols Rounded';font-size:26px">auto_awesome</span>Asistan</span>
+          <span style="position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:rgba(27,25,23,.25)"></span>
+        </div>
+      </div>
+      <div style="font-size:12px;line-height:18px;color:#6B6860">Üç yüzey: etkinlik (beyaz), AI görev bloğu (kesik indigo çerçeve, “Önerilen”), yaşam (sıcak krem). Boşluklar açıkça “2 saat boşluk” olarak etiketlenir; boşluk da bilgidir.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;width:390px">
+      <div style="font-size:12px;color:#6B6860;display:flex;gap:8px;align-items:baseline"><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);border-radius:5px;color:#1A1917">5.1D</span>Plan · Gün · Dark</div>
+      <div style="width:390px;min-height:844px;background:#141311;color:#F2F0EB;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px rgba(27,25,23,.2),0 20px 50px rgba(27,25,23,.2);position:relative;display:flex;flex-direction:column">
+        <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 8px;font-size:15px;font-weight:600"><span>21:14</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:17px"><span>signal_cellular_alt</span><span>wifi</span><span>battery_full</span></span></div>
+        <div style="padding:14px 20px 0;display:flex;flex-direction:column;gap:16px;flex:1">
+          <div style="display:flex;align-items:center;justify-content:space-between"><div style="font-size:28px;line-height:34px;font-weight:600;letter-spacing:-.02em">Plan</div><div style="display:flex;background:rgba(255,255,255,.08);border-radius:999px;padding:3px;font-size:13px;font-weight:600"><span style="height:30px;padding:0 14px;border-radius:999px;background:#F2F0EB;color:#141311;display:flex;align-items:center">Gün</span><span style="height:30px;padding:0 14px;border-radius:999px;color:#A39F96;display:flex;align-items:center">Hafta</span></div></div>
+          <div style="display:flex;justify-content:space-between">
+            <sc-for list="{{ daysDark }}" as="d" hint-placeholder-count="7"><div style="width:42px;height:60px;border-radius:14px;background:{{ d.bg }};color:{{ d.fg }};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;box-shadow:{{ d.sh }}"><span style="font-size:11px;font-weight:500;opacity:.8">{{ d.d }}</span><span style="font-size:17px;font-weight:600">{{ d.n }}</span><span style="width:4px;height:4px;border-radius:2px;background:{{ d.dot }}"></span></div></sc-for>
+          </div>
+          <div style="background:radial-gradient(140% 100% at 0% 0%,rgba(133,134,242,.28) 0%,#1F1E1B 60%);border-radius:20px;padding:16px;box-shadow:0 0 0 1px rgba(255,255,255,.06)">
+            <div style="display:flex;align-items:center;gap:6px;color:#A9AAF5;font-size:12px;font-weight:600;letter-spacing:.06em"><span style="font-family:'Material Symbols Rounded';font-size:16px;font-variation-settings:'FILL' 1">auto_awesome</span>TAKVİM ZEKÂSI</div>
+            <div style="margin-top:8px;font-size:16px;line-height:23px;font-weight:600;letter-spacing:-.01em;text-wrap:pretty">Yarın 14:00–16:30 arasında 2,5 saat boşluğun var.</div>
+            <div style="margin-top:4px;font-size:14px;line-height:20px;color:#A39F96">Teklif hazırlama görevini buraya yerleştirebilirim.</div>
+            <div style="margin-top:12px;display:flex;gap:8px"><span style="height:40px;padding:0 16px;border-radius:12px;background:#8586F2;color:#0F0F2A;font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px"><span style="font-family:'Material Symbols Rounded';font-size:18px">event_available</span>Planla</span><span style="height:40px;padding:0 14px;border-radius:12px;color:#A39F96;font-size:14px;font-weight:600;display:flex;align-items:center">Başka zaman</span></div>
+          </div>
+          <div style="display:flex;flex-direction:column;padding-bottom:16px">
+            <sc-for list="{{ dayDark }}" as="e" hint-placeholder-count="6">
+              <div style="display:flex;gap:12px;min-height:68px">
+                <div style="width:44px;flex:none;font-size:12px;font-weight:500;color:#7A776F;padding-top:8px;text-align:right">{{ e.t }}</div>
+                <div style="flex:1;min-width:0;padding:4px 0;border-top:1px solid rgba(255,255,255,.07)">
+                  <div style="border-radius:14px;padding:10px 14px;background:{{ e.bg }};border:{{ e.border }};color:{{ e.fg }};display:flex;flex-direction:column;gap:2px">
+                    <div style="display:flex;align-items:center;gap:6px;font-size:15px;font-weight:600;letter-spacing:-.01em"><span style="font-family:'Material Symbols Rounded';font-size:16px;color:{{ e.ic }}">{{ e.icon }}</span>{{ e.title }}</div>
+                    <div style="font-size:12px;color:{{ e.mc }}">{{ e.meta }}</div>
+                  </div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="position:sticky;bottom:0;height:90px;padding:8px 8px 28px;background:rgba(20,19,17,.92);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.08);display:flex;font-size:11px;font-weight:500">
+          <span style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#7A776F"><span style="font-family:'Material Symbols Rounded';font-size:26px">sunny</span>Bugün</span>
+          <span style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#7A776F"><span style="font-family:'Material Symbols Rounded';font-size:26px">dynamic_feed</span>Akış</span>
+          <span style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#A9AAF5"><span style="font-family:'Material Symbols Rounded';font-size:26px;font-variation-settings:'FILL' 1">calendar_today</span>Plan</span>
+          <span style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#7A776F"><span style="font-family:'Material Symbols Rounded';font-size:26px">auto_awesome</span>Asistan</span>
+          <span style="position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:rgba(255,255,255,.4)"></span>
+        </div>
+      </div>
+      <div style="font-size:12px;line-height:18px;color:#6B6860">Aynı üç yüzey dark tokenlarla: etkinlik #1F1E1B, AI bloğu %12 indigo + kesik #8586F2, yaşam %10 amber. Bugün günü ters çevrilir (#F2F0EB üzerine #141311), segment seçimi de aynı kuralı izler.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;width:390px">
+      <div style="font-size:12px;color:#6B6860;display:flex;gap:8px;align-items:baseline"><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);border-radius:5px;color:#1A1917">5.2</span>Plan · Hafta + Takvim Zekâsı</div>
+      <div style="width:390px;min-height:844px;background:#F5F4F0;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px rgba(27,25,23,.08),0 20px 50px rgba(27,25,23,.10);position:relative;display:flex;flex-direction:column">
+        <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 8px;font-size:15px;font-weight:600"><span>9:41</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:17px"><span>signal_cellular_alt</span><span>wifi</span><span>battery_full</span></span></div>
+        <div style="padding:14px 20px 0;display:flex;flex-direction:column;gap:16px;flex:1">
+          <div style="display:flex;align-items:center;justify-content:space-between"><div style="font-size:28px;line-height:34px;font-weight:600;letter-spacing:-.02em">Plan</div><div style="display:flex;background:#E9E7E1;border-radius:999px;padding:3px;font-size:13px;font-weight:600"><span style="height:30px;padding:0 14px;border-radius:999px;color:#6B6860;display:flex;align-items:center">Gün</span><span style="height:30px;padding:0 14px;border-radius:999px;background:#fff;color:#1A1917;display:flex;align-items:center;box-shadow:0 1px 3px rgba(27,25,23,.12)">Hafta</span></div></div>
+          <div style="background:#fff;border-radius:20px;padding:16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)">
+            <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E">7–13 EYLÜL · YOĞUNLUK</span><span style="font-size:12px;color:#9B978E">18 etkinlik</span></div>
+            <div style="margin-top:14px;display:flex;gap:8px;align-items:flex-end;height:120px">
+              <sc-for list="{{ week }}" as="w" hint-placeholder-count="7"><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:3px;height:100%"><sc-for list="{{ w.bars }}" as="b" hint-placeholder-count="2"><div style="height:{{ b.h }};border-radius:5px;background:{{ b.bg }}"></div></sc-for></div></sc-for>
+            </div>
+            <div style="margin-top:8px;display:flex;gap:8px"><sc-for list="{{ week }}" as="w" hint-placeholder-count="7"><div style="flex:1;text-align:center;font-size:11px;font-weight:600;color:{{ w.fg }}">{{ w.d }}</div></sc-for></div>
+            <div style="margin-top:12px;display:flex;gap:14px;font-size:11px;color:#9B978E"><span style="display:flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:3px;background:#D9D6F7"></span>Toplantı</span><span style="display:flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:3px;background:#EDEDFC"></span>Odak</span><span style="display:flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:3px;background:#F3B7AE"></span>Yoğun</span></div>
+          </div>
+          <div style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E;padding:4px 4px 0">TAKVİM ZEKÂSI</div>
+          <div style="background:#fff;border-radius:16px;padding:14px 16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05);display:flex;gap:12px;align-items:flex-start"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#9A6300;margin-top:1px">bolt</span><div style="flex:1"><div style="font-size:15px;font-weight:600;letter-spacing:-.01em">Yarın oldukça yoğun.</div><div style="margin-top:2px;font-size:13px;line-height:19px;color:#6B6860">09:00 ve 10:00 toplantıların arka arkaya. Arada mola yok; 10:00'ı 10:15'e kaydırabilirim.</div><div style="margin-top:8px;display:flex;gap:14px;font-size:13px;font-weight:600"><span style="color:#4547C9">10:15'e Kaydır</span><span style="color:#6B6860">Böyle Kalsın</span></div></div></div>
+          <div style="background:#fff;border-radius:16px;padding:14px 16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05);display:flex;gap:12px;align-items:flex-start"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#2262BE;margin-top:1px">directions_car</span><div style="flex:1"><div style="font-size:15px;font-weight:600;letter-spacing:-.01em;text-wrap:pretty">13:30 doktor randevusu için 12:50'de çıkman gerekebilir.</div><div style="margin-top:2px;font-size:13px;line-height:19px;color:#6B6860">Kadıköy → Nişantaşı · 38 dk trafik tahmini · Randevu maili, 28 Ağu</div><div style="margin-top:8px;display:flex;gap:14px;font-size:13px;font-weight:600"><span style="color:#4547C9">12:40'a Hatırlat</span></div></div></div>
+          <div style="background:#fff;border-radius:16px;padding:14px 16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05);display:flex;gap:12px;align-items:flex-start"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#5B5CE2;margin-top:1px">self_improvement</span><div style="flex:1"><div style="font-size:15px;font-weight:600;letter-spacing:-.01em">16:00 toplantısı öncesi 45 dakika boşluğun var.</div><div style="margin-top:2px;font-size:13px;line-height:19px;color:#6B6860">Yatırımcı görüşmesi için hazırlık notunu okumaya yeter.</div><div style="margin-top:8px;display:flex;gap:14px;font-size:13px;font-weight:600"><span style="color:#4547C9">Hazırlığı Buraya Koy</span></div></div></div>
+          <div style="background:#fff;border-radius:16px;padding:14px 16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05);display:flex;gap:12px;align-items:flex-start;margin-bottom:16px"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#C7432F;margin-top:1px">error</span><div style="flex:1"><div style="font-size:15px;font-weight:600;letter-spacing:-.01em;text-wrap:pretty">Çarşamba 14:00 müşteri toplantısı ile 14:30 doktor çakışıyor.</div><div style="margin-top:8px;display:flex;gap:14px;font-size:13px;font-weight:600"><span style="color:#4547C9">Seçenekleri Gör</span></div></div></div>
+        </div>
+        <div style="position:sticky;bottom:0;height:90px;padding:8px 8px 28px;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-top:1px solid rgba(27,25,23,.06);display:flex;font-size:11px;font-weight:500">
+          <span style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#9B978E"><span style="font-family:'Material Symbols Rounded';font-size:26px">sunny</span>Bugün</span>
+          <span style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#9B978E"><span style="font-family:'Material Symbols Rounded';font-size:26px">dynamic_feed</span>Akış</span>
+          <span style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#5B5CE2"><span style="font-family:'Material Symbols Rounded';font-size:26px;font-variation-settings:'FILL' 1">calendar_today</span>Plan</span>
+          <span style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#9B978E"><span style="font-family:'Material Symbols Rounded';font-size:26px">auto_awesome</span>Asistan</span>
+          <span style="position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:rgba(27,25,23,.25)"></span>
+        </div>
+      </div>
+      <div style="font-size:12px;line-height:18px;color:#6B6860">Hafta görünümü grid değil yoğunluk hikâyesi. Zekâ kartları: ikon rengi anlam taşır (amber yoğunluk, mavi ulaşım, indigo fırsat, coral çakışma); her kartın en fazla 2 aksiyonu var.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;width:390px">
+      <div style="font-size:12px;color:#6B6860;display:flex;gap:8px;align-items:baseline"><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);border-radius:5px;color:#1A1917">5.3</span>Takvim Çakışması · Çözüm sayfası açık</div>
+      <div style="width:390px;height:844px;background:#F5F4F0;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px rgba(27,25,23,.08),0 20px 50px rgba(27,25,23,.10);position:relative;display:flex;flex-direction:column">
+        <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 8px;font-size:15px;font-weight:600"><span>9:41</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:17px"><span>signal_cellular_alt</span><span>wifi</span><span>battery_full</span></span></div>
+        <div style="padding:14px 20px 0;display:flex;flex-direction:column;gap:16px;flex:1">
+          <div style="display:flex;align-items:center;justify-content:space-between"><span style="width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(27,25,23,.08)"><span style="font-family:'Material Symbols Rounded';font-size:20px">arrow_back</span></span><span style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E">ÇARŞAMBA · 10 EYLÜL</span><span style="width:36px"></span></div>
+          <div><div style="display:flex;align-items:center;gap:6px;color:#C7432F;font-size:12px;font-weight:600;letter-spacing:.06em"><span style="font-family:'Material Symbols Rounded';font-size:16px">error</span>TAKVİM ÇAKIŞMASI</div><div style="margin-top:8px;font-size:26px;line-height:32px;font-weight:600;letter-spacing:-.02em">Bu iki etkinlik çakışıyor.</div></div>
+          <div style="position:relative;display:flex;flex-direction:column;gap:8px">
+            <div style="background:#fff;border-radius:16px;padding:14px 16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05);display:flex;gap:12px;align-items:center"><span style="width:48px;font-size:14px;font-weight:600">14:00</span><div style="flex:1"><div style="font-size:15px;font-weight:600;letter-spacing:-.01em">Müşteri toplantısı</div><div style="font-size:12px;color:#9B978E">60 dk · Mehmet Yılmaz · Ofis</div></div><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#6B6860">groups</span></div>
+            <div style="background:#FDF6EC;border-radius:16px;padding:14px 16px;border:1px solid rgba(27,25,23,.06);display:flex;gap:12px;align-items:center;margin-left:24px"><span style="width:48px;font-size:14px;font-weight:600">14:30</span><div style="flex:1"><div style="font-size:15px;font-weight:600;letter-spacing:-.01em">Doktor randevusu</div><div style="font-size:12px;color:#9B978E">30 dk · Nişantaşı · Randevu maili</div></div><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#6B6860">medical_services</span></div>
+            <span style="position:absolute;left:0;top:50%;width:16px;height:2px;background:#E0553F;transform:translateY(-1px);border-radius:1px"></span>
+          </div>
+          <div style="font-size:14px;line-height:21px;color:#6B6860;text-wrap:pretty">Toplantı 15:00'te biter; doktora 38 dakika yol var. Doktor randevusunu kaydırmak en az kişiyi etkiler.</div>
+        </div>
+        <div style="position:absolute;inset:0;background:rgba(27,25,23,.35)"></div>
+        <div style="position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:28px 28px 0 0;padding:10px 20px 44px;box-shadow:0 -10px 40px rgba(27,25,23,.12)">
+          <div style="width:36px;height:5px;border-radius:3px;background:#E0DED7;margin:0 auto 14px"></div>
+          <div style="font-size:19px;font-weight:600;letter-spacing:-.01em">Nasıl çözelim?</div>
+          <div style="margin-top:2px;font-size:13px;color:#6B6860">Seçtiğin çözüm onayına sunulur, otomatik uygulanmaz.</div>
+          <div style="margin-top:12px;display:flex;flex-direction:column">
+            <div style="display:flex;align-items:center;gap:12px;min-height:60px;border-top:1px solid rgba(27,25,23,.06)"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#5B5CE2;width:24px">auto_awesome</span><div style="flex:1"><div style="font-size:15px;font-weight:500">Doktoru 15:45'e al</div><div style="font-size:12px;color:#4547C9;font-weight:600">Önerilen · Klinikte 15:45 boş görünüyor</div></div><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#C9C5BC">chevron_right</span></div>
+            <div style="display:flex;align-items:center;gap:12px;min-height:60px;border-top:1px solid rgba(27,25,23,.06)"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#6B6860;width:24px">event_repeat</span><div style="flex:1"><div style="font-size:15px;font-weight:500">Toplantıyı 13:00'a öner</div><div style="font-size:12px;color:#9B978E">Mehmet'e öneri maili taslağı hazırlanır</div></div><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#C9C5BC">chevron_right</span></div>
+            <div style="display:flex;align-items:center;gap:12px;min-height:60px;border-top:1px solid rgba(27,25,23,.06)"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#6B6860;width:24px">schedule</span><div style="flex:1"><div style="font-size:15px;font-weight:500">Toplantıyı 30 dk kısalt</div><div style="font-size:12px;color:#9B978E">14:00–14:30 · Doktora zamanında yetişirsin</div></div><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#C9C5BC">chevron_right</span></div>
+            <div style="display:flex;align-items:center;gap:12px;min-height:60px;border-top:1px solid rgba(27,25,23,.06)"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#6B6860;width:24px">visibility_off</span><div style="flex:1"><div style="font-size:15px;font-weight:500">Böyle kalsın</div><div style="font-size:12px;color:#9B978E">Bu çakışmayı bir daha gösterme</div></div></div>
+          </div>
+          <span style="position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:rgba(27,25,23,.25)"></span>
+        </div>
+      </div>
+      <div style="font-size:12px;line-height:18px;color:#6B6860">Çakışma görselleştirmesi: ikinci kart sağa kaydırılır ve kısa coral çizgi üst üste binmeyi işaret eder. Çözümler sıralıdır; ilki AI önerisi ve gerekçesi.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;width:390px">
+      <div style="font-size:12px;color:#6B6860;display:flex;gap:8px;align-items:baseline"><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);border-radius:5px;color:#1A1917">5.4</span>Toplantıya Hazırlan · Light · İmza ekran</div>
+      <div style="width:390px;min-height:844px;background:#F5F4F0;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px rgba(27,25,23,.08),0 20px 50px rgba(27,25,23,.10);position:relative;display:flex;flex-direction:column">
+        <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 8px;font-size:15px;font-weight:600"><span>14:12</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:17px"><span>signal_cellular_alt</span><span>wifi</span><span>battery_full</span></span></div>
+        <div style="padding:6px 20px 130px;display:flex;flex-direction:column;gap:16px;flex:1">
+          <div style="display:flex;align-items:center;justify-content:space-between"><span style="width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(27,25,23,.08)"><span style="font-family:'Material Symbols Rounded';font-size:20px">arrow_back</span></span><span style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E">TOPLANTIYA HAZIRLAN</span><span style="height:30px;padding:0 10px;border-radius:999px;background:#FDF2DC;color:#9A6300;font-size:12px;font-weight:600;display:flex;align-items:center;gap:4px"><span style="font-family:'Material Symbols Rounded';font-size:15px">schedule</span>18 dk</span></div>
+          <div style="display:flex;align-items:center;gap:14px;padding:4px 0"><span style="width:56px;height:56px;border-radius:50%;background:#DCE4F5;color:#2B3F73;font-size:20px;font-weight:600;display:flex;align-items:center;justify-content:center;flex:none">MY</span><div style="flex:1"><div style="font-size:24px;line-height:30px;font-weight:600;letter-spacing:-.02em">Mehmet Yılmaz</div><div style="margin-top:2px;font-size:14px;color:#6B6860">Müşteri toplantısı · 14:30 · 60 dk · Ofis</div></div><span style="font-family:'Material Symbols Rounded';font-size:22px;color:#B8B4AA">chevron_right</span></div>
+          <div style="background:#1A1917;color:#fff;border-radius:24px;padding:20px;box-shadow:0 12px 32px rgba(27,25,23,.18)">
+            <div style="display:flex;align-items:center;gap:6px;color:#A9AAF5;font-size:12px;font-weight:600;letter-spacing:.06em"><span style="font-family:'Material Symbols Rounded';font-size:16px;font-variation-settings:'FILL' 1">auto_awesome</span>KONUŞMAN GEREKEN 3 ŞEY</div>
+            <div style="margin-top:14px;display:flex;flex-direction:column;gap:14px">
+              <div style="display:flex;gap:14px"><span style="width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.12);font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;flex:none">1</span><div><div style="font-size:17px;font-weight:600;letter-spacing:-.01em">Fiyat</div><div style="margin-top:2px;font-size:14px;line-height:20px;color:rgba(255,255,255,.7)">Revize teklif 17:00'ye kadar bekleniyor; %8 indirim sınırını netleştir.</div></div></div>
+              <div style="display:flex;gap:14px"><span style="width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.12);font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;flex:none">2</span><div><div style="font-size:17px;font-weight:600;letter-spacing:-.01em">Teslim tarihi</div><div style="margin-top:2px;font-size:14px;line-height:20px;color:rgba(255,255,255,.7)">Ekim başı için onay istiyor; üretim takvimi 6 Ekim'i gösteriyor.</div></div></div>
+              <div style="display:flex;gap:14px"><span style="width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.12);font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;flex:none">3</span><div><div style="font-size:17px;font-weight:600;letter-spacing:-.01em">Sözleşme</div><div style="margin-top:2px;font-size:14px;line-height:20px;color:rgba(255,255,255,.7)">Taslak 2 haftadır açık; hukuk yorumu bekliyor.</div></div></div>
+            </div>
+          </div>
+          <sc-for list="{{ prep }}" as="s" hint-placeholder-count="6">
+            <div><div style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E;padding:0 4px 8px">{{ s.title }}</div>
+              <div style="background:#fff;border-radius:18px;padding:4px 16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)">
+                <sc-for list="{{ s.rows }}" as="r" hint-placeholder-count="1"><div style="display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-top:{{ r.border }}"><span style="width:30px;height:30px;border-radius:10px;background:#F0EFEB;color:#6B6860;display:flex;align-items:center;justify-content:center;flex:none"><span style="font-family:'Material Symbols Rounded';font-size:17px">{{ r.icon }}</span></span><div style="flex:1;min-width:0"><div style="font-size:15px;line-height:21px;letter-spacing:-.01em;text-wrap:pretty">{{ r.t }}</div><div style="font-size:12px;color:#9B978E;margin-top:2px">{{ r.m }}</div></div></div></sc-for>
+              </div></div>
+          </sc-for>
+        </div>
+        <div style="position:sticky;bottom:0;padding:16px 20px 44px;background:linear-gradient(180deg,rgba(245,244,240,0) 0%,#F5F4F0 45%);display:flex;gap:10px"><span style="flex:1;height:52px;border-radius:16px;background:#5B5CE2;color:#fff;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(91,92,226,.28)">2 Dakikalık Özeti Oku</span><span style="height:52px;padding:0 18px;border-radius:16px;background:#fff;font-size:15px;font-weight:600;display:flex;align-items:center;box-shadow:0 1px 2px rgba(27,25,23,.08)">Not Al</span><span style="position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:rgba(27,25,23,.25)"></span></div>
+      </div>
+      <div style="font-size:12px;line-height:18px;color:#6B6860">Toplantıdan 20 dk önce bildirim, ekranın ilk katlaması “3 şey” kartıyla biter. Geri kalan bölümler kaynaklı kanıt. Bu ekran mağaza görselinde de kullanılır.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;width:390px">
+      <div style="font-size:12px;color:#6B6860;display:flex;gap:8px;align-items:baseline"><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);border-radius:5px;color:#1A1917">5.5</span>Toplantıya Hazırlan · Dark</div>
+      <div style="width:390px;min-height:844px;background:#141311;color:#F2F0EB;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px rgba(27,25,23,.2),0 20px 50px rgba(27,25,23,.2);position:relative;display:flex;flex-direction:column">
+        <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 8px;font-size:15px;font-weight:600"><span>14:12</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:17px"><span>signal_cellular_alt</span><span>wifi</span><span>battery_full</span></span></div>
+        <div style="padding:6px 20px 130px;display:flex;flex-direction:column;gap:16px;flex:1">
+          <div style="display:flex;align-items:center;justify-content:space-between"><span style="width:36px;height:36px;border-radius:50%;background:#1F1E1B;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 1px rgba(255,255,255,.08)"><span style="font-family:'Material Symbols Rounded';font-size:20px">arrow_back</span></span><span style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#7A776F">TOPLANTIYA HAZIRLAN</span><span style="height:30px;padding:0 10px;border-radius:999px;background:rgba(217,139,11,.18);color:#F0B85A;font-size:12px;font-weight:600;display:flex;align-items:center;gap:4px"><span style="font-family:'Material Symbols Rounded';font-size:15px">schedule</span>18 dk</span></div>
+          <div style="display:flex;align-items:center;gap:14px;padding:4px 0"><span style="width:56px;height:56px;border-radius:50%;background:#2B3F73;color:#DCE4F5;font-size:20px;font-weight:600;display:flex;align-items:center;justify-content:center;flex:none">MY</span><div style="flex:1"><div style="font-size:24px;line-height:30px;font-weight:600;letter-spacing:-.02em">Mehmet Yılmaz</div><div style="margin-top:2px;font-size:14px;color:#A39F96">Müşteri toplantısı · 14:30 · 60 dk · Ofis</div></div><span style="font-family:'Material Symbols Rounded';font-size:22px;color:#5E5B54">chevron_right</span></div>
+          <div style="background:linear-gradient(160deg,#2C2C7A 0%,#4A4BC8 100%);color:#fff;border-radius:24px;padding:20px;box-shadow:0 12px 32px rgba(91,92,226,.25)">
+            <div style="display:flex;align-items:center;gap:6px;color:#D6D6FB;font-size:12px;font-weight:600;letter-spacing:.06em"><span style="font-family:'Material Symbols Rounded';font-size:16px;font-variation-settings:'FILL' 1">auto_awesome</span>KONUŞMAN GEREKEN 3 ŞEY</div>
+            <div style="margin-top:14px;display:flex;flex-direction:column;gap:14px">
+              <div style="display:flex;gap:14px"><span style="width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.16);font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;flex:none">1</span><div><div style="font-size:17px;font-weight:600;letter-spacing:-.01em">Fiyat</div><div style="margin-top:2px;font-size:14px;line-height:20px;color:rgba(255,255,255,.75)">Revize teklif 17:00'ye kadar bekleniyor; %8 indirim sınırını netleştir.</div></div></div>
+              <div style="display:flex;gap:14px"><span style="width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.16);font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;flex:none">2</span><div><div style="font-size:17px;font-weight:600;letter-spacing:-.01em">Teslim tarihi</div><div style="margin-top:2px;font-size:14px;line-height:20px;color:rgba(255,255,255,.75)">Ekim başı için onay istiyor; üretim takvimi 6 Ekim'i gösteriyor.</div></div></div>
+              <div style="display:flex;gap:14px"><span style="width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.16);font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;flex:none">3</span><div><div style="font-size:17px;font-weight:600;letter-spacing:-.01em">Sözleşme</div><div style="margin-top:2px;font-size:14px;line-height:20px;color:rgba(255,255,255,.75)">Taslak 2 haftadır açık; hukuk yorumu bekliyor.</div></div></div>
+            </div>
+          </div>
+          <sc-for list="{{ prepDark }}" as="s" hint-placeholder-count="6">
+            <div><div style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#7A776F;padding:0 4px 8px">{{ s.title }}</div>
+              <div style="background:#1F1E1B;border-radius:18px;padding:4px 16px;box-shadow:0 0 0 1px rgba(255,255,255,.06)">
+                <sc-for list="{{ s.rows }}" as="r" hint-placeholder-count="1"><div style="display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-top:{{ r.border }}"><span style="width:30px;height:30px;border-radius:10px;background:rgba(255,255,255,.08);color:#A39F96;display:flex;align-items:center;justify-content:center;flex:none"><span style="font-family:'Material Symbols Rounded';font-size:17px">{{ r.icon }}</span></span><div style="flex:1;min-width:0"><div style="font-size:15px;line-height:21px;letter-spacing:-.01em;text-wrap:pretty">{{ r.t }}</div><div style="font-size:12px;color:#7A776F;margin-top:2px">{{ r.m }}</div></div></div></sc-for>
+              </div></div>
+          </sc-for>
+        </div>
+        <div style="position:sticky;bottom:0;padding:16px 20px 44px;background:linear-gradient(180deg,rgba(20,19,17,0) 0%,#141311 45%);display:flex;gap:10px"><span style="flex:1;height:52px;border-radius:16px;background:#8586F2;color:#0F0F2A;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center">2 Dakikalık Özeti Oku</span><span style="height:52px;padding:0 18px;border-radius:16px;background:#1F1E1B;color:#F2F0EB;font-size:15px;font-weight:600;display:flex;align-items:center;box-shadow:0 0 0 1px rgba(255,255,255,.08)">Not Al</span><span style="position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:rgba(255,255,255,.4)"></span></div>
+      </div>
+      <div style="font-size:12px;line-height:18px;color:#6B6860">Dark'ta koyu kart siyah üstünde kaybolacağı için “3 şey” kartı indigo gradyana döner; birincil buton açık indigo, üzerinde koyu metin (kontrast 9:1).</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;width:390px">
+      <div style="font-size:12px;color:#6B6860;display:flex;gap:8px;align-items:baseline"><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);border-radius:5px;color:#1A1917">5.6</span>2 Dakikalık Özet · Okuma görünümü</div>
+      <div style="width:390px;height:844px;background:#FBFAF7;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px rgba(27,25,23,.08),0 20px 50px rgba(27,25,23,.10);position:relative;display:flex;flex-direction:column">
+        <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 8px;font-size:15px;font-weight:600"><span>14:13</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:17px"><span>signal_cellular_alt</span><span>wifi</span><span>battery_full</span></span></div>
+        <div style="padding:6px 24px 40px;display:flex;flex-direction:column;gap:22px;flex:1">
+          <div style="display:flex;align-items:center;justify-content:space-between"><span style="width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(27,25,23,.08)"><span style="font-family:'Material Symbols Rounded';font-size:20px">close</span></span><span style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E">2 DAKİKALIK ÖZET</span><span style="width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(27,25,23,.08)"><span style="font-family:'Material Symbols Rounded';font-size:20px">headphones</span></span></div>
+          <div><div style="font-family:Lora,Georgia,serif;font-style:italic;font-size:15px;color:#6B6860">Mehmet Yılmaz · 14:30</div><div style="margin-top:6px;font-family:Lora,Georgia,serif;font-size:30px;line-height:36px;font-weight:500;letter-spacing:-.02em;text-wrap:pretty">Nerede kalmıştınız?</div></div>
+          <p style="margin:0;font-family:Lora,Georgia,serif;font-size:17px;line-height:28px;text-wrap:pretty">Mehmet ile en son <b style="font-weight:600">1 Eylül'de</b> konuştunuz. Fiyat aralığını ve teslim süresini ele aldınız; Mehmet Ekim başı teslimat için revize teklif istedi, sen Cuma göndereceğini söyledin. Teklif v2'yi <b style="font-weight:600">2 Eylül'de</b> gönderdin; henüz yanıt gelmedi.</p>
+          <p style="margin:0;font-family:Lora,Georgia,serif;font-size:17px;line-height:28px;text-wrap:pretty">Dün akşam gelen mailde fiyatın Ekim teslimatına göre güncellenmesini istedi. Bu, %8 indirim sınırını ve üretim takviminin gösterdiği <b style="font-weight:600">6 Ekim</b> tarihini konuşmanı gerektiriyor.</p>
+          <p style="margin:0;font-family:Lora,Georgia,serif;font-size:17px;line-height:28px;text-wrap:pretty">Sözleşme taslağı iki haftadır hukuk yorumu bekliyor; Mehmet'in bunu sorması muhtemel. Nakliye maliyetinin kimde olacağı ilk görüşmede açık kalmıştı.</p>
+          <div style="margin-top:auto;display:flex;flex-direction:column;gap:8px"><div style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E">KAYNAKLAR</div><div style="display:flex;flex-wrap:wrap;gap:6px"><span style="height:30px;padding:0 10px;border-radius:999px;background:#fff;font-size:12px;font-weight:500;display:flex;align-items:center;gap:5px;box-shadow:0 1px 2px rgba(27,25,23,.06)"><span style="font-family:'Material Symbols Rounded';font-size:15px;color:#6B6860">mail</span>3 mail</span><span style="height:30px;padding:0 10px;border-radius:999px;background:#fff;font-size:12px;font-weight:500;display:flex;align-items:center;gap:5px;box-shadow:0 1px 2px rgba(27,25,23,.06)"><span style="font-family:'Material Symbols Rounded';font-size:15px;color:#6B6860">call</span>1 görüşme notu</span><span style="height:30px;padding:0 10px;border-radius:999px;background:#fff;font-size:12px;font-weight:500;display:flex;align-items:center;gap:5px;box-shadow:0 1px 2px rgba(27,25,23,.06)"><span style="font-family:'Material Symbols Rounded';font-size:15px;color:#6B6860">description</span>Teklif v2.pdf</span></div></div>
+        </div>
+        <span style="position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:rgba(27,25,23,.25)"></span>
+      </div>
+      <div style="font-size:12px;line-height:18px;color:#6B6860">Okuma görünümü brifingle aynı editoryal sesi kullanır: Lora, kalın tarih vurguları, altta kaynak çipleri. Kulaklık ikonu aynı metni sesli okur.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;width:390px">
+      <div style="font-size:12px;color:#6B6860;display:flex;gap:8px;align-items:baseline"><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);border-radius:5px;color:#1A1917">5.7</span>Toplantı Sonrası Yakalama · Ses girişi</div>
+      <div style="width:390px;height:844px;background:#F5F4F0;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px rgba(27,25,23,.08),0 20px 50px rgba(27,25,23,.10);position:relative;display:flex;flex-direction:column">
+        <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 8px;font-size:15px;font-weight:600"><span>15:31</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:17px"><span>signal_cellular_alt</span><span>wifi</span><span>battery_full</span></span></div>
+        <div style="padding:6px 20px 44px;display:flex;flex-direction:column;gap:18px;flex:1">
+          <div style="display:flex;align-items:center;justify-content:space-between"><span style="width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(27,25,23,.08)"><span style="font-family:'Material Symbols Rounded';font-size:20px">close</span></span><span style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E">TOPLANTI SONRASI</span><span style="width:36px"></span></div>
+          <div><div style="font-size:13px;color:#6B6860">Mehmet Yılmaz · 14:30–15:30</div><div style="margin-top:6px;font-size:28px;line-height:34px;font-weight:600;letter-spacing:-.02em">Toplantın bitti.</div><div style="margin-top:6px;font-size:16px;line-height:23px;color:#6B6860">Takip etmen gereken bir şey var mı?</div></div>
+          <div style="background:#fff;border-radius:20px;padding:16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)"><div style="font-size:16px;line-height:24px;font-style:italic">“Mehmet'e yarın teklif göndereceğim. Sözleşme için hukuktan Perşembe'ye kadar yorum isteyeceğim.”</div><div style="margin-top:12px;display:flex;align-items:center;gap:8px">{{ bars }}<span style="font-size:12px;color:#9B978E">0:07 · dinleniyor</span></div></div>
+          <div style="background:radial-gradient(140% 100% at 0% 0%,#E4E4FA 0%,#FFFFFF 60%);border-radius:20px;padding:16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)">
+            <div style="display:flex;align-items:center;gap:6px;color:#5B5CE2;font-size:12px;font-weight:600;letter-spacing:.06em"><span style="font-family:'Material Symbols Rounded';font-size:16px;font-variation-settings:'FILL' 1">auto_awesome</span>2 YENİ TAAHHÜT</div>
+            <div style="margin-top:10px;display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:14px;background:#fff;box-shadow:0 1px 2px rgba(27,25,23,.06)"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#5B5CE2">handshake</span><div style="flex:1"><div style="font-size:15px;font-weight:600;letter-spacing:-.01em">Mehmet'e teklif gönder</div><div style="font-size:12px;color:#9B978E">Yarın · Mehmet Yılmaz</div></div><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#2FA062;font-variation-settings:'FILL' 1">check_circle</span></div>
+              <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:14px;background:#fff;box-shadow:0 1px 2px rgba(27,25,23,.06)"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#5B5CE2">handshake</span><div style="flex:1"><div style="font-size:15px;font-weight:600;letter-spacing:-.01em">Hukuktan sözleşme yorumu iste</div><div style="font-size:12px;color:#9B978E">Perşembe · Hukuk ekibi</div></div><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#2FA062;font-variation-settings:'FILL' 1">check_circle</span></div>
+            </div>
+          </div>
+          <div style="display:flex;gap:10px;margin-top:auto"><span style="flex:1;height:52px;border-radius:16px;background:#5B5CE2;color:#fff;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center">Kaydet</span><span style="width:52px;height:52px;border-radius:16px;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(27,25,23,.08)"><span style="font-family:'Material Symbols Rounded';font-size:22px">keyboard</span></span></div>
+        </div>
+        <span style="position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:rgba(27,25,23,.25)"></span>
+      </div>
+      <div style="font-size:12px;line-height:18px;color:#6B6860">Toplantı bitiminde 1 dakika sonra sessiz bildirim. Konuşma anında taahhüde dönüşür; yeşil onay “tespit edildi” demek, yazma işlemi yalnızca Kaydet ile.</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const PREP=[
+ {title:'TOPLANTININ AMACI',rows:[{icon:'target',t:'Eylül teklifinin son hâlini netleştirmek ve Ekim teslimatı için onay almak.',m:'Takvim davetinden çıkarıldı'}]},
+ {title:'SON GÖRÜŞMENİZ',rows:[{icon:'history',t:'1 Eylül · Fiyat aralığı ve teslim süresi konuşuldu. Mehmet revize teklif istedi; sen Cuma göndereceğini söyledin.',m:'4 gün önce · Görüşme notları'}]},
+ {title:'SON MAİLLER',rows:[{icon:'mail',t:'Re: Teklif — “Fiyatı Ekim teslimatına göre güncelleyebilir misiniz?”',m:'Mehmet · Dün 18:20'},{icon:'mail',t:'Teklif v2 gönderildi (PDF)',m:'Sen · 2 Eyl 10:05'}]},
+ {title:'AÇIK KONULAR',rows:[{icon:'radio_button_unchecked',t:'Sözleşme taslağı hukuk yorumu bekliyor',m:'14 gün'},{icon:'radio_button_unchecked',t:'Nakliye maliyeti kimde?',m:'1 Eylül görüşmesi'}]},
+ {title:'SENDEN BEKLENENLER',rows:[{icon:'person',t:'Revize teklif · PDF',m:'Bugün 17:00'}]},
+ {title:'SENİN BEKLEDİKLERİN',rows:[{icon:'schedule_send',t:'Teklif v2 için geri bildirim',m:'3 gündür bekliyor'}]}
+];
+const DAY=[
+ {t:'09:00',title:'Haftalık ekip',meta:'60 dk · Ofis',icon:'event',type:'event'},
+ {t:'11:00',title:'Ürün gözden geçirme',meta:'30 dk · Online',icon:'videocam',type:'event'},
+ {t:'12:00',title:'2 saat boşluk',meta:'Öğle yemeği ve odaklanma için uygun',icon:'self_improvement',type:'gap'},
+ {t:'14:30',title:'Mehmet ile müşteri toplantısı',meta:'60 dk · Ofis · Hazırlık hazır',icon:'groups',type:'event'},
+ {t:'16:00',title:'Teklif hazırlama',meta:'Önerilen · 45 dk · AI görev bloğu',icon:'auto_awesome',type:'ai'},
+ {t:'17:00',title:'Başvuru son saati',meta:'Girişim programı · Mailden tespit edildi',icon:'flag',type:'event'},
+ {t:'20:30',title:'Akşam yemeği · Karaköy',meta:'Rezervasyon · 4 kişi',icon:'restaurant',type:'life'}
+];
+const WEEK=[{d:'Pzt',b:[38,20]},{d:'Sal',b:[26,14]},{d:'Çar',b:[54,30],hot:true},{d:'Per',b:[30,10]},{d:'Cum',b:[22,26]},{d:'Cmt',b:[16,8],today:true},{d:'Paz',b:[8,0]}];
+class Component extends DCLogic {
+  renderVals(){
+    const el=React.createElement;
+    const wb=(sel)=>PREP.map(s=>({...s,rows:s.rows.map((r,i)=>({...r,border:i?sel:'0'}))}));
+    const bars=el('div',{style:{display:'flex',gap:3,alignItems:'center',height:20}},Array.from({length:26},(_,i)=>el('div',{key:i,style:{width:3,borderRadius:2,background:i<18?'#5B5CE2':'#D9D6F7',height:6+((i*7)%5)*3}})));
+    return {
+      prep:wb('1px solid rgba(27,25,23,.06)'),prepDark:wb('1px solid rgba(255,255,255,.06)'),bars,
+      daysDark:['Pzt','Sal','Çar','Per','Cum','Cmt','Paz'].map((d,i)=>({d,n:String(i+1),bg:i===4?'#F2F0EB':'#1F1E1B',fg:i===4?'#141311':'#F2F0EB',sh:i===4?'none':'0 0 0 1px rgba(255,255,255,.06)',dot:i===4?'#5B5CE2':i<4?'#3A3936':i===5?'#8586F2':'transparent'})),
+      dayDark:DAY.map(e=>({...e,bg:e.type==='gap'?'transparent':e.type==='ai'?'rgba(133,134,242,.12)':e.type==='life'?'rgba(240,184,90,.10)':'#1F1E1B',border:e.type==='ai'?'1px dashed #8586F2':e.type==='gap'?'1px dashed rgba(255,255,255,.15)':'1px solid rgba(255,255,255,.06)',fg:e.type==='gap'?'#7A776F':'#F2F0EB',ic:e.type==='ai'?'#A9AAF5':e.type==='gap'?'#5E5B54':'#A39F96',mc:e.type==='ai'?'#A9AAF5':'#7A776F'})),
+      days:['Pzt','Sal','Çar','Per','Cum','Cmt','Paz'].map((d,i)=>({d,n:String(i+1),bg:i===4?'#1A1917':'#fff',fg:i===4?'#fff':'#1A1917',dot:i===4?'#A9AAF5':i<4?'#E0DED7':i===5?'#5B5CE2':'transparent'})),
+      day:DAY.map(e=>({...e,bg:e.type==='gap'?'transparent':e.type==='ai'?'#F7F7FE':e.type==='life'?'#FDF6EC':'#fff',border:e.type==='ai'?'1px dashed #A9AAF5':e.type==='gap'?'1px dashed rgba(27,25,23,.15)':'1px solid rgba(27,25,23,.06)',fg:e.type==='gap'?'#9B978E':'#1A1917',ic:e.type==='ai'?'#5B5CE2':e.type==='gap'?'#B8B4AA':'#6B6860',mc:e.type==='ai'?'#4547C9':'#9B978E'})),
+      week:WEEK.map(w=>({d:w.d,fg:w.today?'#5B5CE2':w.hot?'#C7432F':'#6B6860',bars:[{h:w.b[0]+'px',bg:w.hot?'#F3B7AE':w.today?'#5B5CE2':'#D9D6F7'},{h:w.b[1]+'px',bg:w.hot?'#E0553F':w.today?'#A9AAF5':'#EDEDFC'}]}))
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "dijital-asistan-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:mobile": "pnpm --filter mobile start",
+    "dev:web": "pnpm --filter web dev",
+    "dev:backoffice": "pnpm --filter backoffice dev",
+    "build:web": "pnpm --filter web build",
+    "build:backoffice": "pnpm --filter backoffice build",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "supabase:start": "cd supabase && supabase start"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "prettier": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=22",
+    "pnpm": ">=10"
+  }
+}

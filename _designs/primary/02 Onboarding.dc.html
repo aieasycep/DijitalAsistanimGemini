@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Lora:ital,wght@0,400..600;1,400..600&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..600,0..1,0&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#ECEAE4;font-family:Geist,-apple-system,"SF Pro Text",system-ui,sans-serif;color:#1A1917;-webkit-font-smoothing:antialiased}a{color:#4547C9;text-decoration:none}a:hover{color:#5B5CE2;text-decoration:underline}button{font-family:inherit}@keyframes daspin{to{transform:rotate(360deg)}}@keyframes dabar{from{transform:scaleY(.25)}to{transform:scaleY(1)}}</style>
+</helmet>
+<div style="padding:40px 44px 80px;display:flex;flex-direction:column;gap:44px">
+  <div style="display:flex;flex-direction:column;gap:12px">
+    <div style="display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:#6B6860"><a href="Dijital%20Asistan.dc.html">← Prototip ve IA</a><a href="01%20Tasarim%20Sistemi.dc.html">01 Sistem</a><b style="color:#1A1917">02 Onboarding</b><a href="03%20Bugun%20ve%20Brifingler.dc.html">03 Bugün</a><a href="04%20Akis%20ve%20Mail.dc.html">04 Akış</a><a href="05%20Plan%20ve%20Toplantilar.dc.html">05 Plan</a><a href="06%20Asistan%20Hafiza%20Kisiler.dc.html">06 Asistan</a><a href="07%20Hesap%20Gizlilik%20Pro.dc.html">07 Hesap</a><a href="08%20Durumlar%20Widgetlar%20Etkilesimler.dc.html">08 Durumlar</a><a href="09%20Pazarlama.dc.html">09 Pazarlama</a></div>
+    <h1 style="margin:0;font-size:30px;line-height:36px;font-weight:600;letter-spacing:-.02em">02 · Onboarding, Bağlantılar, İlk Analiz</h1>
+    <p style="margin:0;max-width:720px;font-size:14px;line-height:21px;color:#6B6860">Akış: 4 tanıtım → hesap → bağlantılar (her OAuth öncesi izin açıklayıcı) → kişiselleştirme → brifing saatleri → ilk analiz (dramatik an) → bildirim izni → (Android) telefon bildirimleri → Bugün. Tanıtım görselleri çizim değil, ürünün kendi UI parçalarıdır.</p>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start">
+    <div style="display:flex;flex-direction:column;gap:10px;width:390px">
+      <div style="font-size:12px;color:#6B6860;display:flex;gap:8px;align-items:baseline"><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);border-radius:5px;color:#1A1917">2.1</span>Tanıtım 1 · Marka</div>
+      <div style="width:390px;height:844px;background:linear-gradient(160deg,#1E1E4C 0%,#3B3CA8 58%,#7071EA 100%);color:#fff;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px rgba(27,25,23,.2),0 20px 50px rgba(27,25,23,.2);position:relative;display:flex;flex-direction:column;padding:0 28px 44px">
+        <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 2px 8px;font-size:15px;font-weight:600"><span>9:41</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:17px"><span>signal_cellular_alt</span><span>wifi</span><span>battery_full</span></span></div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;text-align:center">
+          <span style="width:96px;height:96px;border-radius:30px;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 20px 50px rgba(0,0,0,.25)"><span style="font-family:'Material Symbols Rounded';font-size:52px;color:#5B5CE2;font-variation-settings:'FILL' 1">auto_awesome</span></span>
+          <div><div style="font-size:15px;font-weight:600;letter-spacing:.1em;opacity:.75">DİJİTAL ASİSTAN</div><div style="margin-top:14px;font-size:34px;line-height:40px;font-weight:600;letter-spacing:-.025em;text-wrap:pretty">Bugün bilmen gerekenleri, sen sormadan söyler.</div></div>
+          <div style="font-size:16px;line-height:24px;color:rgba(255,255,255,.75);max-width:300px">Mailini, takvimini ve yapman gerekenleri tek yerde anlar.</div>
+        </div>
+        <div style="display:flex;justify-content:center;gap:6px;margin-bottom:22px"><span style="width:20px;height:6px;border-radius:3px;background:#fff"></span><span style="width:6px;height:6px;border-radius:3px;background:rgba(255,255,255,.4)"></span><span style="width:6px;height:6px;border-radius:3px;background:rgba(255,255,255,.4)"></span><span style="width:6px;height:6px;border-radius:3px;background:rgba(255,255,255,.4)"></span></div>
+        <span style="height:52px;border-radius:16px;background:#fff;color:#25266A;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center">Başlayalım</span>
+        <span style="margin-top:14px;text-align:center;font-size:13px;color:rgba(255,255,255,.7)">Zaten hesabın var mı? <b style="color:#fff">Giriş yap</b></span>
+        <span style="position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:rgba(255,255,255,.4)"></span>
+      </div>
+      <div style="font-size:12px;line-height:18px;color:#6B6860">Şafak gradyanı = brifingin rengi; onboarding boyunca tek marka anı. Sonraki ekranlar açık zemine döner.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;width:390px">
+      <div style="font-size:12px;color:#6B6860;display:flex;gap:8px;align-items:baseline"><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);border-radius:5px;color:#1A1917">2.2</span>Tanıtım 2 · Gürültüyü azalt</div>
+      <div style="width:390px;height:844px;background:#F5F4F0;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px rgba(27,25,23,.08),0 20px 50px rgba(27,25,23,.10);position:relative;display:flex;flex-direction:column;padding:0 28px 44px">
+        <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 2px 8px;font-size:15px;font-weight:600"><span>9:41</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:17px"><span>signal_cellular_alt</span><span>wifi</span><span>battery_full</span></span></div>
+        <div style="display:flex;justify-content:flex-end;margin-top:10px;font-size:14px;font-weight:600;color:#6B6860">Atla</div>
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:34px">
+          <div style="position:relative;height:300px">
+            <div style="position:absolute;left:24px;right:24px;top:0;display:flex;flex-direction:column;gap:6px;opacity:.55">
+              <div style="height:34px;border-radius:10px;background:#fff;box-shadow:0 1px 2px rgba(27,25,23,.06);display:flex;align-items:center;gap:8px;padding:0 12px"><span style="width:16px;height:16px;border-radius:50%;background:#E9E7E1"></span><span style="width:120px;height:8px;border-radius:4px;background:#E9E7E1"></span></div>
+              <div style="height:34px;border-radius:10px;background:#fff;box-shadow:0 1px 2px rgba(27,25,23,.06);display:flex;align-items:center;gap:8px;padding:0 12px"><span style="width:16px;height:16px;border-radius:50%;background:#E9E7E1"></span><span style="width:160px;height:8px;border-radius:4px;background:#E9E7E1"></span></div>
+              <div style="height:34px;border-radius:10px;background:#fff;box-shadow:0 1px 2px rgba(27,25,23,.06);display:flex;align-items:center;gap:8px;padding:0 12px"><span style="width:16px;height:16px;border-radius:50%;background:#E9E7E1"></span><span style="width:90px;height:8px;border-radius:4px;background:#E9E7E1"></span></div>
+              <div style="height:34px;border-radius:10px;background:#fff;box-shadow:0 1px 2px rgba(27,25,23,.06);display:flex;align-items:center;gap:8px;padding:0 12px"><span style="width:16px;height:16px;border-radius:50%;background:#E9E7E1"></span><span style="width:140px;height:8px;border-radius:4px;background:#E9E7E1"></span></div>
+            </div>
+            <div style="position:absolute;left:0;right:0;top:20px;text-align:center"><span style="font-size:64px;line-height:64px;font-weight:600;letter-spacing:-.04em;color:#1A1917">127</span><div style="font-size:14px;color:#6B6860;margin-top:2px">mail</div></div>
+            <div style="position:absolute;left:50%;top:116px;margin-left:-14px;width:28px;height:28px;border-radius:50%;background:#5B5CE2;color:#fff;display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:18px">arrow_downward</span></div>
+            <div style="position:absolute;left:0;right:0;top:160px;display:flex;flex-direction:column;gap:8px">
+              <div style="height:40px;border-radius:12px;background:#fff;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.06);display:flex;align-items:center;gap:10px;padding:0 14px"><span style="font-size:10px;font-weight:700;padding:2px 6px;border-radius:999px;background:#FCEDE9;color:#C7432F">ACİL</span><span style="font-size:13px;font-weight:600">Ahmet revize teklif bekliyor</span></div>
+              <div style="height:40px;border-radius:12px;background:#fff;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.06);display:flex;align-items:center;gap:10px;padding:0 14px"><span style="font-size:10px;font-weight:700;padding:2px 6px;border-radius:999px;background:#FDF2DC;color:#9A6300">SON TARİH</span><span style="font-size:13px;font-weight:600">Başvuru bugün 17:00</span></div>
+              <div style="height:40px;border-radius:12px;background:#fff;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.06);display:flex;align-items:center;gap:10px;padding:0 14px"><span style="font-size:10px;font-weight:700;padding:2px 6px;border-radius:999px;background:#F0EFEB;color:#6B6860">TAKİP</span><span style="font-size:13px;font-weight:600">Teklife 3 gündür cevap yok</span></div>
+            </div>
+          </div>
+          <div style="text-align:center"><div style="font-size:15px;font-weight:600;color:#5B5CE2">127 mail → 3 önemli konu</div><div style="margin-top:8px;font-size:32px;line-height:38px;font-weight:600;letter-spacing:-.025em">Gürültüyü azalt.</div><div style="margin-top:8px;font-size:16px;line-height:24px;color:#6B6860">Gelen her şeyi okur, yalnızca önemli olanı gösterir.</div></div>
+        </div>
+        <div style="display:flex;justify-content:center;gap:6px;margin-bottom:22px"><span style="width:6px;height:6px;border-radius:3px;background:#C9C5BC"></span><span style="width:20px;height:6px;border-radius:3px;background:#1A1917"></span><span style="width:6px;height:6px;border-radius:3px;background:#C9C5BC"></span><span style="width:6px;height:6px;border-radius:3px;background:#C9C5BC"></span></div>
+        <span style="height:52px;border-radius:16px;background:#1A1917;color:#fff;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center">Devam</span>
+        <span style="position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:rgba(27,25,23,.25)"></span>
+      </div>
+      <div style="font-size:12px;line-height:18px;color:#6B6860">Gerçek kart bileşenleriyle anlatım: soluk iskelet yığın → sayı → üç gerçek öncelik kartı. Animasyon: yığın aşağı akıp 3 karta “çöker”.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;width:390px">
+      <div style="font-size:12px;color:#6B6860;display:flex;gap:8px;align-items:baseline"><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);border-radius:5px;color:#1A1917">2.3</span>Tanıtım 3 · Brifing</div>
+      <div style="width:390px;height:844px;background:#F5F4F0;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px rgba(27,25,23,.08),0 20px 50px rgba(27,25,23,.10);position:relative;display:flex;flex-direction:column;padding:0 28px 44px">
+        <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 2px 8px;font-size:15px;font-weight:600"><span>9:41</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:17px"><span>signal_cellular_alt</span><span>wifi</span><span>battery_full</span></span></div>
+        <div style="display:flex;justify-content:flex-end;margin-top:10px;font-size:14px;font-weight:600;color:#6B6860">Atla</div>
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:34px">
+          <div style="border-radius:28px;overflow:hidden;box-shadow:0 20px 50px rgba(27,25,23,.14);transform:rotate(-2deg)">
+            <div style="background:linear-gradient(160deg,#1E1E4C 0%,#3B3CA8 58%,#7071EA 100%);color:#fff;padding:22px 20px 34px"><div style="font-size:11px;font-weight:600;letter-spacing:.08em;opacity:.72">SABAH BRİFİNGİ · 08:00</div><div style="margin-top:6px;font-size:24px;line-height:30px;font-weight:600;letter-spacing:-.02em">Günaydın Yunus</div><div style="margin-top:4px;font-size:14px;color:rgba(255,255,255,.8)">Bugün oldukça sakin bir günün var.</div></div>
+            <div style="margin-top:-18px;background:#F5F4F0;border-radius:22px 22px 0 0;padding:18px 20px 20px"><div style="font-family:Lora,Georgia,serif;font-size:15px;line-height:24px">Öğlene kadar toplantın bulunmuyor. Saat 14:30'da Mehmet ile müşteri toplantın var…</div><div style="margin-top:12px;display:flex;align-items:center;gap:8px;height:40px;border-radius:12px;background:#1A1917;color:#fff;font-size:13px;font-weight:600;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:18px">headphones</span>Brifingi Dinle · 2 dk</div></div>
+          </div>
+          <div style="text-align:center"><div style="font-size:15px;font-weight:600;color:#5B5CE2">Her sabah 08:00</div><div style="margin-top:8px;font-size:32px;line-height:38px;font-weight:600;letter-spacing:-.025em;text-wrap:pretty">Gününü sen sormadan hazırlarız.</div><div style="margin-top:8px;font-size:16px;line-height:24px;color:#6B6860">Okumak istemezsen 2 dakikada dinle.</div></div>
+        </div>
+        <div style="display:flex;justify-content:center;gap:6px;margin-bottom:22px"><span style="width:6px;height:6px;border-radius:3px;background:#C9C5BC"></span><span style="width:6px;height:6px;border-radius:3px;background:#C9C5BC"></span><span style="width:20px;height:6px;border-radius:3px;background:#1A1917"></span><span style="width:6px;height:6px;border-radius:3px;background:#C9C5BC"></span></div>
+        <span style="height:52px;border-radius:16px;background:#1A1917;color:#fff;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center">Devam</span>
+        <span style="position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:rgba(27,25,23,.25)"></span>
+      </div>
+      <div style="font-size:12px;line-height:18px;color:#6B6860">Brifing kartı hafif eğik durur; ürünün gerçek bileşeni, çizim değil.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;width:390px">
+      <div style="font-size:12px;color:#6B6860;display:flex;gap:8px;align-items:baseline"><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);border-radius:5px;color:#1A1917">2.4</span>Tanıtım 4 · Kontrol sende</div>
+      <div style="width:390px;height:844px;background:#F5F4F0;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px rgba(27,25,23,.08),0 20px 50px rgba(27,25,23,.10);position:relative;display:flex;flex-direction:column;padding:0 28px 44px">
+        <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 2px 8px;font-size:15px;font-weight:600"><span>9:41</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:17px"><span>signal_cellular_alt</span><span>wifi</span><span>battery_full</span></span></div>
+        <div style="display:flex;justify-content:flex-end;margin-top:10px;font-size:14px;font-weight:600;color:#6B6860">Atla</div>
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:34px">
+          <div style="background:#fff;border-radius:20px;padding:16px;box-shadow:0 20px 50px rgba(27,25,23,.14);transform:rotate(1.5deg)">
+            <div style="display:flex;align-items:center;gap:8px"><span style="width:28px;height:28px;border-radius:9px;background:#EDEDFC;color:#4547C9;display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:17px">send</span></span><span style="font-size:12px;font-weight:600;letter-spacing:.06em;color:#6B6860;flex:1">MAİL GÖNDER</span><span style="font-size:11px;font-weight:700;padding:3px 8px;border-radius:999px;background:#FDF2DC;color:#9A6300">BEKLİYOR</span></div>
+            <div style="margin-top:10px;font-size:16px;line-height:22px;font-weight:600;letter-spacing:-.01em">Mehmet Yılmaz'a takip mesajı gönder</div>
+            <div style="margin-top:8px;display:grid;grid-template-columns:56px 1fr;gap:4px 10px;font-size:12px;line-height:18px"><span style="color:#9B978E">Neden</span><span>Teklife 3 gündür yanıt gelmedi.</span><span style="color:#9B978E">Değişim</span><span>1 mail · Kısa, profesyonel ton</span></div>
+            <div style="margin-top:12px;display:flex;gap:8px;font-size:13px;font-weight:600"><span style="flex:1;height:38px;border-radius:12px;background:#5B5CE2;color:#fff;display:flex;align-items:center;justify-content:center">Onayla</span><span style="height:38px;padding:0 12px;border-radius:12px;background:#EDEDFC;color:#4547C9;display:flex;align-items:center">Düzenle</span><span style="height:38px;padding:0 12px;border-radius:12px;background:#F0EFEB;color:#6B6860;display:flex;align-items:center">Reddet</span></div>
+          </div>
+          <div style="text-align:center"><div style="font-size:15px;font-weight:600;color:#5B5CE2">Onay Merkezi</div><div style="margin-top:8px;font-size:32px;line-height:38px;font-weight:600;letter-spacing:-.025em">Kontrol her zaman sende.</div><div style="margin-top:8px;font-size:16px;line-height:24px;color:#6B6860;text-wrap:pretty">Sen onaylamadan mail göndermez, takvimine dokunmaz.</div></div>
+        </div>
+        <div style="display:flex;justify-content:center;gap:6px;margin-bottom:22px"><span style="width:6px;height:6px;border-radius:3px;background:#C9C5BC"></span><span style="width:6px;height:6px;border-radius:3px;background:#C9C5BC"></span><span style="width:6px;height:6px;border-radius:3px;background:#C9C5BC"></span><span style="width:20px;height:6px;border-radius:3px;background:#1A1917"></span></div>
+        <span style="height:52px;border-radius:16px;background:#5B5CE2;color:#fff;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center">Hesap Oluştur</span>
+        <span style="position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:rgba(27,25,23,.25)"></span>
+      </div>
+      <div style="font-size:12px;line-height:18px;color:#6B6860">Son tanıtım güven mesajıyla biter; CTA marka rengine döner ve hesap oluşturmaya geçer.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;width:390px">
+      <div style="font-size:12px;color:#6B6860;display:flex;gap:8px;align-items:baseline"><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);border-radius:5px;color:#1A1917">2.5</span>Hesap Oluştur</div>
+      <div style="width:390px;height:844px;background:#F5F4F0;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px rgba(27,25,23,.08),0 20px 50px rgba(27,25,23,.10);position:relative;display:flex;flex-direction:column;padding:0 28px 44px">
+        <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 2px 8px;font-size:15px;font-weight:600"><span>9:41</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:17px"><span>signal_cellular_alt</span><span>wifi</span><span>battery_full</span></span></div>
+        <div style="margin-top:10px"><span style="width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(27,25,23,.08)"><span style="font-family:'Material Symbols Rounded';font-size:20px">arrow_back</span></span></div>
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:28px">
+          <div><span style="width:56px;height:56px;border-radius:18px;background:#5B5CE2;display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:30px;color:#fff;font-variation-settings:'FILL' 1">auto_awesome</span></span><div style="margin-top:22px;font-size:30px;line-height:36px;font-weight:600;letter-spacing:-.025em">Hesabını oluştur</div><div style="margin-top:6px;font-size:15px;line-height:22px;color:#6B6860">Giriş yöntemin, bağlayacağın hesaplardan bağımsızdır.</div></div>
+          <div style="display:flex;flex-direction:column;gap:10px;font-size:15px;font-weight:600">
+            <span style="height:52px;border-radius:16px;background:#1A1917;color:#fff;display:flex;align-items:center;justify-content:center;gap:10px"><span style="width:22px;height:22px;border-radius:50%;background:#fff;color:#1A1917;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center">G</span>Google ile devam et</span>
+            <span style="height:52px;border-radius:16px;background:#fff;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 1px 2px rgba(27,25,23,.08)"><span style="font-family:'Material Symbols Rounded';font-size:20px">ios</span>Apple ile devam et</span>
+            <span style="height:52px;border-radius:16px;background:#fff;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 1px 2px rgba(27,25,23,.08)"><span style="width:16px;height:16px;display:grid;grid-template-columns:1fr 1fr;gap:2px"><span style="background:#F25022"></span><span style="background:#7FBA00"></span><span style="background:#00A4EF"></span><span style="background:#FFB900"></span></span>Microsoft ile devam et</span>
+            <div style="display:flex;align-items:center;gap:10px;margin:6px 0;color:#9B978E;font-size:12px"><span style="flex:1;height:1px;background:rgba(27,25,23,.1)"></span>veya<span style="flex:1;height:1px;background:rgba(27,25,23,.1)"></span></div>
+            <span style="height:52px;border-radius:16px;background:#fff;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 1px 2px rgba(27,25,23,.08);color:#4547C9"><span style="font-family:'Material Symbols Rounded';font-size:20px">mail</span>E-posta ile devam et</span>
+          </div>
+        </div>
+        <div style="text-align:center;font-size:12px;line-height:18px;color:#9B978E;text-wrap:pretty">Devam ederek <b style="color:#6B6860">Kullanım Koşulları</b> ve <b style="color:#6B6860">Gizlilik Politikası</b>'nı kabul edersin. Verilerin reklam amacıyla kullanılmaz.</div>
+        <span style="position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:rgba(27,25,23,.25)"></span>
+      </div>
+      <div style="font-size:12px;line-height:18px;color:#6B6860">Platform sırası cihaza göre: iOS'ta Apple ilk, Android'de Google ilk. Sağlayıcı logoları için gerçek marka varlıkları kullanılacak (burada yer tutucu).</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;width:390px">
+      <div style="font-size:12px;color:#6B6860;display:flex;gap:8px;align-items:baseline"><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);border-radius:5px;color:#1A1917">2.6</span>Dijital hayatını bağla</div>
+      <div style="width:390px;height:844px;background:#F5F4F0;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px rgba(27,25,23,.08),0 20px 50px rgba(27,25,23,.10);position:relative;display:flex;flex-direction:column;padding:0 20px 44px">
+        <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 10px 8px;font-size:15px;font-weight:600"><span>9:41</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:17px"><span>signal_cellular_alt</span><span>wifi</span><span>battery_full</span></span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px"><span style="width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(27,25,23,.08)"><span style="font-family:'Material Symbols Rounded';font-size:20px">arrow_back</span></span><span style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E">ADIM 1 / 4</span><span style="width:36px"></span></div>
+        <div style="margin-top:22px"><div style="font-size:30px;line-height:36px;font-weight:600;letter-spacing:-.025em">Dijital hayatını bağla.</div><div style="margin-top:6px;font-size:15px;line-height:22px;color:#6B6860">En az bir mail ve bir takvim yeterli. İstediğin zaman kaldırabilirsin.</div></div>
+        <div style="margin-top:22px;display:flex;flex-direction:column;gap:10px">
+          <sc-for list="{{ integrations }}" as="i" hint-placeholder-count="5">
+            <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:18px;background:#fff;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)"><span style="width:44px;height:44px;border-radius:14px;background:{{ i.tbg }};color:{{ i.tfg }};display:flex;align-items:center;justify-content:center;flex:none"><span style="font-family:'Material Symbols Rounded';font-size:22px">{{ i.icon }}</span></span><div style="flex:1;min-width:0"><div style="font-size:15px;font-weight:600;letter-spacing:-.01em">{{ i.name }}</div><div style="font-size:12px;color:#9B978E">{{ i.meta }}</div></div><span style="height:34px;padding:0 12px;border-radius:999px;background:{{ i.bbg }};color:{{ i.bfg }};font-size:13px;font-weight:600;display:flex;align-items:center;gap:4px"><span style="font-family:'Material Symbols Rounded';font-size:16px">{{ i.bicon }}</span>{{ i.btn }}</span></div>
+          </sc-for>
+        </div>
+        <div style="margin-top:auto;display:flex;flex-direction:column;gap:10px"><div style="display:flex;align-items:center;gap:8px;padding:0 4px;font-size:13px;color:#6B6860"><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#1E7A47">verified_user</span>Sen onaylamadan mail göndermeyiz.</div><span style="height:52px;border-radius:16px;background:#5B5CE2;color:#fff;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center">Devam · 2 hesap bağlı</span></div>
+        <span style="position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:rgba(27,25,23,.25)"></span>
+      </div>
+      <div style="font-size:12px;line-height:18px;color:#6B6860">Durumlar: Bağla (indigo tonal) / Bağlandı (yeşil, ✓). Devam butonu bağlı hesap sayısını söyler. Kart ikonları gerçek sağlayıcı logolarıyla değiştirilecek.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;width:390px">
+      <div style="font-size:12px;color:#6B6860;display:flex;gap:8px;align-items:baseline"><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);border-radius:5px;color:#1A1917">2.7</span>İzin Açıklayıcı · Gmail (OAuth öncesi)</div>
+      <div style="width:390px;height:844px;background:#F5F4F0;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px rgba(27,25,23,.08),0 20px 50px rgba(27,25,23,.10);position:relative;display:flex;flex-direction:column">
+        <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 8px;font-size:15px;font-weight:600"><span>9:41</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:17px"><span>signal_cellular_alt</span><span>wifi</span><span>battery_full</span></span></div>
+        <div style="flex:1"></div>
+        <div style="position:absolute;inset:0;background:rgba(27,25,23,.35)"></div>
+        <div style="position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:28px 28px 0 0;padding:10px 24px 44px;box-shadow:0 -10px 40px rgba(27,25,23,.12)">
+          <div style="width:36px;height:5px;border-radius:3px;background:#E0DED7;margin:0 auto 18px"></div>
+          <div style="display:flex;align-items:center;gap:12px"><span style="width:44px;height:44px;border-radius:14px;background:#FCEDE9;color:#C7432F;display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:22px">mail</span></span><div><div style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E">GMAIL</div><div style="font-size:20px;font-weight:600;letter-spacing:-.02em">Mail erişimine neden ihtiyacımız var?</div></div></div>
+          <div style="margin-top:18px;display:flex;flex-direction:column;gap:10px;font-size:15px">
+            <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;background:#F5F4F0"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#5B5CE2">priority_high</span>Önemli mailleri bulmak</div>
+            <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;background:#F5F4F0"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#5B5CE2">person</span>Cevap bekleyenleri anlamak</div>
+            <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;background:#F5F4F0"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#5B5CE2">flag</span>Son tarihleri tespit etmek</div>
+          </div>
+          <div style="margin-top:18px;padding:16px;border-radius:18px;background:#E4F5EA;display:flex;flex-direction:column;gap:10px;font-size:14px;line-height:20px;color:#1E5A36">
+            <div style="display:flex;gap:10px"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#1E7A47;flex:none">verified_user</span><b>Sen onaylamadan mail göndermeyiz.</b></div>
+            <div style="display:flex;gap:10px"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#1E7A47;flex:none">link_off</span>Bağlantını istediğin zaman kaldırabilirsin.</div>
+            <div style="display:flex;gap:10px"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#1E7A47;flex:none">block</span>Verilerin reklam amacıyla kullanılmaz, satılmaz.</div>
+          </div>
+          <div style="margin-top:18px;display:flex;flex-direction:column;gap:8px"><span style="height:52px;border-radius:16px;background:#5B5CE2;color:#fff;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center">Google ile Bağlan</span><span style="height:44px;border-radius:14px;color:#6B6860;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center">Şimdi değil</span></div>
+          <div style="margin-top:8px;text-align:center;font-size:12px;color:#9B978E">Sonraki adımda Google'ın kendi izin ekranı açılır.</div>
+          <span style="position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:rgba(27,25,23,.25)"></span>
+        </div>
+      </div>
+      <div style="font-size:12px;line-height:18px;color:#6B6860">Yerel OAuth'tan hemen önce açılan sayfa: 3 neden + 3 güvence. Aynı kalıp Outlook ve takvimler için; yalnızca ikon ve nedenler değişir.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;width:390px">
+      <div style="font-size:12px;color:#6B6860;display:flex;gap:8px;align-items:baseline"><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);border-radius:5px;color:#1A1917">2.7b</span>İzin Açıklayıcı · Outlook / Microsoft 365</div>
+      <div style="width:390px;height:844px;background:#F5F4F0;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px rgba(27,25,23,.08),0 20px 50px rgba(27,25,23,.10);position:relative;display:flex;flex-direction:column">
+        <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 8px;font-size:15px;font-weight:600"><span>9:41</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:17px"><span>signal_cellular_alt</span><span>wifi</span><span>battery_full</span></span></div>
+        <div style="flex:1"></div>
+        <div style="position:absolute;inset:0;background:rgba(27,25,23,.35)"></div>
+        <div style="position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:28px 28px 0 0;padding:10px 24px 44px;box-shadow:0 -10px 40px rgba(27,25,23,.12)">
+          <div style="width:36px;height:5px;border-radius:3px;background:#E0DED7;margin:0 auto 18px"></div>
+          <div style="display:flex;align-items:center;gap:12px"><span style="width:44px;height:44px;border-radius:14px;background:#E7F0FD;color:#2262BE;display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:22px">mail</span></span><div><div style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E">OUTLOOK · MICROSOFT 365</div><div style="font-size:20px;font-weight:600;letter-spacing:-.02em">Outlook erişimine neden ihtiyacımız var?</div></div></div>
+          <div style="margin-top:18px;display:flex;flex-direction:column;gap:10px;font-size:15px">
+            <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;background:#F5F4F0"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#5B5CE2">work</span>İş maillerinde önemli konuları bulmak</div>
+            <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;background:#F5F4F0"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#5B5CE2">forum</span>Cevap bekleyen konuşmaları anlamak</div>
+            <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;background:#F5F4F0"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#5B5CE2">description</span>Teklif, sözleşme ve son tarihleri tespit etmek</div>
+          </div>
+          <div style="margin-top:18px;padding:16px;border-radius:18px;background:#E4F5EA;display:flex;flex-direction:column;gap:10px;font-size:14px;line-height:20px;color:#1E5A36">
+            <div style="display:flex;gap:10px"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#1E7A47;flex:none">verified_user</span><b>Sen onaylamadan mail göndermeyiz.</b></div>
+            <div style="display:flex;gap:10px"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#1E7A47;flex:none">admin_panel_settings</span>Kurumsal hesapta yalnızca sana verilen izinler kullanılır; şirket politikaların geçerli kalır.</div>
+            <div style="display:flex;gap:10px"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#1E7A47;flex:none">link_off</span>Bağlantını istediğin zaman kaldırabilirsin.</div>
+            <div style="display:flex;gap:10px"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#1E7A47;flex:none">block</span>Verilerin reklam amacıyla kullanılmaz, satılmaz.</div>
+          </div>
+          <div style="margin-top:18px;display:flex;flex-direction:column;gap:8px"><span style="height:52px;border-radius:16px;background:#5B5CE2;color:#fff;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:10px"><span style="width:16px;height:16px;display:grid;grid-template-columns:1fr 1fr;gap:2px"><span style="background:#F25022"></span><span style="background:#7FBA00"></span><span style="background:#00A4EF"></span><span style="background:#FFB900"></span></span>Microsoft ile Bağlan</span><span style="height:44px;border-radius:14px;color:#6B6860;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center">Şimdi değil</span></div>
+          <div style="margin-top:8px;text-align:center;font-size:12px;color:#9B978E">Sonraki adımda Microsoft'un kendi izin ekranı açılır.</div>
+          <span style="position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:rgba(27,25,23,.25)"></span>
+        </div>
+      </div>
+      <div style="font-size:12px;line-height:18px;color:#6B6860">Gmail kalıbının aynısı; ikon karosu bilgi mavisi, nedenler iş bağlamına göre. Kurumsal hesaplar için ek güvence satırı (yönetici politikaları).</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;width:390px">
+      <div style="font-size:12px;color:#6B6860;display:flex;gap:8px;align-items:baseline"><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);border-radius:5px;color:#1A1917">2.7c</span>İzin Açıklayıcı · Takvim</div>
+      <div style="width:390px;height:844px;background:#F5F4F0;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px rgba(27,25,23,.08),0 20px 50px rgba(27,25,23,.10);position:relative;display:flex;flex-direction:column">
+        <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 8px;font-size:15px;font-weight:600"><span>9:41</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:17px"><span>signal_cellular_alt</span><span>wifi</span><span>battery_full</span></span></div>
+        <div style="flex:1"></div>
+        <div style="position:absolute;inset:0;background:rgba(27,25,23,.35)"></div>
+        <div style="position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:28px 28px 0 0;padding:10px 24px 44px;box-shadow:0 -10px 40px rgba(27,25,23,.12)">
+          <div style="width:36px;height:5px;border-radius:3px;background:#E0DED7;margin:0 auto 18px"></div>
+          <div style="display:flex;align-items:center;gap:12px"><span style="width:44px;height:44px;border-radius:14px;background:#E4F5EA;color:#1E7A47;display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:22px">calendar_month</span></span><div><div style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E">TAKVİM</div><div style="font-size:20px;font-weight:600;letter-spacing:-.02em">Takvim erişimine neden ihtiyacımız var?</div></div></div>
+          <div style="margin-top:12px;display:flex;gap:6px;font-size:12px;font-weight:600"><span style="height:30px;padding:0 10px;border-radius:999px;background:#1A1917;color:#fff;display:flex;align-items:center;gap:4px"><span style="font-family:'Material Symbols Rounded';font-size:14px">check</span>Google Takvim</span><span style="height:30px;padding:0 10px;border-radius:999px;background:#F5F4F0;color:#6B6860;display:flex;align-items:center">Apple Takvim</span><span style="height:30px;padding:0 10px;border-radius:999px;background:#F5F4F0;color:#6B6860;display:flex;align-items:center">Microsoft Takvim</span></div>
+          <div style="margin-top:14px;display:flex;flex-direction:column;gap:8px;font-size:15px">
+            <div style="display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:14px;background:#F5F4F0"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#5B5CE2">today</span>Günün programını anlamak</div>
+            <div style="display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:14px;background:#F5F4F0"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#5B5CE2">event_busy</span>Toplantı çakışmalarını tespit etmek</div>
+            <div style="display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:14px;background:#F5F4F0"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#5B5CE2">wb_twilight</span>Yaklaşan etkinlikleri brifinge eklemek</div>
+            <div style="display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:14px;background:#F5F4F0"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#5B5CE2">event_available</span>Uygun zaman önermek</div>
+          </div>
+          <div style="margin-top:14px;padding:16px;border-radius:18px;background:#E4F5EA;display:flex;flex-direction:column;gap:10px;font-size:14px;line-height:20px;color:#1E5A36">
+            <div style="display:flex;gap:10px"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#1E7A47;flex:none">verified_user</span><b>Takviminde değişiklik yapmadan önce senden onay isteriz.</b></div>
+            <div style="display:flex;gap:10px"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#1E7A47;flex:none">link_off</span>Bağlantını istediğin zaman kaldırabilirsin.</div>
+            <div style="display:flex;gap:10px"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#1E7A47;flex:none">block</span>Etkinlik içerikleri reklam amacıyla kullanılmaz.</div>
+          </div>
+          <div style="margin-top:14px;display:flex;flex-direction:column;gap:8px"><span style="height:52px;border-radius:16px;background:#5B5CE2;color:#fff;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center">Google Takvim'i Bağla</span><span style="height:44px;border-radius:14px;color:#6B6860;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center">Şimdi değil</span></div>
+          <div style="margin-top:8px;text-align:center;font-size:12px;color:#9B978E">Apple Takvim cihazdan okunur; ayrı giriş gerekmez.</div>
+          <span style="position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:rgba(27,25,23,.25)"></span>
+        </div>
+      </div>
+      <div style="font-size:12px;line-height:18px;color:#6B6860">Üç sağlayıcı için tek açıklayıcı; seçili sağlayıcı çipi CTA metnini değiştirir. Dört neden ürünün dört takvim yeteneğine birebir karşılık gelir.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;width:390px">
+      <div style="font-size:12px;color:#6B6860;display:flex;gap:8px;align-items:baseline"><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);border-radius:5px;color:#1A1917">2.8</span>Kişiselleştirme · Çoklu seçim</div>
+      <div style="width:390px;height:844px;background:#F5F4F0;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px rgba(27,25,23,.08),0 20px 50px rgba(27,25,23,.10);position:relative;display:flex;flex-direction:column;padding:0 20px 44px">
+        <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 10px 8px;font-size:15px;font-weight:600"><span>9:41</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:17px"><span>signal_cellular_alt</span><span>wifi</span><span>battery_full</span></span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px"><span style="width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(27,25,23,.08)"><span style="font-family:'Material Symbols Rounded';font-size:20px">arrow_back</span></span><span style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E">ADIM 2 / 4</span><span style="width:36px"></span></div>
+        <div style="margin-top:22px"><div style="font-size:30px;line-height:36px;font-weight:600;letter-spacing:-.025em">Senin için neler önemli?</div><div style="margin-top:6px;font-size:15px;line-height:22px;color:#6B6860">Birden fazla seçebilirsin. Zamanla kendim de öğrenirim.</div></div>
+        <div style="margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <sc-for list="{{ interests }}" as="c" hint-placeholder-count="8">
+            <div style="height:88px;border-radius:18px;background:{{ c.bg }};color:{{ c.fg }};box-shadow:{{ c.sh }};padding:14px;display:flex;flex-direction:column;justify-content:space-between;position:relative"><span style="font-family:'Material Symbols Rounded';font-size:24px;color:{{ c.ic }}">{{ c.icon }}</span><span style="font-size:15px;font-weight:600;letter-spacing:-.01em">{{ c.t }}</span><span style="position:absolute;top:12px;right:12px;font-family:'Material Symbols Rounded';font-size:20px;color:{{ c.chk }};font-variation-settings:'FILL' 1">check_circle</span></div>
+          </sc-for>
+        </div>
+        <div style="margin-top:auto"><span style="height:52px;border-radius:16px;background:#5B5CE2;color:#fff;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center">Devam · 4 seçili</span></div>
+        <span style="position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:rgba(27,25,23,.25)"></span>
+      </div>
+      <div style="font-size:12px;line-height:18px;color:#6B6860">Seçili kart: koyu zemin + dolu onay işareti. “Hepsi” diğerlerini otomatik işaretler. Seçimler yaşam kartlarının Bugün'de görünürlüğünü belirler.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;width:390px">
+      <div style="font-size:12px;color:#6B6860;display:flex;gap:8px;align-items:baseline"><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);border-radius:5px;color:#1A1917">2.9</span>Brifing Ayarları</div>
+      <div style="width:390px;height:844px;background:#F5F4F0;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px rgba(27,25,23,.08),0 20px 50px rgba(27,25,23,.10);position:relative;display:flex;flex-direction:column;padding:0 20px 44px">
+        <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 10px 8px;font-size:15px;font-weight:600"><span>9:41</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:17px"><span>signal_cellular_alt</span><span>wifi</span><span>battery_full</span></span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px"><span style="width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(27,25,23,.08)"><span style="font-family:'Material Symbols Rounded';font-size:20px">arrow_back</span></span><span style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E">ADIM 3 / 4</span><span style="width:36px"></span></div>
+        <div style="margin-top:22px"><div style="font-size:30px;line-height:36px;font-weight:600;letter-spacing:-.025em">Günün ritmi</div><div style="margin-top:6px;font-size:15px;line-height:22px;color:#6B6860">Brifingleri ne zaman hazırlayayım? Sonradan değiştirebilirsin.</div></div>
+        <div style="margin-top:22px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:18px;background:#fff;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)"><span style="width:44px;height:44px;border-radius:14px;background:#EDEDFC;color:#5B5CE2;display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:22px">wb_twilight</span></span><div style="flex:1"><div style="font-size:15px;font-weight:600">Sabah brifingi</div><div style="font-size:12px;color:#9B978E">Günün tamamı · sesli sürüm</div></div><span style="height:36px;padding:0 12px;border-radius:12px;background:#F5F4F0;font-size:17px;font-weight:600;display:flex;align-items:center;letter-spacing:-.01em">08:00</span></div>
+          <div style="display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:18px;background:#fff;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)"><span style="width:44px;height:44px;border-radius:14px;background:#F0EFEB;color:#6B6860;display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:22px">wb_sunny</span></span><div style="flex:1"><div style="font-size:15px;font-weight:600">Öğle nabzı</div><div style="font-size:12px;color:#9B978E">Yalnızca değişenler</div></div><span style="height:36px;padding:0 12px;border-radius:12px;background:#F5F4F0;font-size:17px;font-weight:600;display:flex;align-items:center;letter-spacing:-.01em">13:00</span></div>
+          <div style="display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:18px;background:#fff;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)"><span style="width:44px;height:44px;border-radius:14px;background:#F0EFEB;color:#6B6860;display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:22px">bedtime</span></span><div style="flex:1"><div style="font-size:15px;font-weight:600">Akşam kapanışı</div><div style="font-size:12px;color:#9B978E">Yarına kalanlar</div></div><span style="height:36px;padding:0 12px;border-radius:12px;background:#F5F4F0;font-size:17px;font-weight:600;display:flex;align-items:center;letter-spacing:-.01em">19:00</span></div>
+          <div style="display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:18px;background:#fff;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)"><span style="width:44px;height:44px;border-radius:14px;background:#F0EFEB;color:#6B6860;display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:22px">weekend</span></span><div style="flex:1"><div style="font-size:15px;font-weight:600">Hafta sonu</div><div style="font-size:12px;color:#9B978E">Sadece sabah, 10:00 · Kişisel öncelikli</div></div><span style="width:50px;height:30px;border-radius:15px;background:#5B5CE2;position:relative"><span style="position:absolute;top:2px;right:2px;width:26px;height:26px;border-radius:13px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2)"></span></span></div>
+        </div>
+        <div style="margin-top:14px;display:flex;align-items:center;gap:8px;padding:0 4px;font-size:13px;line-height:19px;color:#6B6860"><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#5B5CE2">psychology</span>Takvimine göre: genelde 08:15'te telefonu açıyorsun. 08:00 iyi bir seçim.</div>
+        <div style="margin-top:auto"><span style="height:52px;border-radius:16px;background:#5B5CE2;color:#fff;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center">Devam</span></div>
+        <span style="position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:rgba(27,25,23,.25)"></span>
+      </div>
+      <div style="font-size:12px;line-height:18px;color:#6B6860">Saat çipine dokunuş yerel saat seçiciyi açar. Öğle ve akşam Pro özelliği; ücretsizde kilit ikonu ile görünür, gizlenmez.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;width:390px">
+      <div style="font-size:12px;color:#6B6860;display:flex;gap:8px;align-items:baseline"><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);border-radius:5px;color:#1A1917">2.10</span>İlk Analiz · İşleniyor (dramatik an)</div>
+      <div style="width:390px;height:844px;background:linear-gradient(180deg,#15153A 0%,#25266A 60%,#3B3CA8 100%);color:#fff;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px rgba(27,25,23,.2),0 20px 50px rgba(27,25,23,.2);position:relative;display:flex;flex-direction:column;padding:0 28px 44px">
+        <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 2px 8px;font-size:15px;font-weight:600"><span>9:41</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:17px"><span>signal_cellular_alt</span><span>wifi</span><span>battery_full</span></span></div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:36px">
+          {{ ring }}
+          <div style="text-align:center"><div style="font-size:26px;line-height:32px;font-weight:600;letter-spacing:-.02em">Dijital hayatın analiz ediliyor…</div><div style="margin-top:8px;font-size:14px;color:rgba(255,255,255,.7)">Son 72 saat · Gmail ve Google Takvim</div></div>
+          <div style="width:100%;display:flex;flex-direction:column;gap:12px;font-size:15px">
+            <div style="display:flex;align-items:center;gap:12px;opacity:1"><span style="font-family:'Material Symbols Rounded';font-size:22px;color:#A9F0C1;font-variation-settings:'FILL' 1">check_circle</span><span style="flex:1">127 mail bulundu</span></div>
+            <div style="display:flex;align-items:center;gap:12px;opacity:1"><span style="font-family:'Material Symbols Rounded';font-size:22px;color:#A9F0C1;font-variation-settings:'FILL' 1">check_circle</span><span style="flex:1">8 potansiyel önemli konu</span></div>
+            <div style="display:flex;align-items:center;gap:12px;opacity:1"><span style="font-family:'Material Symbols Rounded';font-size:22px;color:#A9F0C1;font-variation-settings:'FILL' 1">check_circle</span><span style="flex:1">4 etkinlik</span></div>
+            <div style="display:flex;align-items:center;gap:12px">{{ spinner }}<span style="flex:1">2 takip tespit ediliyor…</span></div>
+            <div style="display:flex;align-items:center;gap:12px;opacity:.4"><span style="width:22px;height:22px;border-radius:50%;border:2px solid rgba(255,255,255,.4)"></span><span style="flex:1">Öncelikler sıralanıyor</span></div>
+          </div>
+        </div>
+        <div style="text-align:center;font-size:12px;color:rgba(255,255,255,.6)">Genelde 20–40 saniye sürer. Mail içerikleri cihazında özetlenir, hiçbir şey gönderilmez.</div>
+        <span style="position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:rgba(255,255,255,.4)"></span>
+      </div>
+      <div style="font-size:12px;line-height:18px;color:#6B6860">Sayılar canlı artar (127 → sayaç), her satır tamamlandığında yeşil ✓ + hafif haptic. Halka nabız atar; ilerleme çubuğu yok, belirsiz bekleme hissi yerine bulgu listesi.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;width:390px">
+      <div style="font-size:12px;color:#6B6860;display:flex;gap:8px;align-items:baseline"><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);border-radius:5px;color:#1A1917">2.11</span>İlk Analiz · Hazır</div>
+      <div style="width:390px;height:844px;background:linear-gradient(160deg,#1E1E4C 0%,#3B3CA8 58%,#7071EA 100%);color:#fff;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px rgba(27,25,23,.2),0 20px 50px rgba(27,25,23,.2);position:relative;display:flex;flex-direction:column;padding:0 28px 44px">
+        <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 2px 8px;font-size:15px;font-weight:600"><span>9:41</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:17px"><span>signal_cellular_alt</span><span>wifi</span><span>battery_full</span></span></div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;text-align:center">
+          <span style="width:88px;height:88px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 20px 50px rgba(0,0,0,.25)"><span style="font-family:'Material Symbols Rounded';font-size:44px;color:#2FA062;font-variation-settings:'FILL' 1">check</span></span>
+          <div><div style="font-size:15px;font-weight:600;letter-spacing:.1em;opacity:.75">HAZIR.</div><div style="margin-top:14px;font-size:32px;line-height:38px;font-weight:600;letter-spacing:-.025em;text-wrap:pretty">Son 72 saatte bilmen gereken <span style="color:#C9C9FF">5</span> şey bulduk.</div></div>
+          <div style="width:100%;background:rgba(255,255,255,.1);border-radius:20px;padding:6px 16px;text-align:left;font-size:14px">
+            <div style="display:flex;align-items:center;gap:10px;padding:10px 0"><span style="font-size:10px;font-weight:700;padding:2px 6px;border-radius:999px;background:#FCEDE9;color:#C7432F">ACİL</span><span style="flex:1">Ahmet revize teklif bekliyor · 17:00</span></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid rgba(255,255,255,.1)"><span style="font-size:10px;font-weight:700;padding:2px 6px;border-radius:999px;background:rgba(255,255,255,.15)">TOPLANTI</span><span style="flex:1">Mehmet ile 14:30 · hazırlık hazır</span></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid rgba(255,255,255,.1)"><span style="font-size:10px;font-weight:700;padding:2px 6px;border-radius:999px;background:#FDF2DC;color:#9A6300">SON TARİH</span><span style="flex:1">Başvuru bugün 17:00</span></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid rgba(255,255,255,.1);opacity:.7"><span style="flex:1">+ 2 konu daha</span></div>
+          </div>
+        </div>
+        <span style="height:52px;border-radius:16px;background:#fff;color:#25266A;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center">Brifingimi Gör</span>
+        <span style="position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:rgba(255,255,255,.4)"></span>
+      </div>
+      <div style="font-size:12px;line-height:18px;color:#6B6860">İlk değer anı: gerçek bulgular hemen görünür, brifing bir dokunuş uzakta. Bildirim izni bundan SONRA istenir; değer görülmeden izin istenmez.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;width:390px">
+      <div style="font-size:12px;color:#6B6860;display:flex;gap:8px;align-items:baseline"><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);border-radius:5px;color:#1A1917">2.12</span>Bildirim İzni Açıklayıcı</div>
+      <div style="width:390px;height:844px;background:#F5F4F0;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px rgba(27,25,23,.08),0 20px 50px rgba(27,25,23,.10);position:relative;display:flex;flex-direction:column;padding:0 28px 44px">
+        <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 2px 8px;font-size:15px;font-weight:600"><span>9:41</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:17px"><span>signal_cellular_alt</span><span>wifi</span><span>battery_full</span></span></div>
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:28px">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;gap:12px;padding:14px;border-radius:20px;background:rgba(255,255,255,.7);backdrop-filter:blur(20px);box-shadow:0 8px 24px rgba(27,25,23,.08);transform:translateX(-8px)"><span style="width:38px;height:38px;border-radius:11px;background:#5B5CE2;display:flex;align-items:center;justify-content:center;flex:none"><span style="font-family:'Material Symbols Rounded';font-size:22px;color:#fff;font-variation-settings:'FILL' 1">auto_awesome</span></span><div style="flex:1"><div style="display:flex;justify-content:space-between;font-size:13px"><b>Dijital Asistan</b><span style="color:#9B978E">14:10</span></div><div style="font-size:14px;line-height:19px;margin-top:2px">Toplantına 20 dakika kaldı. Mehmet için 3 konu hazır.</div></div></div>
+            <div style="display:flex;gap:12px;padding:14px;border-radius:20px;background:rgba(255,255,255,.7);backdrop-filter:blur(20px);box-shadow:0 8px 24px rgba(27,25,23,.08);transform:translateX(8px)"><span style="width:38px;height:38px;border-radius:11px;background:#5B5CE2;display:flex;align-items:center;justify-content:center;flex:none"><span style="font-family:'Material Symbols Rounded';font-size:22px;color:#fff;font-variation-settings:'FILL' 1">auto_awesome</span></span><div style="flex:1"><div style="display:flex;justify-content:space-between;font-size:13px"><b>Dijital Asistan</b><span style="color:#9B978E">08:00</span></div><div style="font-size:14px;line-height:19px;margin-top:2px">Bugün cevaplaman gereken önemli bir mail var.</div></div></div>
+            <div style="display:flex;gap:12px;padding:14px;border-radius:20px;background:rgba(255,255,255,.7);backdrop-filter:blur(20px);box-shadow:0 8px 24px rgba(27,25,23,.08);transform:translateX(-4px)"><span style="width:38px;height:38px;border-radius:11px;background:#5B5CE2;display:flex;align-items:center;justify-content:center;flex:none"><span style="font-family:'Material Symbols Rounded';font-size:22px;color:#fff;font-variation-settings:'FILL' 1">auto_awesome</span></span><div style="flex:1"><div style="display:flex;justify-content:space-between;font-size:13px"><b>Dijital Asistan</b><span style="color:#9B978E">11:30</span></div><div style="font-size:14px;line-height:19px;margin-top:2px">Kargon bugün geliyor. 14:00–18:00 arası.</div></div></div>
+          </div>
+          <div style="text-align:center"><div style="font-size:30px;line-height:36px;font-weight:600;letter-spacing:-.025em;text-wrap:pretty">Sadece önemli olduğunda haber verelim.</div><div style="margin-top:8px;font-size:15px;line-height:22px;color:#6B6860;text-wrap:pretty">Günde ortalama 3 bildirim. Pazarlama bildirimi yok, “bak bana” bildirimi yok.</div></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px"><span style="height:52px;border-radius:16px;background:#5B5CE2;color:#fff;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center">Bildirimleri Aç</span><span style="height:44px;border-radius:14px;color:#6B6860;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center">Daha sonra</span></div>
+        <span style="position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:rgba(27,25,23,.25)"></span>
+      </div>
+      <div style="font-size:12px;line-height:18px;color:#6B6860">Üç gerçek bildirim örneği; sistem izni ancak “Bildirimleri Aç”tan sonra istenir. “Daha sonra” ilk brifing ekranında tekrar, sonra bir daha sormaz.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;width:390px">
+      <div style="font-size:12px;color:#6B6860;display:flex;gap:8px;align-items:baseline"><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);border-radius:5px;color:#1A1917">2.13</span>Android · Telefon Bildirimleri (isteğe bağlı)</div>
+      <div style="width:390px;height:844px;background:#F5F4F0;border-radius:32px;overflow:hidden;box-shadow:0 0 0 1px rgba(27,25,23,.08),0 20px 50px rgba(27,25,23,.10);position:relative;display:flex;flex-direction:column;padding:0 20px 28px">
+        <div style="height:46px;display:flex;align-items:center;justify-content:space-between;padding:0 8px;font-size:14px;font-weight:600"><span>9:41</span><span style="display:flex;gap:6px;align-items:center;font-family:'Material Symbols Rounded';font-size:17px"><span>wifi</span><span>signal_cellular_alt</span><span>battery_full</span></span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px"><span style="width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(27,25,23,.08)"><span style="font-family:'Material Symbols Rounded';font-size:20px">arrow_back</span></span><span style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E">SADECE ANDROID</span><span style="font-size:14px;font-weight:600;color:#6B6860">Atla</span></div>
+        <div style="margin-top:22px"><div style="font-size:30px;line-height:36px;font-weight:600;letter-spacing:-.025em">Telefon bildirimlerini de anlayayım mı?</div><div style="margin-top:6px;font-size:15px;line-height:22px;color:#6B6860;text-wrap:pretty">Kargo, banka ve uygulama bildirimlerinden kişisel sinyaller çıkarırım. Mesaj içerikleri asla saklanmaz.</div></div>
+        <div style="margin-top:22px;font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E;padding:0 4px">UYGULAMALAR</div>
+        <div style="margin-top:8px;background:#fff;border-radius:18px;padding:4px 16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)">
+          <sc-for list="{{ apps }}" as="a" hint-placeholder-count="5"><div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-top:{{ a.border }}"><span style="width:36px;height:36px;border-radius:11px;background:#F0EFEB;color:#6B6860;display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:20px">{{ a.icon }}</span></span><div style="flex:1"><div style="font-size:15px;font-weight:600">{{ a.name }}</div><div style="font-size:12px;color:#9B978E">{{ a.meta }}</div></div><span style="width:50px;height:30px;border-radius:15px;background:{{ a.tbg }};position:relative"><span style="position:absolute;top:2px;left:{{ a.knob }};width:26px;height:26px;border-radius:13px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2)"></span></span></div></sc-for>
+        </div>
+        <div style="margin-top:14px;padding:14px 16px;border-radius:16px;background:#E4F5EA;display:flex;gap:10px;font-size:13px;line-height:19px;color:#1E5A36"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#1E7A47;flex:none">verified_user</span>Bildirim erişimi cihazda işlenir. Sohbet uygulamaları varsayılan olarak kapalıdır ve önerilmez.</div>
+        <div style="margin-top:auto;display:flex;flex-direction:column;gap:8px"><span style="height:52px;border-radius:16px;background:#5B5CE2;color:#fff;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center">Bildirim Erişimini Aç</span><div style="text-align:center;font-size:12px;color:#9B978E">Android Ayarlar → Bildirim erişimi ekranı açılır.</div></div>
+        <span style="position:absolute;left:50%;bottom:8px;width:108px;height:4px;margin-left:-54px;border-radius:2px;background:rgba(27,25,23,.3)"></span>
+      </div>
+      <div style="font-size:12px;line-height:18px;color:#6B6860">Android çerçevesi: daha küçük köşe yarıçapı, hareket çubuğu, durum çubuğu düzeni farklı. iOS akışı bu adımı hiç görmez; ürün deneyimi bundan bağımsızdır.</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const INTEGRATIONS=[
+ {icon:'mail',name:'Gmail',meta:'yunus@…com · 3 gün analiz edildi',tbg:'#FCEDE9',tfg:'#C7432F',on:true},
+ {icon:'mail',name:'Outlook',meta:'İş maili · Microsoft 365',tbg:'#E7F0FD',tfg:'#2262BE',on:false},
+ {icon:'calendar_month',name:'Google Takvim',meta:'2 takvim · Kişisel, İş',tbg:'#E4F5EA',tfg:'#1E7A47',on:true},
+ {icon:'calendar_month',name:'Microsoft Takvim',meta:'Outlook takvimi',tbg:'#E7F0FD',tfg:'#2262BE',on:false},
+ {icon:'calendar_month',name:'Apple Takvim',meta:'iCloud · cihazdan okunur',tbg:'#F0EFEB',tfg:'#6B6860',on:false}
+];
+const INTERESTS=[{icon:'work',t:'İş',on:true},{icon:'family_restroom',t:'Aile',on:true},{icon:'account_balance_wallet',t:'Finans',on:false},{icon:'flight',t:'Seyahat',on:true},{icon:'shopping_bag',t:'Alışveriş',on:false},{icon:'event_available',t:'Randevular',on:true},{icon:'flag',t:'Son Tarihler',on:false},{icon:'select_all',t:'Hepsi',on:false}];
+const APPS=[{icon:'local_shipping',name:'Kargo uygulamaları',meta:'Trendyol, Hepsiburada, Yurtiçi',on:true},{icon:'account_balance',name:'Banka',meta:'Ödeme ve son tarih bildirimleri',on:true},{icon:'flight',name:'Havayolu',meta:'THY, Pegasus · kapı ve rötar',on:true},{icon:'restaurant',name:'Rezervasyon',meta:'Yemek, otel, etkinlik',on:false},{icon:'chat',name:'Mesajlaşma',meta:'WhatsApp, Telegram · önerilmez',on:false}];
+class Component extends DCLogic {
+  renderVals(){
+    const el=React.createElement;
+    const ring=el('div',{style:{position:'relative',width:132,height:132,display:'flex',alignItems:'center',justifyContent:'center'}},
+      el('span',{style:{position:'absolute',inset:0,borderRadius:'50%',border:'3px solid rgba(255,255,255,.15)'}}),
+      el('span',{style:{position:'absolute',inset:0,borderRadius:'50%',border:'3px solid transparent',borderTopColor:'#fff',animation:'daspin 1.4s linear infinite'}}),
+      el('span',{style:{position:'absolute',inset:14,borderRadius:'50%',border:'2px solid transparent',borderBottomColor:'rgba(255,255,255,.6)',animation:'daspin 2.2s linear infinite reverse'}}),
+      el('span',{style:{fontFamily:"'Material Symbols Rounded'",fontSize:44,color:'#fff',fontVariationSettings:"'FILL' 1"}},'auto_awesome'));
+    const spinner=el('span',{style:{width:22,height:22,borderRadius:'50%',border:'2px solid rgba(255,255,255,.3)',borderTopColor:'#fff',animation:'daspin .9s linear infinite',flex:'none'}});
+    return {
+      ring,spinner,
+      integrations:INTEGRATIONS.map(i=>({...i,bbg:i.on?'#E4F5EA':'#EDEDFC',bfg:i.on?'#1E7A47':'#4547C9',bicon:i.on?'check':'add',btn:i.on?'Bağlandı':'Bağla'})),
+      interests:INTERESTS.map(c=>({...c,bg:c.on?'#1A1917':'#fff',fg:c.on?'#fff':'#1A1917',ic:c.on?'#A9AAF5':'#5B5CE2',sh:c.on?'none':'0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)',chk:c.on?'#fff':'transparent'})),
+      apps:APPS.map((a,i)=>({...a,border:i?'1px solid rgba(27,25,23,.06)':'0',tbg:a.on?'#5B5CE2':'#D9D6D0',knob:a.on?'22px':'2px'}))
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Lora:ital,wght@0,400..600;1,400..600&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..600,0..1,0&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#ECEAE4;font-family:Geist,-apple-system,"SF Pro Text",system-ui,sans-serif;color:#1A1917;-webkit-font-smoothing:antialiased}
+a{color:#4547C9;text-decoration:none}a:hover{color:#5B5CE2;text-decoration:underline}
+button{font-family:inherit}
+@keyframes dabar{from{transform:scaleY(.25)}to{transform:scaleY(1)}}
+@keyframes dapulse{0%{transform:scale(.9);opacity:.6}100%{transform:scale(1.35);opacity:0}}
+@keyframes daspin{to{transform:rotate(360deg)}}
+</style>
+</helmet>
+<div style="max-width:1320px;margin:0 auto;padding:40px 32px 80px;display:flex;flex-wrap:wrap-reverse;gap:48px;align-items:flex-end">
+  <div style="flex:1 1 440px;min-width:0;max-width:600px;display:flex;flex-direction:column;gap:36px">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="width:36px;height:36px;border-radius:11px;background:#5B5CE2;color:#fff;display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:20px;font-variation-settings:'FILL' 1">auto_awesome</span></span>
+        <span style="font-size:13px;font-weight:600;letter-spacing:.08em;color:#6B6860">DİJİTAL ASİSTAN · ÜRÜN TASARIMI V1</span>
+      </div>
+      <h1 style="margin:18px 0 0;font-size:40px;line-height:46px;font-weight:600;letter-spacing:-.025em;text-wrap:pretty">Bugün bilmen gerekenleri, sen sormadan söyler.</h1>
+      <p style="margin:14px 0 0;font-size:17px;line-height:26px;color:#6B6860;text-wrap:pretty">iOS + Android için proaktif kişisel komuta merkezi. Sağdaki telefon çalışan bir prototip: sekmeler, kartlar, brifing, ses, toplantı hazırlığı, yanıt taslağı ve onay akışı gerçek durumlarla çalışır. Tüm ekran kataloğu aşağıdaki 9 sayfada.</p>
+    </div>
+
+    <div style="background:#fff;border-radius:20px;padding:22px 24px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)">
+      <div style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E">VARSAYIMLAR VE KARARLAR</div>
+      <ul style="margin:12px 0 0;padding:0 0 0 18px;font-size:14px;line-height:22px;color:#1A1917;display:flex;flex-direction:column;gap:6px">
+        <li>Ana ekran <b>Bugün</b>: “Şimdi neyi bilmeliyim?” sorusunun cevabı. Sohbet ikinci katman (Asistan sekmesi).</li>
+        <li>Örnek kullanıcı Yunus; iş ve kişisel hayat tek akışta. Kargo, uçuş, ödeme, abonelik ve güvenlik sinyalleri mail içeriğinden türetilir; ek entegrasyon gerekmez.</li>
+        <li>AI hiçbir yazma işlemini onaysız yapmaz. Mail gönderme, etkinlik oluşturma/taşıma, hatırlatıcı ve görev ekleme <b>Onay Merkezi</b>'nden geçer.</li>
+        <li>Her AI çıkarımının altında kaynak satırı vardır (Gmail · kişi · saat). Orijinal içerik her zaman bir dokunuş uzakta.</li>
+        <li>Renk yalnızca anlam taşır: coral = acil, amber = son tarih, yeşil = tamamlandı, mavi = bilgi. Marka indigosu sadece AI işaretleri ve birincil aksiyon için.</li>
+        <li>Kullanıcı düzeltebilir: her kartın “···” menüsünde <i>Önemli değil · Daha sık göster · VIP yap · Takip etme</i>. Her düzeltme “Öğrendim” geri bildirimi verir.</li>
+        <li>Tipografi: Geist (SF Pro karakterinde; iOS'ta gövde SF Pro'ya düşer) + Lora yalnızca brifing anlatısı ve haftalık özet için. Gövde min. 15px, dokunma alanı min. 44px.</li>
+        <li>Light mode ana mod. Dark mode temsilî ekranlar 03 ve 05 sayfalarında.</li>
+      </ul>
+    </div>
+
+    <div style="background:#fff;border-radius:20px;padding:22px 24px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)">
+      <div style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E">BİLGİ MİMARİSİ</div>
+      <div style="margin-top:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px">
+        <div style="background:#F5F4F0;border-radius:14px;padding:14px"><div style="display:flex;align-items:center;gap:6px;font-weight:600;font-size:14px"><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#5B5CE2">sunny</span>Bugün</div><div style="margin-top:6px;font-size:13px;line-height:19px;color:#6B6860">Brifing hero · Öncelikler · Sabah / öğle / akşam brifingi · Sesli brifing · Toplantı hazırlığı · Mail detayı · AI yanıt</div></div>
+        <div style="background:#F5F4F0;border-radius:14px;padding:14px"><div style="display:flex;align-items:center;gap:6px;font-weight:600;font-size:14px"><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#5B5CE2">dynamic_feed</span>Akış</div><div style="margin-top:6px;font-size:13px;line-height:19px;color:#6B6860">Tüm kaynaklar tek dikkat akışı · Filtreler · Mail zekâsı · Takip · Senden beklenenler · Taahhütler · Yaşam kartları · Evrensel yakalama</div></div>
+        <div style="background:#F5F4F0;border-radius:14px;padding:14px"><div style="display:flex;align-items:center;gap:6px;font-weight:600;font-size:14px"><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#5B5CE2">calendar_today</span>Plan</div><div style="margin-top:6px;font-size:13px;line-height:19px;color:#6B6860">Gün / hafta · Takvim zekâsı · Çakışma çözümü · AI görev blokları · Toplantı sonrası yakalama</div></div>
+        <div style="background:#F5F4F0;border-radius:14px;padding:14px"><div style="display:flex;align-items:center;gap:6px;font-weight:600;font-size:14px"><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#5B5CE2">auto_awesome</span>Asistan</div><div style="margin-top:6px;font-size:13px;line-height:19px;color:#6B6860">Önerilen sorular · Zengin kartlı sohbet · Ses modu · Hafıza araması · Kişi zekâsı</div></div>
+      </div>
+      <div style="margin-top:12px;font-size:13px;line-height:20px;color:#6B6860">Sağ üst avatar → Profil: Onay Merkezi, Ayarlar, Bağlantılar, Gizlilik, Abonelik. Sekme sayısı 4'te sabit; yeni yetenekler yeni sekme değil, ilgili sekmenin içinde bir kart olarak açılır.</div>
+    </div>
+
+    <div style="background:#fff;border-radius:20px;padding:22px 24px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)">
+      <div style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E">PROTOTİPTE DENE</div>
+      <ul style="margin:12px 0 0;padding:0 0 0 18px;font-size:14px;line-height:22px;display:flex;flex-direction:column;gap:4px">
+        <li><b>Brifingimi Gör</b> → tam ekran brifing → <b>Brifingi Dinle</b> → sesli oynatıcı (oynat, 15 sn, hız).</li>
+        <li>Ahmet kartında <b>Yanıtla</b> → ton seçimi taslağı değiştirir → <b>Göndermeyi Onayla</b> → başarı → kart Bugün'den düşer.</li>
+        <li>Mehmet kartında <b>Hazırlan</b> → Toplantı hazırlığı; isme dokun → Kişi zekâsı.</li>
+        <li><b>Hatırlat</b> → akıllı hatırlatıcı sayfası. Kartın onayı → tamamlandı animasyonu. “···” → düzeltme menüsü.</li>
+        <li>Başlıkta <b>onay</b> rozeti → Onay Merkezi (onayla / düzenle / reddet). “Takvime Ekle” yeni bir onay üretir.</li>
+        <li>Akış filtreleri, Plan'da Gün/Hafta ve <b>Planla</b>, Asistan'da önerilen sorular ve mikrofon → ses modu.</li>
+      </ul>
+    </div>
+
+    <div style="background:#fff;border-radius:20px;padding:22px 24px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)">
+      <div style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E">EKRAN KATALOĞU · 9 SAYFA</div>
+      <div style="margin-top:12px;display:flex;flex-direction:column">
+        <a href="01%20Tasarim%20Sistemi.dc.html" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid rgba(27,25,23,.07);font-size:14px"><span><b style="color:#1A1917">01 Tasarım Sistemi</b> <span style="color:#6B6860">· renk, tipografi, spacing, bileşenler ve tüm durumlar</span></span><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#9B978E">arrow_forward</span></a>
+        <a href="02%20Onboarding.dc.html" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid rgba(27,25,23,.07);font-size:14px"><span><b style="color:#1A1917">02 Onboarding</b> <span style="color:#6B6860">· giriş, hesap, bağlantılar, izin açıklayıcı, kişiselleştirme, ilk analiz, bildirimler, Android</span></span><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#9B978E">arrow_forward</span></a>
+        <a href="03%20Bugun%20ve%20Brifingler.dc.html" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid rgba(27,25,23,.07);font-size:14px"><span><b style="color:#1A1917">03 Bugün ve Brifingler</b> <span style="color:#6B6860">· Bugün (light/dark), sabah, sesli, öğle, akşam, haftalık özet, paylaşım kartı</span></span><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#9B978E">arrow_forward</span></a>
+        <a href="04%20Akis%20ve%20Mail.dc.html" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid rgba(27,25,23,.07);font-size:14px"><span><b style="color:#1A1917">04 Akış ve Mail</b> <span style="color:#6B6860">· akış, mail zekâsı, mail detayı, AI yanıt, takip, senden beklenenler, taahhütler, yaşam kartları, yakalama, hatırlatıcı</span></span><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#9B978E">arrow_forward</span></a>
+        <a href="05%20Plan%20ve%20Toplantilar.dc.html" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid rgba(27,25,23,.07);font-size:14px"><span><b style="color:#1A1917">05 Plan ve Toplantılar</b> <span style="color:#6B6860">· gün/hafta, takvim zekâsı, çakışma, toplantı hazırlığı (light/dark), toplantı sonrası</span></span><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#9B978E">arrow_forward</span></a>
+        <a href="06%20Asistan%20Hafiza%20Kisiler.dc.html" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid rgba(27,25,23,.07);font-size:14px"><span><b style="color:#1A1917">06 Asistan, Hafıza, Kişiler</b> <span style="color:#6B6860">· asistan, sohbet, ses modu, hafıza araması, VIP kişiler, kişi zekâsı, onay merkezi, AI kişiselleştirme</span></span><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#9B978E">arrow_forward</span></a>
+        <a href="07%20Hesap%20Gizlilik%20Pro.dc.html" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid rgba(27,25,23,.07);font-size:14px"><span><b style="color:#1A1917">07 Hesap, Gizlilik, Pro</b> <span style="color:#6B6860">· profil, ayarlar, brifing ayarları, gizlilik merkezi, paywall, davet</span></span><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#9B978E">arrow_forward</span></a>
+        <a href="08%20Durumlar%20Widgetlar%20Etkilesimler.dc.html" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid rgba(27,25,23,.07);font-size:14px"><span><b style="color:#1A1917">08 Durumlar, Widget'lar, Etkileşimler</b> <span style="color:#6B6860">· boş / hata / yükleme, iOS + Android widget'ları, kilit ekranı, mikro-etkileşim notları</span></span><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#9B978E">arrow_forward</span></a>
+        <a href="09%20Pazarlama.dc.html" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;font-size:14px"><span><b style="color:#1A1917">09 Pazarlama</b> <span style="color:#6B6860">· 6 mağaza ekranı, 3 adet 9:16 reklam</span></span><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#9B978E">arrow_forward</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div style="flex:0 0 auto;position:sticky;top:24px;display:flex;flex-direction:column;gap:14px;align-items:center">
+    <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ immersive }}" hint-size="402px,874px">
+      <div style="height:100%;display:flex;flex-direction:column;background:#F5F4F0;position:relative;font-family:Geist,-apple-system,system-ui,sans-serif;color:#1A1917;letter-spacing:0">
+
+        <sc-if value="{{ isToday }}" hint-placeholder-val="{{ true }}">
+          <div style="flex:1;overflow:auto;padding:70px 20px 112px;display:flex;flex-direction:column;gap:18px">
+            <div style="display:flex;align-items:flex-end;justify-content:space-between">
+              <div>
+                <div style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E">5 EYLÜL CUMARTESİ</div>
+                <h1 style="margin:4px 0 0;font-size:28px;line-height:34px;font-weight:600;letter-spacing:-.02em">Günaydın, {{ name }}</h1>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px">
+                <sc-if value="{{ hasPending }}" hint-placeholder-val="{{ true }}">
+                  <button onClick="{{ openApprovals }}" style="height:34px;padding:0 12px 0 9px;border:0;border-radius:999px;background:#fff;color:#4547C9;font:600 12px Geist,system-ui;display:flex;align-items:center;gap:5px;cursor:pointer;box-shadow:0 1px 2px rgba(27,25,23,.06)"><span style="font-family:'Material Symbols Rounded';font-size:18px">task_alt</span>{{ pendingCount }} onay</button>
+                </sc-if>
+                <button onClick="{{ openProfile }}" style="width:40px;height:40px;border-radius:50%;border:0;background:#1A1917;color:#fff;font:600 15px Geist,system-ui;display:flex;align-items:center;justify-content:center;cursor:pointer">{{ initial }}</button>
+              </div>
+            </div>
+
+            <div style="background:radial-gradient(140% 100% at 100% 0%,#E4E4FA 0%,#FFFFFF 58%);border-radius:28px;padding:22px 22px 20px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 12px 32px rgba(91,92,226,.10)">
+              <div style="display:flex;align-items:center;gap:6px;color:#5B5CE2;font-size:12px;font-weight:600;letter-spacing:.06em"><span style="font-family:'Material Symbols Rounded';font-size:16px;font-variation-settings:'FILL' 1">auto_awesome</span>BRİFİNG HAZIR · 07:58</div>
+              <div style="margin-top:10px;font-size:26px;line-height:32px;font-weight:600;letter-spacing:-.02em;text-wrap:pretty">Bugün bilmen gereken <span style="color:#5B5CE2">{{ count }}</span> şey var.</div>
+              <div style="margin-top:8px;font-size:14px;line-height:20px;color:#6B6860">3 önemli mail · 4 etkinlik · 2 takip</div>
+              <div style="display:flex;gap:10px;margin-top:18px">
+                <button onClick="{{ openBriefing }}" style="flex:1;height:48px;border:0;border-radius:14px;background:#5B5CE2;color:#fff;font:600 15px Geist,system-ui;cursor:pointer;transition:transform .12s" style-active="transform:scale(.97)">Brifingimi Gör</button>
+                <button onClick="{{ openAudio }}" style="height:48px;padding:0 16px 0 12px;border:0;border-radius:14px;background:#EDEDFC;color:#4547C9;font:600 14px Geist,system-ui;display:flex;align-items:center;gap:4px;cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:20px;font-variation-settings:'FILL' 1">play_arrow</span>Dinle · 2 dk</button>
+              </div>
+            </div>
+
+            <div style="display:flex;align-items:baseline;justify-content:space-between;padding:4px 4px 0">
+              <div style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E">ÖNCELİKLERİN</div>
+              <div style="font-size:12px;color:#9B978E">{{ count }} konu</div>
+            </div>
+
+            <sc-for list="{{ prios }}" as="p" hint-placeholder-count="3">
+              <div style="background:#fff;border-radius:20px;padding:14px 16px 10px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05);opacity:{{ p.op }};transform:{{ p.tf }};transition:opacity .3s ease,transform .3s ease">
+                <div style="display:flex;align-items:center;justify-content:space-between">
+                  <div style="display:flex;align-items:center;gap:8px">
+                    <span style="font-size:11px;font-weight:700;letter-spacing:.05em;padding:3px 8px;border-radius:999px;background:{{ p.bbg }};color:{{ p.bfg }}">{{ p.badge }}</span>
+                    <span style="font-size:12px;color:#9B978E">{{ p.time }}</span>
+                  </div>
+                  <div style="display:flex;margin-right:-8px">
+                    <button onClick="{{ p.onDone }}" title="Tamamlandı" style="width:36px;height:36px;border:0;background:transparent;color:#B8B4AA;display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:50%" style-hover="color:#2FA062;background:#E4F5EA"><span style="font-family:'Material Symbols Rounded';font-size:22px">check_circle</span></button>
+                    <button onClick="{{ p.onMore }}" style="width:36px;height:36px;border:0;background:transparent;color:#B8B4AA;display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:50%" style-hover="background:#F0EFEB;color:#6B6860"><span style="font-family:'Material Symbols Rounded';font-size:22px">more_horiz</span></button>
+                  </div>
+                </div>
+                <div onClick="{{ p.onOpen }}" style="margin-top:6px;font-size:17px;line-height:23px;font-weight:600;letter-spacing:-.01em;text-wrap:pretty;cursor:pointer">{{ p.title }}</div>
+                <sc-if value="{{ p.sub }}" hint-placeholder-val="{{ false }}"><div style="margin-top:4px;font-size:14px;line-height:20px;color:#6B6860">{{ p.sub }}</div></sc-if>
+                <div style="margin-top:10px;display:flex;align-items:center;gap:6px;font-size:12px;color:#9B978E"><span style="font-family:'Material Symbols Rounded';font-size:16px">{{ p.src }}</span>{{ p.source }}</div>
+                <div style="margin-top:6px;display:flex;gap:2px;margin-left:-10px">
+                  <button onClick="{{ p.onA1 }}" style="height:36px;padding:0 10px;border:0;background:transparent;color:#4547C9;font:600 14px Geist,system-ui;cursor:pointer;border-radius:10px" style-hover="background:#EDEDFC">{{ p.a1 }}</button>
+                  <sc-if value="{{ p.a2 }}" hint-placeholder-val="{{ false }}"><button onClick="{{ p.onA2 }}" style="height:36px;padding:0 10px;border:0;background:transparent;color:#6B6860;font:600 14px Geist,system-ui;cursor:pointer;border-radius:10px" style-hover="background:#F0EFEB">{{ p.a2 }}</button></sc-if>
+                </div>
+              </div>
+            </sc-for>
+
+            <sc-if value="{{ allDone }}" hint-placeholder-val="{{ false }}">
+              <div style="text-align:center;padding:36px 20px;display:flex;flex-direction:column;align-items:center;gap:10px">
+                <span style="width:56px;height:56px;border-radius:50%;background:#E4F5EA;color:#1E7A47;display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:30px">done_all</span></span>
+                <div style="font-size:18px;font-weight:600;letter-spacing:-.01em">Her şey kontrol altında.</div>
+                <div style="font-size:14px;line-height:20px;color:#6B6860">Yeni bir şey olursa haber veririm. Öğle brifingi 13:00'te.</div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isAkis }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1;overflow:auto;padding:70px 0 112px;display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:0 20px">
+              <h1 style="margin:0;font-size:28px;line-height:34px;font-weight:600;letter-spacing:-.02em">Akış</h1>
+              <button onClick="{{ openCaptureToast }}" style="height:36px;padding:0 12px 0 8px;border:0;border-radius:999px;background:#fff;color:#4547C9;font:600 12px Geist,system-ui;display:flex;align-items:center;gap:4px;cursor:pointer;box-shadow:0 1px 2px rgba(27,25,23,.06)"><span style="font-family:'Material Symbols Rounded';font-size:18px">add_a_photo</span>Ekle</button>
+            </div>
+            <div style="display:flex;flex:none;gap:8px;overflow:auto;padding:0 20px 4px;scrollbar-width:none">
+              <sc-for list="{{ filters }}" as="f" hint-placeholder-count="5">
+                <button onClick="{{ f.go }}" style="flex:none;height:34px;padding:0 14px;border:0;border-radius:999px;background:{{ f.bg }};color:{{ f.fg }};font:600 13px Geist,system-ui;cursor:pointer;transition:background .15s">{{ f.label }}</button>
+              </sc-for>
+            </div>
+            <div style="padding:0 20px;font-size:13px;color:#6B6860">{{ feedSummary }}</div>
+            <div style="display:flex;flex-direction:column;gap:12px;padding:0 20px">
+              <sc-for list="{{ feed }}" as="f" hint-placeholder-count="4">
+                <div style="background:#fff;border-radius:20px;padding:14px 16px 10px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)">
+                  <div style="display:flex;align-items:center;gap:8px">
+                    <span style="width:28px;height:28px;border-radius:9px;background:#F0EFEB;color:#6B6860;display:flex;align-items:center;justify-content:center;flex:none"><span style="font-family:'Material Symbols Rounded';font-size:17px">{{ f.icon }}</span></span>
+                    <span style="flex:1;min-width:0;font-size:12px;color:#9B978E;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ f.src }}</span>
+                    <span style="font-size:11px;font-weight:700;letter-spacing:.05em;padding:3px 8px;border-radius:999px;background:{{ f.bbg }};color:{{ f.bfg }}">{{ f.badge }}</span>
+                    <span style="font-size:12px;color:#9B978E;flex:none">{{ f.time }}</span>
+                  </div>
+                  <div style="margin-top:10px;font-size:16px;line-height:22px;font-weight:600;letter-spacing:-.01em;text-wrap:pretty">{{ f.title }}</div>
+                  <div style="margin-top:4px;font-size:14px;line-height:20px;color:#6B6860;text-wrap:pretty">{{ f.sum }}</div>
+                  <div style="margin-top:6px;margin-left:-10px"><button onClick="{{ f.onAct }}" style="height:36px;padding:0 10px;border:0;background:transparent;color:#4547C9;font:600 14px Geist,system-ui;cursor:pointer;border-radius:10px" style-hover="background:#EDEDFC">{{ f.action }}</button></div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isPlan }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1;overflow:auto;padding:70px 20px 112px;display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <h1 style="margin:0;font-size:28px;line-height:34px;font-weight:600;letter-spacing:-.02em">Plan</h1>
+              <div style="display:flex;background:#E9E7E1;border-radius:999px;padding:3px">
+                <button onClick="{{ setDay }}" style="height:30px;padding:0 14px;border:0;border-radius:999px;background:{{ dayBg }};color:{{ dayFg }};font:600 13px Geist,system-ui;cursor:pointer;box-shadow:{{ daySh }}">Gün</button>
+                <button onClick="{{ setWeek }}" style="height:30px;padding:0 14px;border:0;border-radius:999px;background:{{ weekBg }};color:{{ weekFg }};font:600 13px Geist,system-ui;cursor:pointer;box-shadow:{{ weekSh }}">Hafta</button>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:space-between">
+              <sc-for list="{{ days }}" as="d" hint-placeholder-count="7">
+                <div style="width:42px;height:60px;border-radius:14px;background:{{ d.bg }};color:{{ d.fg }};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px">
+                  <span style="font-size:11px;font-weight:500;opacity:.8">{{ d.d }}</span>
+                  <span style="font-size:17px;font-weight:600">{{ d.n }}</span>
+                  <span style="width:4px;height:4px;border-radius:2px;background:{{ d.dot }}"></span>
+                </div>
+              </sc-for>
+            </div>
+
+            <div style="background:radial-gradient(140% 100% at 0% 0%,#E4E4FA 0%,#FFFFFF 60%);border-radius:20px;padding:16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)">
+              <div style="display:flex;align-items:center;gap:6px;color:#5B5CE2;font-size:12px;font-weight:600;letter-spacing:.06em"><span style="font-family:'Material Symbols Rounded';font-size:16px;font-variation-settings:'FILL' 1">auto_awesome</span>TAKVİM ZEKÂSI</div>
+              <div style="margin-top:8px;font-size:16px;line-height:23px;font-weight:600;letter-spacing:-.01em;text-wrap:pretty">Yarın 14:00–16:30 arasında 2,5 saat boşluğun var.</div>
+              <div style="margin-top:4px;font-size:14px;line-height:20px;color:#6B6860">Teklif hazırlama görevini buraya yerleştirebilirim.</div>
+              <div style="margin-top:12px;display:flex;gap:8px">
+                <button onClick="{{ onPlan }}" style="height:40px;padding:0 16px;border:0;border-radius:12px;background:{{ planBtnBg }};color:{{ planBtnFg }};font:600 14px Geist,system-ui;display:flex;align-items:center;gap:6px;cursor:pointer;transition:background .2s"><span style="font-family:'Material Symbols Rounded';font-size:18px">{{ planBtnIcon }}</span>{{ planBtnLabel }}</button>
+                <button onClick="{{ toastLater }}" style="height:40px;padding:0 14px;border:0;border-radius:12px;background:transparent;color:#6B6860;font:600 14px Geist,system-ui;cursor:pointer">Başka zaman</button>
+              </div>
+            </div>
+
+            <sc-if value="{{ isDay }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;flex-direction:column">
+                <sc-for list="{{ dayEvents }}" as="e" hint-placeholder-count="5">
+                  <div style="display:flex;gap:12px;min-height:{{ e.h }}">
+                    <div style="width:44px;flex:none;font-size:12px;font-weight:500;color:#9B978E;padding-top:8px;text-align:right">{{ e.t }}</div>
+                    <div style="flex:1;min-width:0;padding:4px 0;border-top:1px solid rgba(27,25,23,.07)">
+                      <div style="border-radius:14px;padding:10px 14px;background:{{ e.bg }};border:{{ e.border }};color:{{ e.fg }};display:flex;flex-direction:column;gap:2px">
+                        <div style="display:flex;align-items:center;gap:6px;font-size:15px;font-weight:600;letter-spacing:-.01em"><span style="font-family:'Material Symbols Rounded';font-size:16px;color:{{ e.iconColor }}">{{ e.icon }}</span>{{ e.title }}</div>
+                        <div style="font-size:12px;color:{{ e.metaColor }}">{{ e.meta }}</div>
+                      </div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isWeek }}" hint-placeholder-val="{{ false }}">
+              <div style="background:#fff;border-radius:20px;padding:16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)">
+                <div style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E">7–13 EYLÜL · YOĞUNLUK</div>
+                <div style="margin-top:14px;display:flex;gap:8px;align-items:flex-end;height:120px">
+                  <sc-for list="{{ week }}" as="w" hint-placeholder-count="7">
+                    <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:3px;height:100%">
+                      <sc-for list="{{ w.bars }}" as="b" hint-placeholder-count="2">
+                        <div style="height:{{ b.h }};border-radius:5px;background:{{ b.bg }}"></div>
+                      </sc-for>
+                    </div>
+                  </sc-for>
+                </div>
+                <div style="margin-top:8px;display:flex;gap:8px">
+                  <sc-for list="{{ week }}" as="w" hint-placeholder-count="7"><div style="flex:1;text-align:center;font-size:11px;font-weight:600;color:{{ w.fg }}">{{ w.d }}</div></sc-for>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <div style="background:#fff;border-radius:16px;padding:14px 16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05);display:flex;gap:12px;align-items:flex-start"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#9A6300;margin-top:1px">bolt</span><div><div style="font-size:15px;font-weight:600;letter-spacing:-.01em">Yarın oldukça yoğun.</div><div style="margin-top:2px;font-size:13px;line-height:19px;color:#6B6860">09:00 ve 10:00 toplantıların arka arkaya. Arada mola yok.</div></div></div>
+                <div style="background:#fff;border-radius:16px;padding:14px 16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05);display:flex;gap:12px;align-items:flex-start"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#2262BE;margin-top:1px">directions_car</span><div><div style="font-size:15px;font-weight:600;letter-spacing:-.01em">13:30 doktor randevusu için 12:50'de çıkman gerekebilir.</div><div style="margin-top:2px;font-size:13px;line-height:19px;color:#6B6860">Kadıköy → Nişantaşı · 38 dk trafik tahmini</div></div></div>
+                <div style="background:#fff;border-radius:16px;padding:14px 16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05);display:flex;gap:12px;align-items:flex-start"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#C7432F;margin-top:1px">error</span><div style="flex:1"><div style="font-size:15px;font-weight:600;letter-spacing:-.01em">Çarşamba 14:00 müşteri toplantısı ile 14:30 doktor çakışıyor.</div><div style="margin-top:8px;margin-left:-10px"><button onClick="{{ toastConflict }}" style="height:34px;padding:0 10px;border:0;background:transparent;color:#4547C9;font:600 14px Geist,system-ui;cursor:pointer;border-radius:10px">Seçenekleri Gör</button></div></div></div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isAsistan }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1;overflow:auto;padding:70px 20px 24px;display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <h1 style="margin:0;font-size:28px;line-height:34px;font-weight:600;letter-spacing:-.02em">Asistan</h1>
+              <button onClick="{{ toastMemory }}" style="height:36px;padding:0 12px 0 8px;border:0;border-radius:999px;background:#fff;color:#6B6860;font:600 12px Geist,system-ui;display:flex;align-items:center;gap:4px;cursor:pointer;box-shadow:0 1px 2px rgba(27,25,23,.06)"><span style="font-family:'Material Symbols Rounded';font-size:18px">search</span>Hafıza</button>
+            </div>
+            <sc-if value="{{ chatEmpty }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;align-items:center;gap:10px;background:#fff;border-radius:16px;padding:12px 14px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)">
+                <span style="width:34px;height:34px;border-radius:50%;background:#EDEDFC;color:#5B5CE2;display:flex;align-items:center;justify-content:center;flex:none"><span style="font-family:'Material Symbols Rounded';font-size:18px;font-variation-settings:'FILL' 1">auto_awesome</span></span>
+                <div style="font-size:14px;line-height:20px;color:#1A1917">Bugün <b>46 mail</b>, <b>4 etkinlik</b> ve <b>2 takip</b> analiz edildi. Ne öğrenmek istersin?</div>
+              </div>
+              <div style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E;padding:6px 4px 0">ÖNERİLEN</div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <sc-for list="{{ suggestions }}" as="q" hint-placeholder-count="5">
+                  <button onClick="{{ q.ask }}" style="text-align:left;height:52px;padding:0 16px;border:0;border-radius:16px;background:#fff;color:#1A1917;font:500 15px Geist,system-ui;display:flex;align-items:center;justify-content:space-between;gap:10px;cursor:pointer;box-shadow:0 1px 2px rgba(27,25,23,.04)" style-hover="background:#EDEDFC">{{ q.text }}<span style="font-family:'Material Symbols Rounded';font-size:18px;color:#B8B4AA">arrow_outward</span></button>
+                </sc-for>
+              </div>
+            </sc-if>
+            <sc-for list="{{ chat }}" as="m" hint-placeholder-count="0">
+              <div style="display:flex;flex-direction:column;align-items:{{ m.align }};gap:8px">
+                <div style="max-width:86%;padding:10px 14px;border-radius:18px;background:{{ m.bg }};color:{{ m.fg }};font-size:15px;line-height:21px;text-wrap:pretty;box-shadow:{{ m.sh }}">{{ m.text }}</div>
+                <sc-if value="{{ m.card }}" hint-placeholder-val="{{ false }}">
+                  <div style="width:100%;box-sizing:border-box;background:#fff;border-radius:16px;padding:12px 14px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)">
+                    <div style="font-size:12px;font-weight:600;letter-spacing:.06em;color:#9B978E">{{ m.cardTitle }}</div>
+                    <div style="margin-top:8px;display:flex;flex-direction:column">
+                      <sc-for list="{{ m.rows }}" as="r" hint-placeholder-count="2">
+                        <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid rgba(27,25,23,.06);font-size:14px"><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#5B5CE2">{{ r.icon }}</span><span style="flex:1">{{ r.t }}</span><span style="font-size:12px;color:#9B978E">{{ r.m }}</span></div>
+                      </sc-for>
+                    </div>
+                  </div>
+                </sc-if>
+              </div>
+            </sc-for>
+            <sc-if value="{{ typing }}" hint-placeholder-val="{{ false }}"><div style="display:flex;gap:4px;padding:8px 14px;align-self:flex-start">{{ typingDots }}</div></sc-if>
+          </div>
+          <div style="padding:8px 16px 112px;background:linear-gradient(180deg,rgba(245,244,240,0),#F5F4F0 30%)">
+            <div style="display:flex;align-items:center;gap:8px;height:52px;padding:0 6px 0 16px;border-radius:999px;background:#fff;box-shadow:0 1px 2px rgba(27,25,23,.06),0 8px 24px rgba(27,25,23,.08)">
+              <input placeholder="Dijital hayatına sor…" style="flex:1;min-width:0;border:0;outline:0;background:transparent;font:400 15px Geist,system-ui;color:#1A1917">
+              <button onClick="{{ openVoice }}" style="width:40px;height:40px;border:0;border-radius:50%;background:#5B5CE2;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:20px">mic</span></button>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isBriefing }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1;overflow:auto;background:#F5F4F0">
+            <div style="background:linear-gradient(160deg,#1E1E4C 0%,#3B3CA8 58%,#7071EA 100%);padding:96px 20px 60px;color:#fff;position:relative">
+              <button onClick="{{ back }}" style="position:absolute;top:60px;left:16px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.16);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:20px">arrow_back</span></button>
+              <div style="font-size:12px;font-weight:600;letter-spacing:.08em;opacity:.72">SABAH BRİFİNGİ · 5 EYLÜL</div>
+              <div style="margin-top:8px;font-size:32px;line-height:38px;font-weight:600;letter-spacing:-.02em">Günaydın {{ name }}</div>
+              <div style="margin-top:6px;font-size:16px;line-height:22px;color:rgba(255,255,255,.8)">Bugün oldukça sakin bir günün var.</div>
+            </div>
+            <div style="margin-top:-28px;background:#F5F4F0;border-radius:28px 28px 0 0;padding:26px 20px 130px;display:flex;flex-direction:column;gap:22px">
+              <p style="margin:0;font-family:Lora,Georgia,serif;font-size:18px;line-height:29px;color:#1A1917;text-wrap:pretty">Öğlene kadar toplantın bulunmuyor. Saat 14:30'da Mehmet ile müşteri toplantın var. Toplantı öncesinde dün gelen fiyat teklifine bakman faydalı olabilir. Gelen 46 mail arasında 3 konu dikkat gerektiriyor.</p>
+              <sc-for list="{{ brief }}" as="s" hint-placeholder-count="3">
+                <div>
+                  <div style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E;padding:0 4px 8px">{{ s.title }}</div>
+                  <div style="background:#fff;border-radius:18px;padding:4px 16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)">
+                    <sc-for list="{{ s.rows }}" as="r" hint-placeholder-count="2">
+                      <div style="display:flex;align-items:center;gap:12px;padding:11px 0;border-top:{{ r.border }}">
+                        <span style="width:30px;height:30px;border-radius:10px;background:#F0EFEB;color:#6B6860;display:flex;align-items:center;justify-content:center;flex:none"><span style="font-family:'Material Symbols Rounded';font-size:17px">{{ r.icon }}</span></span>
+                        <div style="flex:1;min-width:0"><div style="font-size:15px;line-height:20px;font-weight:500;letter-spacing:-.01em">{{ r.t }}</div><div style="font-size:12px;color:#9B978E;margin-top:1px">{{ r.m }}</div></div>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="position:absolute;left:0;right:0;bottom:0;padding:16px 20px 44px;background:linear-gradient(180deg,rgba(245,244,240,0) 0%,#F5F4F0 45%)">
+            <button onClick="{{ openAudio }}" style="width:100%;height:52px;border:0;border-radius:16px;background:#1A1917;color:#fff;font:600 15px Geist,system-ui;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;box-shadow:0 8px 24px rgba(27,25,23,.18)"><span style="font-family:'Material Symbols Rounded';font-size:20px">headphones</span>Brifingi Dinle · 2 dk</button>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isAudio }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1;overflow:auto;background:linear-gradient(180deg,#15153A 0%,#25266A 60%,#3B3CA8 100%);color:#fff;padding:60px 20px 48px;display:flex;flex-direction:column">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <button onClick="{{ back }}" style="width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:20px">expand_more</span></button>
+              <div style="font-size:12px;font-weight:600;letter-spacing:.08em;opacity:.7">SESLİ BRİFİNG</div>
+              <button onClick="{{ cycleSpeed }}" style="height:32px;padding:0 12px;border-radius:999px;border:0;background:rgba(255,255,255,.14);color:#fff;font:600 13px Geist,system-ui;cursor:pointer">{{ speed }}</button>
+            </div>
+            <div style="margin-top:44px;text-align:center">
+              <div style="font-size:26px;line-height:32px;font-weight:600;letter-spacing:-.02em">Sabah Brifingi</div>
+              <div style="margin-top:6px;font-size:14px;color:rgba(255,255,255,.7)">5 Eylül · 2 dk 14 sn · {{ chapterName }}</div>
+            </div>
+            <div style="margin:40px 0 0;display:flex;justify-content:center">{{ wave }}</div>
+            <div style="margin-top:28px">
+              <div style="height:4px;border-radius:2px;background:rgba(255,255,255,.18);overflow:hidden"><div style="height:100%;width:{{ progressPct }};background:#fff;border-radius:2px;transition:width .5s linear"></div></div>
+              <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:12px;color:rgba(255,255,255,.7)"><span>{{ elapsed }}</span><span>2:14</span></div>
+            </div>
+            <div style="margin-top:24px;display:flex;align-items:center;justify-content:center;gap:28px">
+              <button onClick="{{ seekBack }}" style="width:52px;height:52px;border-radius:50%;border:0;background:transparent;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;gap:0"><span style="font-family:'Material Symbols Rounded';font-size:30px">replay</span><span style="font-size:10px;font-weight:600;margin-top:-6px">15</span></button>
+              <button onClick="{{ togglePlay }}" style="width:76px;height:76px;border-radius:50%;border:0;background:#fff;color:#25266A;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .12s" style-active="transform:scale(.95)"><span style="font-family:'Material Symbols Rounded';font-size:40px;font-variation-settings:'FILL' 1">{{ playIcon }}</span></button>
+              <button onClick="{{ seekFwd }}" style="width:52px;height:52px;border-radius:50%;border:0;background:transparent;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:30px;transform:scaleX(-1)">replay</span><span style="font-size:10px;font-weight:600;margin-top:-6px">15</span></button>
+            </div>
+            <div style="margin-top:36px;display:flex;flex-direction:column">
+              <sc-for list="{{ chapters }}" as="c" hint-placeholder-count="4">
+                <button onClick="{{ c.go }}" style="display:flex;align-items:center;gap:12px;padding:11px 4px;border:0;border-top:1px solid rgba(255,255,255,.1);background:transparent;color:#fff;font:500 14px Geist,system-ui;cursor:pointer;text-align:left;opacity:{{ c.op }}"><span style="width:22px;font-size:12px;color:rgba(255,255,255,.6)">{{ c.n }}</span><span style="flex:1">{{ c.t }}</span><span style="font-size:12px;color:rgba(255,255,255,.6)">{{ c.d }}</span></button>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isPrep }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1;overflow:auto;padding:60px 20px 130px;display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <button onClick="{{ back }}" style="width:36px;height:36px;border-radius:50%;border:0;background:#fff;color:#1A1917;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 2px rgba(27,25,23,.08)"><span style="font-family:'Material Symbols Rounded';font-size:20px">arrow_back</span></button>
+              <div style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E">TOPLANTIYA HAZIRLAN</div>
+              <span style="height:30px;padding:0 10px;border-radius:999px;background:#FDF2DC;color:#9A6300;font-size:12px;font-weight:600;display:flex;align-items:center;gap:4px"><span style="font-family:'Material Symbols Rounded';font-size:15px">schedule</span>18 dk</span>
+            </div>
+            <button onClick="{{ openPerson }}" style="display:flex;align-items:center;gap:14px;padding:4px 0;border:0;background:transparent;text-align:left;cursor:pointer;font-family:Geist,system-ui">
+              <span style="width:56px;height:56px;border-radius:50%;background:#DCE4F5;color:#2B3F73;font-size:20px;font-weight:600;display:flex;align-items:center;justify-content:center;flex:none">MY</span>
+              <span style="flex:1"><span style="display:block;font-size:24px;line-height:30px;font-weight:600;letter-spacing:-.02em;color:#1A1917">Mehmet Yılmaz</span><span style="display:block;margin-top:2px;font-size:14px;color:#6B6860">Müşteri toplantısı · 14:30 · 60 dk</span></span>
+              <span style="font-family:'Material Symbols Rounded';font-size:22px;color:#B8B4AA">chevron_right</span>
+            </button>
+
+            <div style="background:#1A1917;color:#fff;border-radius:24px;padding:20px;box-shadow:0 12px 32px rgba(27,25,23,.18)">
+              <div style="display:flex;align-items:center;gap:6px;color:#A9AAF5;font-size:12px;font-weight:600;letter-spacing:.06em"><span style="font-family:'Material Symbols Rounded';font-size:16px;font-variation-settings:'FILL' 1">auto_awesome</span>KONUŞMAN GEREKEN 3 ŞEY</div>
+              <div style="margin-top:14px;display:flex;flex-direction:column;gap:14px">
+                <div style="display:flex;gap:14px"><span style="width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.12);font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;flex:none">1</span><div><div style="font-size:17px;font-weight:600;letter-spacing:-.01em">Fiyat</div><div style="margin-top:2px;font-size:14px;line-height:20px;color:rgba(255,255,255,.7)">Revize teklif 17:00'ye kadar bekleniyor; %8 indirim sınırını netleştir.</div></div></div>
+                <div style="display:flex;gap:14px"><span style="width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.12);font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;flex:none">2</span><div><div style="font-size:17px;font-weight:600;letter-spacing:-.01em">Teslim tarihi</div><div style="margin-top:2px;font-size:14px;line-height:20px;color:rgba(255,255,255,.7)">Ekim başı için onay istiyor; üretim takvimi 6 Ekim'i gösteriyor.</div></div></div>
+                <div style="display:flex;gap:14px"><span style="width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.12);font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;flex:none">3</span><div><div style="font-size:17px;font-weight:600;letter-spacing:-.01em">Sözleşme</div><div style="margin-top:2px;font-size:14px;line-height:20px;color:rgba(255,255,255,.7)">Taslak 2 haftadır açık; hukuk yorumu bekliyor.</div></div></div>
+              </div>
+            </div>
+
+            <sc-for list="{{ prepSections }}" as="s" hint-placeholder-count="3">
+              <div>
+                <div style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E;padding:0 4px 8px">{{ s.title }}</div>
+                <div style="background:#fff;border-radius:18px;padding:4px 16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)">
+                  <sc-for list="{{ s.rows }}" as="r" hint-placeholder-count="1">
+                    <div style="display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-top:{{ r.border }}">
+                      <span style="width:30px;height:30px;border-radius:10px;background:#F0EFEB;color:#6B6860;display:flex;align-items:center;justify-content:center;flex:none"><span style="font-family:'Material Symbols Rounded';font-size:17px">{{ r.icon }}</span></span>
+                      <div style="flex:1;min-width:0"><div style="font-size:15px;line-height:21px;letter-spacing:-.01em;text-wrap:pretty">{{ r.t }}</div><div style="font-size:12px;color:#9B978E;margin-top:2px">{{ r.m }}</div></div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="position:absolute;left:0;right:0;bottom:0;padding:16px 20px 44px;background:linear-gradient(180deg,rgba(245,244,240,0) 0%,#F5F4F0 45%);display:flex;gap:10px">
+            <button onClick="{{ toastSummary }}" style="flex:1;height:52px;border:0;border-radius:16px;background:#5B5CE2;color:#fff;font:600 15px Geist,system-ui;cursor:pointer;box-shadow:0 8px 24px rgba(91,92,226,.28)">2 Dakikalık Özeti Oku</button>
+            <button onClick="{{ openPost }}" style="height:52px;padding:0 18px;border:0;border-radius:16px;background:#fff;color:#1A1917;font:600 15px Geist,system-ui;cursor:pointer;box-shadow:0 1px 2px rgba(27,25,23,.08)">Not Al</button>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isPost }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1;overflow:auto;padding:60px 20px 40px;display:flex;flex-direction:column;gap:18px">
+            <button onClick="{{ back }}" style="width:36px;height:36px;border-radius:50%;border:0;background:#fff;color:#1A1917;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 2px rgba(27,25,23,.08)"><span style="font-family:'Material Symbols Rounded';font-size:20px">arrow_back</span></button>
+            <div>
+              <div style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E">TOPLANTI SONRASI · MEHMET YILMAZ</div>
+              <div style="margin-top:6px;font-size:28px;line-height:34px;font-weight:600;letter-spacing:-.02em">Toplantın bitti.</div>
+              <div style="margin-top:6px;font-size:16px;line-height:23px;color:#6B6860">Takip etmen gereken bir şey var mı?</div>
+            </div>
+            <div style="background:#fff;border-radius:20px;padding:16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)">
+              <div style="font-size:15px;line-height:22px;color:#1A1917;font-style:italic">“Mehmet'e yarın teklif göndereceğim.”</div>
+              <div style="margin-top:10px;display:flex;align-items:center;gap:6px;font-size:12px;color:#9B978E"><span style="font-family:'Material Symbols Rounded';font-size:16px">mic</span>Sesle eklendi · 15:31</div>
+            </div>
+            <div style="background:radial-gradient(140% 100% at 0% 0%,#E4E4FA 0%,#FFFFFF 60%);border-radius:20px;padding:16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)">
+              <div style="display:flex;align-items:center;gap:6px;color:#5B5CE2;font-size:12px;font-weight:600;letter-spacing:.06em"><span style="font-family:'Material Symbols Rounded';font-size:16px;font-variation-settings:'FILL' 1">auto_awesome</span>YENİ TAAHHÜT</div>
+              <div style="margin-top:8px;font-size:18px;font-weight:600;letter-spacing:-.01em">Mehmet'e teklif gönder</div>
+              <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+                <span style="height:30px;padding:0 10px;border-radius:999px;background:#F0EFEB;color:#6B6860;font-size:12px;font-weight:600;display:flex;align-items:center;gap:4px"><span style="font-family:'Material Symbols Rounded';font-size:15px">event</span>Yarın</span>
+                <span style="height:30px;padding:0 10px;border-radius:999px;background:#F0EFEB;color:#6B6860;font-size:12px;font-weight:600;display:flex;align-items:center;gap:4px"><span style="font-family:'Material Symbols Rounded';font-size:15px">person</span>Mehmet Yılmaz</span>
+              </div>
+            </div>
+            <div style="display:flex;gap:10px;margin-top:auto">
+              <button onClick="{{ saveCommit }}" style="flex:1;height:52px;border:0;border-radius:16px;background:#5B5CE2;color:#fff;font:600 15px Geist,system-ui;cursor:pointer">Kaydet</button>
+              <button onClick="{{ back }}" style="height:52px;padding:0 18px;border:0;border-radius:16px;background:#fff;color:#1A1917;font:600 15px Geist,system-ui;cursor:pointer">Vazgeç</button>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isMail }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1;overflow:auto;padding:60px 20px 40px;display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <button onClick="{{ back }}" style="width:36px;height:36px;border-radius:50%;border:0;background:#fff;color:#1A1917;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 2px rgba(27,25,23,.08)"><span style="font-family:'Material Symbols Rounded';font-size:20px">arrow_back</span></button>
+              <span style="font-size:11px;font-weight:700;letter-spacing:.05em;padding:4px 9px;border-radius:999px;background:#FCEDE9;color:#C7432F">ACİL</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="width:44px;height:44px;border-radius:50%;background:#F5E1D6;color:#7A3E1F;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center">AY</span>
+              <div style="flex:1;min-width:0"><div style="font-size:16px;font-weight:600;letter-spacing:-.01em">Ahmet Yılmaz</div><div style="font-size:13px;color:#6B6860">Bugün 08:42 · Gmail</div></div>
+            </div>
+            <div style="font-size:22px;line-height:28px;font-weight:600;letter-spacing:-.02em;text-wrap:pretty">Re: Eylül teklifi – revize</div>
+            <div style="background:radial-gradient(140% 100% at 0% 0%,#E4E4FA 0%,#FFFFFF 60%);border-radius:20px;padding:16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)">
+              <div style="display:flex;align-items:center;gap:6px;color:#5B5CE2;font-size:12px;font-weight:600;letter-spacing:.06em"><span style="font-family:'Material Symbols Rounded';font-size:16px;font-variation-settings:'FILL' 1">auto_awesome</span>AI ÖZETİ</div>
+              <div style="margin-top:8px;font-size:17px;line-height:24px;font-weight:500;letter-spacing:-.01em;text-wrap:pretty">Ahmet revize fiyat teklifinin bugün 17:00'ye kadar gönderilmesini istiyor.</div>
+              <div style="margin-top:12px;font-size:12px;font-weight:600;letter-spacing:.06em;color:#9B978E">ÖNEMLİ NOKTALAR</div>
+              <div style="margin-top:6px;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:20px">
+                <div style="display:flex;gap:8px;align-items:center"><span style="width:6px;height:6px;border-radius:3px;background:#5B5CE2"></span>Revize fiyat</div>
+                <div style="display:flex;gap:8px;align-items:center"><span style="width:6px;height:6px;border-radius:3px;background:#5B5CE2"></span>Deadline 17:00</div>
+                <div style="display:flex;gap:8px;align-items:center"><span style="width:6px;height:6px;border-radius:3px;background:#5B5CE2"></span>PDF gönderilecek</div>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <button onClick="{{ openReplyAhmet }}" style="height:56px;padding:0 14px;border:0;border-radius:16px;background:#5B5CE2;color:#fff;font:600 14px Geist,system-ui;display:flex;align-items:center;gap:8px;cursor:pointer;text-align:left"><span style="font-family:'Material Symbols Rounded';font-size:20px">edit_note</span>Yanıt Hazırla</button>
+              <button onClick="{{ toastTask }}" style="height:56px;padding:0 14px;border:0;border-radius:16px;background:#fff;color:#1A1917;font:600 14px Geist,system-ui;display:flex;align-items:center;gap:8px;cursor:pointer;text-align:left;box-shadow:0 1px 2px rgba(27,25,23,.06)"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#5B5CE2">add_task</span>Görev Oluştur</button>
+              <button onClick="{{ addCalendarApproval }}" style="height:56px;padding:0 14px;border:0;border-radius:16px;background:#fff;color:#1A1917;font:600 14px Geist,system-ui;display:flex;align-items:center;gap:8px;cursor:pointer;text-align:left;box-shadow:0 1px 2px rgba(27,25,23,.06)"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#5B5CE2">event</span>Takvime Ekle</button>
+              <button onClick="{{ openRemind }}" style="height:56px;padding:0 14px;border:0;border-radius:16px;background:#fff;color:#1A1917;font:600 14px Geist,system-ui;display:flex;align-items:center;gap:8px;cursor:pointer;text-align:left;box-shadow:0 1px 2px rgba(27,25,23,.06)"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#5B5CE2">notifications</span>Hatırlat</button>
+            </div>
+            <div style="background:#fff;border-radius:18px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05);overflow:hidden">
+              <button onClick="{{ toggleOriginal }}" style="width:100%;height:52px;padding:0 16px;border:0;background:transparent;display:flex;align-items:center;justify-content:space-between;font:600 15px Geist,system-ui;color:#1A1917;cursor:pointer"><span style="display:flex;align-items:center;gap:8px"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#6B6860">mail</span>Orijinal Mail</span><span style="font-family:'Material Symbols Rounded';font-size:22px;color:#9B978E">{{ originalIcon }}</span></button>
+              <sc-if value="{{ showOriginal }}" hint-placeholder-val="{{ false }}">
+                <div style="padding:0 16px 16px;font-size:14px;line-height:21px;color:#1A1917;white-space:pre-wrap;border-top:1px solid rgba(27,25,23,.06);padding-top:12px">Merhaba Yunus,
+
+Geçen hafta konuştuğumuz teklifi revize edebilir misin? Yönetim bugün saat 17:00'ye kadar güncellenmiş fiyatı PDF olarak görmek istiyor. Teslim tarihini de netleştirsek iyi olur.
+
+Teşekkürler,
+Ahmet</div>
+              </sc-if>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:#9B978E;padding:0 4px"><span style="font-family:'Material Symbols Rounded';font-size:16px">verified</span>Kaynak: Gmail · ahmet.yilmaz@… · Gelen Kutusu</div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isReply }}" hint-placeholder-val="{{ false }}">
+          <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+            <div style="flex:1;overflow:auto;padding:60px 20px 40px;display:flex;flex-direction:column;gap:16px">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <button onClick="{{ back }}" style="width:36px;height:36px;border-radius:50%;border:0;background:#fff;color:#1A1917;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 2px rgba(27,25,23,.08)"><span style="font-family:'Material Symbols Rounded';font-size:20px">arrow_back</span></button>
+                <div style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E">{{ replyKicker }}</div>
+                <span style="width:36px"></span>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:#6B6860">Kime <span style="height:30px;padding:0 10px 0 4px;border-radius:999px;background:#fff;color:#1A1917;font-weight:600;display:flex;align-items:center;gap:6px;box-shadow:0 1px 2px rgba(27,25,23,.06)"><span style="width:22px;height:22px;border-radius:50%;background:{{ replyAvBg }};color:{{ replyAvFg }};font-size:10px;display:flex;align-items:center;justify-content:center">{{ replyAv }}</span>{{ replyTo }}</span></div>
+              <div style="display:flex;background:#E9E7E1;border-radius:999px;padding:3px">
+                <sc-for list="{{ tones }}" as="t" hint-placeholder-count="4">
+                  <button onClick="{{ t.go }}" style="flex:1;height:32px;border:0;border-radius:999px;background:{{ t.bg }};color:{{ t.fg }};font:600 13px Geist,system-ui;cursor:pointer;box-shadow:{{ t.sh }};transition:background .15s">{{ t.label }}</button>
+                </sc-for>
+              </div>
+              <div style="background:#fff;border-radius:20px;padding:18px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)">
+                <div style="display:flex;align-items:center;justify-content:space-between">
+                  <div style="display:flex;align-items:center;gap:6px;color:#5B5CE2;font-size:12px;font-weight:600;letter-spacing:.06em"><span style="font-family:'Material Symbols Rounded';font-size:16px;font-variation-settings:'FILL' 1">auto_awesome</span>AI TASLAĞI · {{ toneUpper }}</div>
+                  <span style="font-size:12px;color:#9B978E">Düzenlenebilir</span>
+                </div>
+                <div style="margin-top:12px;font-size:15px;line-height:23px;color:#1A1917;white-space:pre-wrap;text-wrap:pretty">{{ draft }}</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;padding:0 4px;font-size:13px;color:#6B6860"><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#1E7A47">verified_user</span>Sen onaylamadan hiçbir mail gönderilmez.</div>
+              <div style="display:flex;gap:10px;margin-top:auto">
+                <button onClick="{{ approveSend }}" style="flex:1;height:52px;border:0;border-radius:16px;background:#5B5CE2;color:#fff;font:600 15px Geist,system-ui;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;box-shadow:0 8px 24px rgba(91,92,226,.28)">{{ sendSpinner }}{{ sendLabel }}</button>
+                <button onClick="{{ toastEdit }}" style="height:52px;padding:0 18px;border:0;border-radius:16px;background:#fff;color:#1A1917;font:600 15px Geist,system-ui;cursor:pointer;box-shadow:0 1px 2px rgba(27,25,23,.06)">Düzenle</button>
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:40px;text-align:center">
+              <div style="position:relative;width:96px;height:96px;display:flex;align-items:center;justify-content:center">
+                <span style="position:absolute;inset:0;border-radius:50%;background:#E4F5EA;transform:scale({{ successScale }});transition:transform .5s cubic-bezier(.2,.8,.2,1)"></span>
+                <span style="position:relative;font-family:'Material Symbols Rounded';font-size:48px;color:#1E7A47;font-variation-settings:'FILL' 1;transform:scale({{ successScale }});transition:transform .45s .1s cubic-bezier(.2,.8,.2,1)">check_circle</span>
+              </div>
+              <div style="font-size:26px;font-weight:600;letter-spacing:-.02em">Gönderildi</div>
+              <div style="font-size:15px;line-height:22px;color:#6B6860;text-wrap:pretty">{{ replyTo }} yanıtını aldı. Cevap gelince Akış'ta göreceksin.</div>
+              <button onClick="{{ finishSend }}" style="margin-top:12px;height:48px;padding:0 22px;border:0;border-radius:14px;background:#1A1917;color:#fff;font:600 15px Geist,system-ui;cursor:pointer">Bugün'e Dön</button>
+            </div>
+          </sc-if>
+        </sc-if>
+
+        <sc-if value="{{ isApprovals }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1;overflow:auto;padding:60px 20px 40px;display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <button onClick="{{ back }}" style="width:36px;height:36px;border-radius:50%;border:0;background:#fff;color:#1A1917;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 2px rgba(27,25,23,.08)"><span style="font-family:'Material Symbols Rounded';font-size:20px">arrow_back</span></button>
+              <span style="width:36px"></span>
+            </div>
+            <div>
+              <h1 style="margin:0;font-size:28px;line-height:34px;font-weight:600;letter-spacing:-.02em">Onay Bekleyenler</h1>
+              <div style="margin-top:4px;font-size:14px;color:#6B6860">{{ approvalsSummary }}</div>
+            </div>
+            <sc-for list="{{ approvals }}" as="a" hint-placeholder-count="2">
+              <div style="background:#fff;border-radius:20px;padding:16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05);opacity:{{ a.op }};transition:opacity .3s">
+                <div style="display:flex;align-items:center;gap:8px">
+                  <span style="width:28px;height:28px;border-radius:9px;background:#EDEDFC;color:#4547C9;display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:17px">{{ a.icon }}</span></span>
+                  <span style="font-size:12px;font-weight:600;letter-spacing:.06em;color:#6B6860;flex:1">{{ a.type }}</span>
+                  <span style="font-size:11px;font-weight:700;letter-spacing:.05em;padding:3px 8px;border-radius:999px;background:{{ a.sbg }};color:{{ a.sfg }}">{{ a.status }}</span>
+                </div>
+                <div style="margin-top:10px;font-size:17px;line-height:23px;font-weight:600;letter-spacing:-.01em;text-wrap:pretty">{{ a.what }}</div>
+                <div style="margin-top:10px;display:grid;grid-template-columns:64px 1fr;gap:6px 10px;font-size:13px;line-height:19px">
+                  <span style="color:#9B978E">Neden</span><span style="color:#1A1917">{{ a.why }}</span>
+                  <span style="color:#9B978E">Değişim</span><span style="color:#1A1917">{{ a.change }}</span>
+                </div>
+                <sc-if value="{{ a.pending }}" hint-placeholder-val="{{ true }}">
+                  <div style="margin-top:14px;display:flex;gap:8px">
+                    <button onClick="{{ a.approve }}" style="flex:1;height:42px;border:0;border-radius:12px;background:#5B5CE2;color:#fff;font:600 14px Geist,system-ui;cursor:pointer">Onayla</button>
+                    <button onClick="{{ a.edit }}" style="height:42px;padding:0 14px;border:0;border-radius:12px;background:#EDEDFC;color:#4547C9;font:600 14px Geist,system-ui;cursor:pointer">Düzenle</button>
+                    <button onClick="{{ a.reject }}" style="height:42px;padding:0 14px;border:0;border-radius:12px;background:#F0EFEB;color:#6B6860;font:600 14px Geist,system-ui;cursor:pointer">Reddet</button>
+                  </div>
+                </sc-if>
+              </div>
+            </sc-for>
+            <div style="display:flex;align-items:center;gap:8px;padding:8px 4px;font-size:13px;line-height:19px;color:#6B6860"><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#1E7A47">verified_user</span>Önemli işlemler sen onaylamadan gerçekleştirilmez.</div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isProfile }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1;overflow:auto;padding:60px 20px 40px;display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <button onClick="{{ back }}" style="width:36px;height:36px;border-radius:50%;border:0;background:#fff;color:#1A1917;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 2px rgba(27,25,23,.08)"><span style="font-family:'Material Symbols Rounded';font-size:20px">arrow_back</span></button>
+              <span style="width:36px"></span>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px">
+              <span style="width:60px;height:60px;border-radius:50%;background:#1A1917;color:#fff;font-size:22px;font-weight:600;display:flex;align-items:center;justify-content:center">{{ initial }}</span>
+              <div style="flex:1"><div style="font-size:22px;font-weight:600;letter-spacing:-.02em">{{ name }} Emre</div><div style="margin-top:2px;display:flex;align-items:center;gap:6px;font-size:13px;color:#6B6860"><span style="padding:2px 8px;border-radius:999px;background:#EDEDFC;color:#4547C9;font-weight:600;font-size:11px">PRO</span>Deneme · 5 gün kaldı</div></div>
+            </div>
+            <button onClick="{{ openApprovals }}" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:0;border-radius:18px;background:#1A1917;color:#fff;text-align:left;cursor:pointer;font-family:Geist,system-ui"><span style="font-family:'Material Symbols Rounded';font-size:22px;color:#A9AAF5">task_alt</span><span style="flex:1"><span style="display:block;font-size:15px;font-weight:600">Onay Merkezi</span><span style="display:block;font-size:12px;color:rgba(255,255,255,.65);margin-top:1px">{{ pendingCount }} işlem onayını bekliyor</span></span><span style="font-family:'Material Symbols Rounded';font-size:20px;opacity:.6">chevron_right</span></button>
+            <div style="background:#fff;border-radius:18px;padding:0 16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)">
+              <sc-for list="{{ settings }}" as="r" hint-placeholder-count="6">
+                <button onClick="{{ r.go }}" style="width:100%;display:flex;align-items:center;gap:12px;min-height:50px;padding:0;border:0;border-top:{{ r.border }};background:transparent;text-align:left;cursor:pointer;font-family:Geist,system-ui;color:#1A1917">
+                  <span style="font-family:'Material Symbols Rounded';font-size:20px;color:#6B6860;width:24px">{{ r.icon }}</span>
+                  <span style="flex:1;font-size:15px;font-weight:500">{{ r.t }}</span>
+                  <span style="font-size:13px;color:#9B978E">{{ r.v }}</span>
+                  <span style="font-family:'Material Symbols Rounded';font-size:18px;color:#C9C5BC">chevron_right</span>
+                </button>
+              </sc-for>
+            </div>
+            <button onClick="{{ toastSignout }}" style="height:48px;border:0;border-radius:14px;background:transparent;color:#C7432F;font:600 15px Geist,system-ui;cursor:pointer">Çıkış Yap</button>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isPerson }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1;overflow:auto;padding:60px 20px 110px;display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <button onClick="{{ back }}" style="width:36px;height:36px;border-radius:50%;border:0;background:#fff;color:#1A1917;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 2px rgba(27,25,23,.08)"><span style="font-family:'Material Symbols Rounded';font-size:20px">arrow_back</span></button>
+              <span style="height:30px;padding:0 10px;border-radius:999px;background:#EDEDFC;color:#4547C9;font-size:12px;font-weight:600;display:flex;align-items:center;gap:4px"><span style="font-family:'Material Symbols Rounded';font-size:15px;font-variation-settings:'FILL' 1">star</span>VIP</span>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px">
+              <span style="width:76px;height:76px;border-radius:50%;background:#DCE4F5;color:#2B3F73;font-size:26px;font-weight:600;display:flex;align-items:center;justify-content:center">MY</span>
+              <div style="font-size:26px;font-weight:600;letter-spacing:-.02em">Mehmet Yılmaz</div>
+              <div style="font-size:14px;color:#6B6860">Müşteri · Yılmaz Endüstri · Son iletişim dün 18:20</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <div style="background:#fff;border-radius:16px;padding:14px;box-shadow:0 1px 2px rgba(27,25,23,.04)"><div style="font-size:12px;color:#9B978E">Yaklaşan toplantı</div><div style="margin-top:4px;font-size:16px;font-weight:600;letter-spacing:-.01em">Bugün 14:30</div></div>
+              <div style="background:#fff;border-radius:16px;padding:14px;box-shadow:0 1px 2px rgba(27,25,23,.04)"><div style="font-size:12px;color:#9B978E">Açık konular</div><div style="margin-top:4px;font-size:16px;font-weight:600;letter-spacing:-.01em">2 konu</div></div>
+            </div>
+            <sc-for list="{{ personSections }}" as="s" hint-placeholder-count="3">
+              <div>
+                <div style="font-size:12px;font-weight:600;letter-spacing:.08em;color:#9B978E;padding:0 4px 8px">{{ s.title }}</div>
+                <div style="background:#fff;border-radius:18px;padding:4px 16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)">
+                  <sc-for list="{{ s.rows }}" as="r" hint-placeholder-count="1">
+                    <div style="display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-top:{{ r.border }}">
+                      <span style="width:30px;height:30px;border-radius:10px;background:#F0EFEB;color:#6B6860;display:flex;align-items:center;justify-content:center;flex:none"><span style="font-family:'Material Symbols Rounded';font-size:17px">{{ r.icon }}</span></span>
+                      <div style="flex:1;min-width:0"><div style="font-size:15px;line-height:21px;letter-spacing:-.01em;text-wrap:pretty">{{ r.t }}</div><div style="font-size:12px;color:#9B978E;margin-top:2px">{{ r.m }}</div></div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="position:absolute;left:0;right:0;bottom:0;padding:12px 16px 44px;background:linear-gradient(180deg,rgba(245,244,240,0),#F5F4F0 40%)">
+            <div style="display:flex;align-items:center;gap:8px;height:52px;padding:0 6px 0 16px;border-radius:999px;background:#fff;box-shadow:0 1px 2px rgba(27,25,23,.06),0 8px 24px rgba(27,25,23,.08)">
+              <input placeholder="Mehmet hakkında sor…" style="flex:1;min-width:0;border:0;outline:0;background:transparent;font:400 15px Geist,system-ui;color:#1A1917">
+              <button onClick="{{ openVoice }}" style="width:40px;height:40px;border:0;border-radius:50%;background:#5B5CE2;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:20px">mic</span></button>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isPaywall }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1;overflow:auto;padding:60px 20px 40px;display:flex;flex-direction:column;gap:16px;background:linear-gradient(180deg,#EDEDFC 0%,#F5F4F0 30%)">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <button onClick="{{ back }}" style="width:36px;height:36px;border-radius:50%;border:0;background:#fff;color:#1A1917;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 2px rgba(27,25,23,.08)"><span style="font-family:'Material Symbols Rounded';font-size:20px">close</span></button>
+              <span style="width:36px"></span>
+            </div>
+            <div>
+              <div style="display:flex;align-items:center;gap:6px;color:#5B5CE2;font-size:12px;font-weight:600;letter-spacing:.08em"><span style="font-family:'Material Symbols Rounded';font-size:16px;font-variation-settings:'FILL' 1">auto_awesome</span>DİJİTAL ASİSTAN PRO</div>
+              <div style="margin-top:8px;font-size:30px;line-height:36px;font-weight:600;letter-spacing:-.02em;text-wrap:pretty">Tüm dijital hayatın, tek brifingde.</div>
+            </div>
+            <div style="background:#fff;border-radius:20px;padding:6px 16px;box-shadow:0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)">
+              <sc-for list="{{ proFeatures }}" as="f" hint-placeholder-count="6">
+                <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-top:{{ f.border }};font-size:15px"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#5B5CE2">{{ f.icon }}</span>{{ f.t }}</div>
+              </sc-for>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <button onClick="{{ setYearly }}" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid {{ yearlyBorder }};border-radius:16px;background:#fff;text-align:left;cursor:pointer;font-family:Geist,system-ui"><span style="width:20px;height:20px;border-radius:50%;border:2px solid {{ yearlyBorder }};background:{{ yearlyDot }};box-shadow:inset 0 0 0 3px #fff"></span><span style="flex:1"><span style="display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:#1A1917">Yıllık <span style="padding:2px 8px;border-radius:999px;background:#E4F5EA;color:#1E7A47;font-size:11px;font-weight:700">EN AVANTAJLI</span></span><span style="display:block;font-size:13px;color:#6B6860;margin-top:2px">1.490 TL / yıl · ayda 124 TL</span></span></button>
+              <button onClick="{{ setMonthly }}" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid {{ monthlyBorder }};border-radius:16px;background:#fff;text-align:left;cursor:pointer;font-family:Geist,system-ui"><span style="width:20px;height:20px;border-radius:50%;border:2px solid {{ monthlyBorder }};background:{{ monthlyDot }};box-shadow:inset 0 0 0 3px #fff"></span><span style="flex:1"><span style="display:block;font-size:15px;font-weight:600;color:#1A1917">Aylık</span><span style="display:block;font-size:13px;color:#6B6860;margin-top:2px">199 TL / ay</span></span></button>
+            </div>
+            <div style="margin-top:auto;display:flex;flex-direction:column;gap:8px">
+              <button onClick="{{ startTrial }}" style="height:52px;border:0;border-radius:16px;background:#5B5CE2;color:#fff;font:600 15px Geist,system-ui;cursor:pointer;box-shadow:0 8px 24px rgba(91,92,226,.28)">Ücretsiz Dene · 7 gün</button>
+              <button onClick="{{ back }}" style="height:44px;border:0;border-radius:14px;background:transparent;color:#6B6860;font:600 14px Geist,system-ui;cursor:pointer">Free ile devam et</button>
+              <div style="text-align:center;font-size:12px;color:#9B978E">Deneme bitmeden 24 saat önce hatırlatırız. İstediğin zaman iptal.</div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ showNav }}" hint-placeholder-val="{{ true }}">
+          <div style="position:absolute;left:0;right:0;bottom:0;height:90px;padding:8px 8px 28px;background:rgba(255,255,255,.9);backdrop-filter:blur(20px);border-top:1px solid rgba(27,25,23,.06);display:flex;z-index:5">
+            <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="4">
+              <button onClick="{{ t.go }}" style="flex:1;border:0;background:transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:{{ t.color }};cursor:pointer;font:500 11px Geist,system-ui;transition:color .15s">
+                <span style="font-family:'Material Symbols Rounded';font-size:26px;font-variation-settings:{{ t.fill }}">{{ t.icon }}</span>{{ t.label }}
+              </button>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ sheet }}" hint-placeholder-val="{{ false }}">
+          <div onClick="{{ closeSheet }}" style="position:absolute;inset:0;background:rgba(27,25,23,{{ dimA }});transition:background .25s;z-index:20"></div>
+          <div style="position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:28px 28px 0 0;padding:10px 20px 44px;z-index:21;transform:translateY({{ sheetY }});transition:transform .3s cubic-bezier(.2,.8,.2,1);box-shadow:0 -10px 40px rgba(27,25,23,.12)">
+            <div style="width:36px;height:5px;border-radius:3px;background:#E0DED7;margin:0 auto 14px"></div>
+            <div style="font-size:19px;font-weight:600;letter-spacing:-.01em">{{ sheetTitle }}</div>
+            <div style="margin-top:2px;font-size:13px;color:#6B6860">{{ sheetSub }}</div>
+            <div style="margin-top:12px;display:flex;flex-direction:column">
+              <sc-for list="{{ sheetOptions }}" as="o" hint-placeholder-count="4">
+                <button onClick="{{ o.go }}" style="display:flex;align-items:center;gap:12px;min-height:52px;padding:0;border:0;border-top:1px solid rgba(27,25,23,.06);background:transparent;text-align:left;cursor:pointer;font-family:Geist,system-ui;color:#1A1917">
+                  <span style="font-family:'Material Symbols Rounded';font-size:20px;color:{{ o.iconColor }};width:24px">{{ o.icon }}</span>
+                  <span style="flex:1;font-size:15px;font-weight:500">{{ o.t }}</span>
+                  <span style="font-size:12px;color:{{ o.metaColor }};font-weight:{{ o.metaWeight }}">{{ o.m }}</span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ voice }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,#15153A 0%,#25266A 70%,#3B3CA8 100%);color:#fff;z-index:30;display:flex;flex-direction:column;padding:60px 20px 44px">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div style="font-size:12px;font-weight:600;letter-spacing:.08em;opacity:.7">SES MODU</div>
+              <button onClick="{{ closeVoice }}" style="width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:20px">close</span></button>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;text-align:center">
+              <div style="position:relative;width:120px;height:120px;display:flex;align-items:center;justify-content:center">{{ voicePulse }}<span style="position:relative;width:80px;height:80px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:36px;color:#25266A">mic</span></span></div>
+              {{ voiceWave }}
+              <div style="font-size:22px;line-height:30px;font-weight:600;letter-spacing:-.01em;text-wrap:pretty;max-width:300px">{{ voiceText }}</div>
+              <sc-if value="{{ voiceAnswer }}" hint-placeholder-val="{{ false }}">
+                <div style="background:rgba(255,255,255,.1);border-radius:18px;padding:14px 16px;font-size:15px;line-height:22px;text-align:left;max-width:320px">{{ voiceAnswer }}</div>
+              </sc-if>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
+              <sc-for list="{{ voicePrompts }}" as="v" hint-placeholder-count="4">
+                <button onClick="{{ v.go }}" style="height:36px;padding:0 14px;border:0;border-radius:999px;background:rgba(255,255,255,.12);color:#fff;font:500 13px Geist,system-ui;cursor:pointer">{{ v.t }}</button>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ toast }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute;left:16px;right:16px;bottom:104px;z-index:40;display:flex;justify-content:center;pointer-events:none;transform:translateY({{ toastY }});opacity:{{ toastO }};transition:transform .3s cubic-bezier(.2,.8,.2,1),opacity .3s">
+            <div style="background:#1A1917;color:#fff;border-radius:999px;padding:12px 18px 12px 14px;font-size:14px;font-weight:500;display:flex;align-items:center;gap:8px;box-shadow:0 10px 30px rgba(27,25,23,.25);max-width:100%"><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#A9AAF5">{{ toastIcon }}</span><span style="min-width:0">{{ toast }}</span></div>
+          </div>
+        </sc-if>
+      </div>
+    </x-import>
+    <div style="font-size:12px;color:#6B6860;text-align:center;max-width:380px;line-height:18px">Çalışan prototip · iOS 26 çerçevesi · 402×874. Ekran: <b>{{ screenLabel }}</b></div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;userName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Yunus&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototip&quot;},&quot;startScreen&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;today&quot;,&quot;options&quot;:[&quot;today&quot;,&quot;akis&quot;,&quot;plan&quot;,&quot;asistan&quot;,&quot;briefing&quot;,&quot;audio&quot;,&quot;prep&quot;,&quot;mail&quot;,&quot;reply&quot;,&quot;approvals&quot;,&quot;profile&quot;,&quot;person&quot;,&quot;paywall&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototip&quot;}}">
+const TONES={critical:['#FCEDE9','#C7432F'],warning:['#FDF2DC','#9A6300'],neutral:['#F0EFEB','#6B6860'],info:['#E7F0FD','#2262BE'],success:['#E4F5EA','#1E7A47'],primary:['#EDEDFC','#4547C9']};
+const PRIOS=[
+ {id:'p1',badge:'ACİL',tone:'critical',time:'08:42',title:"Ahmet senden bugün 17:00'ye kadar revize teklif bekliyor.",src:'mail',source:'Gmail · Ahmet Yılmaz · 08:42',a1:'Yanıtla',a2:'Hatırlat',go:'mail'},
+ {id:'p2',badge:'TOPLANTI',tone:'neutral',time:'14:30',title:'14:30 Mehmet ile toplantı',sub:'Son görüşmeniz 4 gün önceydi.',src:'event',source:'Google Takvim · Müşteri toplantısı · 60 dk',a1:'Hazırlan',go:'prep'},
+ {id:'p3',badge:'SON TARİH',tone:'warning',time:'17:00',title:"Başvuru bugün 17:00'de kapanıyor.",src:'mail',source:'Gmail · Girişim Programı · Dün 16:10',a1:'Takvime Ekle',go:'mail'},
+ {id:'p4',badge:'TAKİP',tone:'neutral',time:'3 gün',title:'Gönderdiğin teklif mailine 3 gündür cevap gelmedi.',src:'schedule_send',source:'Gmail · Mehmet Yılmaz · 2 Eyl',a1:'Takip Mesajı Hazırla',a2:'Yarın Hatırlat'},
+ {id:'p5',badge:'KİŞİSEL',tone:'neutral',time:'Bugün',title:'Trendyol siparişin bugün geliyor.',src:'package_2',source:'Kargo · Yurtiçi · 14:00–18:00',a1:'Takip Et'}
+];
+const FEED=[
+ {cat:'Mail',imp:1,icon:'mail',src:'Gmail · Ahmet Yılmaz',time:'08:42',title:"Revize teklif bugün 17:00'ye kadar bekleniyor",sum:'Ahmet, fiyat ve teslim tarihini güncellenmiş PDF olarak istiyor.',action:'Yanıtla',tone:'critical',badge:'ACİL',go:'mail'},
+ {cat:'Takvim',imp:1,icon:'event',src:'Google Takvim',time:'14:30',title:'Mehmet ile müşteri toplantısı',sum:'Son görüşmeniz 4 gün önceydi. Açık 2 konu var.',action:'Hazırlan',tone:'neutral',badge:'BUGÜN',go:'prep'},
+ {cat:'Takip',imp:1,icon:'schedule_send',src:'Gmail · Mehmet Yılmaz',time:'3 gün',title:'Teklif mailine cevap gelmedi',sum:"2 Eylül'de gönderildi. Henüz yanıt yok.",action:'Takip Mesajı Hazırla',tone:'neutral',badge:'TAKİP',go:'followup'},
+ {cat:'Mail',imp:1,icon:'mail',src:'Gmail · Girişim Programı',time:'Dün',title:"Başvuru bugün 17:00'de kapanıyor",sum:'Son gün. Form yaklaşık 10 dakika sürüyor.',action:'Takvime Ekle',tone:'warning',badge:'SON TARİH',go:'cal'},
+ {cat:'Kişisel',imp:1,icon:'shield',src:'Google',time:'07:12',title:'Google hesabında yeni giriş',sum:'Chrome · Windows · İstanbul. Sen değilsen şifreni değiştir.',action:'Kontrol Et',tone:'critical',badge:'GÜVENLİK'},
+ {cat:'Kişisel',imp:0,icon:'package_2',src:'Kargo · Trendyol',time:'Bugün',title:'Siparişin bugün geliyor',sum:'Teslimat aralığı 14:00–18:00.',action:'Takip Et',tone:'neutral',badge:'KARGO'},
+ {cat:'Kişisel',imp:0,icon:'flight',src:'THY',time:'Yarın 09:15',title:'TK2412 · İstanbul → Antalya',sum:"Online check-in açıldı. 06:45'te evden çıkman gerekebilir.",action:'Check-in',tone:'neutral',badge:'UÇUŞ'},
+ {cat:'Kişisel',imp:0,icon:'receipt_long',src:'CK Enerji',time:'10 Eyl',title:'Elektrik faturası · 1.842 TL',sum:'Son ödeme günü 10 Eylül.',action:'Hatırlat',tone:'neutral',badge:'ÖDEME',go:'remind'},
+ {cat:'Kişisel',imp:0,icon:'autorenew',src:'Netflix',time:'9 Eyl',title:"Netflix 9 Eylül'de yenilenecek",sum:'Aylık 229,99 TL. Son 30 günde 2 kez izlendi.',action:'İncele',tone:'neutral',badge:'ABONELİK'},
+ {cat:'Kişisel',imp:0,icon:'restaurant',src:'Rezervasyon · Karaköy Lokantası',time:'Cmt 20:30',title:'Akşam yemeği rezervasyonu',sum:'4 kişi. Teyit için 18:00 son saat.',action:'Teyit Et',tone:'neutral',badge:'REZERVASYON'}
+];
+const FILTERS=['Tümü','Önemli','Mail','Takvim','Takip','Kişisel'];
+const TABS=[{id:'today',label:'Bugün',icon:'sunny'},{id:'akis',label:'Akış',icon:'dynamic_feed'},{id:'plan',label:'Plan',icon:'calendar_today'},{id:'asistan',label:'Asistan',icon:'auto_awesome'}];
+const TONE_LIST=['Kısa','Profesyonel','Samimi','Detaylı'];
+const REPLY_AHMET={
+ 'Kısa':"Merhaba Ahmet,\n\nRevize teklifi bugün 17:00'den önce PDF olarak göndereceğim.\n\nİyi çalışmalar,\nYunus",
+ 'Profesyonel':"Merhaba Ahmet,\n\nTalebiniz için teşekkürler. Revize fiyat teklifini, güncellenmiş teslim tarihiyle birlikte bugün 17:00'den önce PDF formatında iletiyor olacağım.\n\nSorularınız olursa memnuniyetle yardımcı olurum.\n\nİyi çalışmalar,\nYunus",
+ 'Samimi':"Selam Ahmet,\n\nMesajın için teşekkürler! Revize teklifi bugün 17:00'den önce PDF olarak yolluyorum, merak etme.\n\nGörüşmek üzere,\nYunus",
+ 'Detaylı':"Merhaba Ahmet,\n\nRevize teklife ilişkin talebinizi aldım. Fiyat kalemlerini güncelledim, teslim tarihini Ekim başı olarak netleştirdim ve sözleşme taslağına atıf ekledim. Belgeyi bugün 17:00'den önce PDF olarak göndereceğim.\n\nEk bir kalem veya değişiklik isterseniz lütfen belirtin.\n\nİyi çalışmalar,\nYunus"};
+const REPLY_MEHMET={
+ 'Kısa':"Merhaba Mehmet,\n\n2 Eylül'de ilettiğim teklif hakkında görüşünüzü alabilir miyim?\n\nİyi çalışmalar,\nYunus",
+ 'Profesyonel':"Merhaba Mehmet,\n\n2 Eylül'de ilettiğim teklifle ilgili değerlendirmenizi öğrenmek isterim. Sorularınız varsa bugünkü görüşmemizde ele alabiliriz.\n\nİyi çalışmalar,\nYunus",
+ 'Samimi':"Selam Mehmet,\n\nGeçen hafta yolladığım teklife bakma fırsatın oldu mu? Bugün görüştüğümüzde üzerinden geçebiliriz.\n\nGörüşmek üzere,\nYunus",
+ 'Detaylı':"Merhaba Mehmet,\n\n2 Eylül'de ilettiğim teklifte fiyat, teslim tarihi ve sözleşme koşullarını özetlemiştim. Değerlendirmenizi ve varsa revize taleplerinizi bugünkü 14:30 görüşmemiz öncesinde alabilirsem toplantıyı daha verimli kullanabiliriz.\n\nİyi çalışmalar,\nYunus"};
+const BRIEF=[
+ {title:'BUGÜNÜN ÖNCELİKLERİ',rows:[{icon:'mail',t:"Ahmet'e revize teklif",m:'Acil · 17:00'},{icon:'event',t:'Mehmet ile müşteri toplantısı',m:'14:30 · Hazırlık öneriliyor'},{icon:'flag',t:"Başvuru 17:00'de kapanıyor",m:'Son tarih'}]},
+ {title:'PROGRAMIN',rows:[{icon:'event',t:'Mehmet ile müşteri toplantısı',m:'14:30 · 60 dk · Ofis'},{icon:'videocam',t:'Ürün gözden geçirme',m:'16:00 · 30 dk · Online'},{icon:'flag',t:'Başvuru son saati',m:'17:00'},{icon:'restaurant',t:'Akşam yemeği rezervasyonu',m:'20:30 · Karaköy'}]},
+ {title:'SENDEN CEVAP BEKLEYENLER',rows:[{icon:'person',t:'Ahmet Yılmaz · Revize teklif',m:'Bugün 17:00'},{icon:'person',t:'Selin Kaya · Sözleşme taslağı',m:'3 saattir bekliyor'}]},
+ {title:'SENİN CEVAP BEKLEDİKLERİN',rows:[{icon:'schedule_send',t:'Mehmet Yılmaz · Teklif',m:'3 gündür yanıt yok'}]},
+ {title:'SON TARİHLER',rows:[{icon:'flag',t:'Girişim programı başvurusu',m:'Bugün 17:00'},{icon:'receipt_long',t:'Elektrik faturası · 1.842 TL',m:'10 Eylül'}]},
+ {title:'KİŞİSEL GELİŞMELER',rows:[{icon:'package_2',t:'Trendyol siparişin bugün geliyor',m:'14:00–18:00'},{icon:'flight',t:'TK2412 İstanbul → Antalya',m:'Yarın 09:15'},{icon:'autorenew',t:'Netflix yenilenecek',m:'9 Eylül'}]}
+];
+const CHAPTERS=[{t:'Genel bakış',d:'0:18'},{t:'Bugünün öncelikleri',d:'0:32'},{t:'Programın',d:'0:24'},{t:'Cevap bekleyenler',d:'0:21'},{t:'Son tarihler',d:'0:17'},{t:'Kişisel gelişmeler',d:'0:22'}];
+const PREP=[
+ {title:'TOPLANTININ AMACI',rows:[{icon:'target',t:'Eylül teklifinin son hâlini netleştirmek ve Ekim teslimatı için onay almak.',m:'Takvim davetinden çıkarıldı'}]},
+ {title:'SON GÖRÜŞMENİZ',rows:[{icon:'history',t:'1 Eylül · Fiyat aralığı ve teslim süresi konuşuldu. Mehmet revize teklif istedi; sen Cuma göndereceğini söyledin.',m:'4 gün önce · Görüşme notları'}]},
+ {title:'SON MAİLLER',rows:[{icon:'mail',t:'Re: Teklif — “Fiyatı Ekim teslimatına göre güncelleyebilir misiniz?”',m:'Mehmet · Dün 18:20'},{icon:'mail',t:'Teklif v2 gönderildi (PDF)',m:'Sen · 2 Eyl 10:05'}]},
+ {title:'AÇIK KONULAR',rows:[{icon:'radio_button_unchecked',t:'Sözleşme taslağı hukuk yorumu bekliyor',m:'14 gün'},{icon:'radio_button_unchecked',t:'Nakliye maliyeti kimde?',m:'1 Eylül görüşmesi'}]},
+ {title:'SENDEN BEKLENENLER',rows:[{icon:'person',t:'Revize teklif · PDF',m:'Bugün 17:00'}]},
+ {title:'SENİN BEKLEDİKLERİN',rows:[{icon:'schedule_send',t:'Teklif v2 için geri bildirim',m:'3 gündür bekliyor'}]}
+];
+const PERSON=[
+ {title:'SON KONUŞULAN KONULAR',rows:[{icon:'sell',t:'Fiyat · %8 indirim sınırı',m:'1 Eyl'},{icon:'local_shipping',t:'Ekim başı teslim',m:'1 Eyl'},{icon:'description',t:'Sözleşme taslağı',m:'22 Ağu'}]},
+ {title:'SENDEN BEKLEDİKLERİ',rows:[{icon:'person',t:'Revize teklif · PDF',m:'Bugün 17:00'}]},
+ {title:'SENİN BEKLEDİKLERİN',rows:[{icon:'schedule_send',t:'Teklif v2 geri bildirimi',m:'3 gün'},{icon:'schedule_send',t:'Sözleşme hukuk yorumu',m:'14 gün'}]},
+ {title:'SON İLETİŞİM',rows:[{icon:'mail',t:'“Fiyatı Ekim teslimatına göre güncelleyebilir misiniz?”',m:'Dün 18:20 · Gmail'},{icon:'call',t:'Telefon görüşmesi · 12 dk',m:'1 Eyl 15:00'}]}
+];
+const SETTINGS=[
+ {icon:'workspace_premium',t:'Abonelik',v:'Pro deneme',go:'paywall'},{icon:'wb_twilight',t:'Brifing',v:'08:00 · 13:00 · 19:00'},{icon:'notifications',t:'Bildirimler',v:'Sadece önemli'},{icon:'tune',t:'Öncelik Kuralları',v:'6 kural'},{icon:'star',t:'Önemli Kişiler',v:'4 kişi',go:'person'},{icon:'link',t:'Bağlantılar',v:'Gmail · Takvim'},{icon:'psychology',t:'AI Kişiselleştirme',v:''},{icon:'shield',t:'Gizlilik ve Güvenlik',v:''},{icon:'contrast',t:'Görünüm',v:'Açık'},{icon:'language',t:'Dil',v:'Türkçe'},{icon:'help',t:'Yardım',v:''},{icon:'rate_review',t:'Geri Bildirim',v:''}
+];
+const PRO=[{icon:'all_inclusive',t:'Sınırsız analiz, birden fazla hesap'},{icon:'wb_twilight',t:'Öğle ve akşam brifingi'},{icon:'groups',t:'Toplantı hazırlığı'},{icon:'schedule_send',t:'Akıllı takip ve taahhütler'},{icon:'headphones',t:'Sesli brifing'},{icon:'memory',t:'AI hafıza ve VIP kişiler'},{icon:'calendar_month',t:'Gelişmiş planlama'}];
+const QA={
+ 'Bugün neye odaklanmalıyım?':{text:"En kritik konu Ahmet'in 17:00'ye kadar beklediği revize teklif. Sonrasında 14:30 Mehmet toplantısı için 3 konuya hazırlanman yeterli.",card:'BUGÜNÜN 2 ÖNCELİĞİ',rows:[{icon:'mail',t:'Revize teklif · Ahmet',m:'17:00'},{icon:'event',t:'Mehmet ile toplantı',m:'14:30'}]},
+ 'Kimlere cevap vermem gerekiyor?':{text:'2 kişi senden cevap bekliyor.',card:'SENDEN BEKLEYENLER',rows:[{icon:'person',t:'Ahmet Yılmaz · Revize teklif',m:'Bugün 17:00'},{icon:'person',t:'Selin Kaya · Sözleşme taslağı',m:'3 saat'}]},
+ 'Yarın yoğun muyum?':{text:'Yarın oldukça yoğun: 09:00 ve 10:00 toplantıların arka arkaya. 14:00–16:30 arası boş; teklif hazırlamak için uygun.',card:'YARIN · 4 ETKİNLİK',rows:[{icon:'event',t:'Haftalık ekip',m:'09:00'},{icon:'event',t:'Ürün gözden geçirme',m:'10:00'},{icon:'medical_services',t:'Doktor randevusu',m:'13:30'},{icon:'event',t:'Yatırımcı görüşmesi',m:'17:00'}]},
+ "Bu hafta hangi deadline'lar var?":{text:'Bu hafta 3 son tarih var. İkisi ödeme, biri başvuru.',card:'SON TARİHLER',rows:[{icon:'flag',t:'Girişim programı başvurusu',m:'Bugün 17:00'},{icon:'autorenew',t:'Netflix yenileme',m:'9 Eyl'},{icon:'receipt_long',t:'Elektrik faturası · 1.842 TL',m:'10 Eyl'}]},
+ 'Mehmet ile en son ne konuştuk?':{text:"1 Eylül'de fiyat ve teslim tarihini konuştunuz. Mehmet, Ekim başı teslim için revize teklif istedi; sen Cuma göndereceğini söyledin.",card:'KAYNAKLAR',rows:[{icon:'mail',t:'Re: Teklif · Gmail',m:'1 Eyl 18:20'},{icon:'call',t:'Görüşme notları',m:'1 Eyl 15:00'}]}
+};
+const VOICE=[{t:'Bugün ne var?',a:'Bugün 4 etkinliğin ve 3 önemli mailin var. En acili Ahmet\'in 17:00\'ye kadar beklediği revize teklif.'},{t:'Brifingimi oku.',a:'Sabah brifingin başlıyor: Öğlene kadar toplantın bulunmuyor. Saat 14:30\'da Mehmet ile müşteri toplantın var…'},{t:'Yarın yoğun muyum?',a:'Evet, yarın yoğun. 09:00 ve 10:00 toplantıların arka arkaya; 14:00–16:30 arası boş.'},{t:"Mehmet'ten cevap geldi mi?",a:'Henüz gelmedi. Teklifi 3 gün önce gönderdin. İstersen bir takip mesajı hazırlayıp onayına sunabilirim.'}];
+const DAY=[
+ {t:'09:00',title:'Haftalık ekip',meta:'60 dk · Ofis',icon:'event',type:'event'},
+ {t:'11:00',title:'Ürün gözden geçirme',meta:'30 dk · Online',icon:'videocam',type:'event'},
+ {t:'12:00',title:'2 saat boşluk',meta:'Öğle yemeği ve odaklanma için uygun',icon:'self_improvement',type:'gap'},
+ {t:'14:30',title:'Mehmet ile müşteri toplantısı',meta:'60 dk · Ofis · Hazırlık hazır',icon:'groups',type:'event'},
+ {t:'16:00',title:'Ürün gözden geçirme',meta:'30 dk · Online',icon:'videocam',type:'event'},
+ {t:'17:00',title:'Başvuru son saati',meta:'Girişim programı · AI tespit etti',icon:'flag',type:'ai'},
+ {t:'20:30',title:'Akşam yemeği · Karaköy',meta:'Rezervasyon · 4 kişi',icon:'restaurant',type:'life'}
+];
+const WEEK=[{d:'Pzt',b:[38,20]},{d:'Sal',b:[26,14]},{d:'Çar',b:[54,30],hot:true},{d:'Per',b:[30,10]},{d:'Cum',b:[22,26]},{d:'Cmt',b:[16,8],today:true},{d:'Paz',b:[8,0]}];
+
+class Component extends DCLogic {
+  state={tab:'today',stack:[],prios:PRIOS.map(p=>({...p})),approvals:[
+    {id:'a1',icon:'send',type:'MAİL GÖNDER',what:"Mehmet Yılmaz'a takip mesajı gönder",why:'Teklif mailine 3 gündür yanıt gelmedi.',change:'1 mail gönderilecek · Kısa, profesyonel ton',status:'pending'},
+    {id:'a2',icon:'event_repeat',type:'ETKİNLİK TAŞI',what:"Mehmet toplantısını 16:00'ya al",why:"Mehmet 16:00'yı önerdi; takvimin uygun.",change:'14:30 → 16:00 · Katılımcılara bildirim gider',status:'pending'}],
+    sheet:null,sheetOn:false,toast:null,toastOn:false,toastIcon:'check',tone:'Profesyonel',replyMode:'ahmet',sending:false,sent:false,successOn:false,showOriginal:false,
+    playing:false,speed:'1.0x',pos:42,akisFilter:'Tümü',planMode:'Gün',planned:false,chat:[],typing:false,voice:false,voiceText:'Dinliyorum…',voiceAnswer:'',billing:'yearly'};
+  componentDidMount(){this.applyStart(this.props.startScreen);}
+  componentDidUpdate(prev){if(prev.startScreen!==this.props.startScreen)this.applyStart(this.props.startScreen);}
+  componentWillUnmount(){clearInterval(this.tick);}
+  applyStart(s){if(!s||s==='today'){this.setState({tab:'today',stack:[]});return;}if(['akis','plan','asistan'].includes(s))this.setState({tab:s,stack:[]});else this.setState({tab:'today',stack:[s]});}
+  toast(msg,icon='check'){clearTimeout(this.t1);clearTimeout(this.t2);this.setState({toast:msg,toastIcon:icon,toastOn:false});this.t1=setTimeout(()=>this.setState({toastOn:true}),20);this.t2=setTimeout(()=>{this.setState({toastOn:false});setTimeout(()=>this.setState(s=>s.toast===msg?{toast:null}:null),320);},2600);}
+  push(k){this.setState(s=>({stack:[...s.stack,k]}));}
+  back(){this.setState(s=>({stack:s.stack.slice(0,-1),showOriginal:false}));}
+  openSheet(kind,ctx){this.setState({sheet:kind,sheetCtx:ctx,sheetOn:false});setTimeout(()=>this.setState({sheetOn:true}),20);}
+  closeSheet(){this.setState({sheetOn:false});setTimeout(()=>this.setState({sheet:null}),300);}
+  done(id){this.setState(s=>({prios:s.prios.map(p=>p.id===id?{...p,removing:true}:p)}));setTimeout(()=>this.setState(s=>({prios:s.prios.filter(p=>p.id!==id)})),330);this.toast('Tamamlandı · Bir sonraki konu yukarı taşındı');}
+  addApproval(a){this.setState(s=>({approvals:[{...a,id:'a'+Date.now(),status:'pending'},...s.approvals]}));this.toast("Onay Merkezi'ne eklendi",'task_alt');}
+  act(p,i){
+    if(p.id==='p1'){i===1?this.setState({replyMode:'ahmet',stack:[...this.state.stack,'reply'],sent:false,sending:false}):this.openSheet('remind',p);}
+    else if(p.id==='p2')this.push('prep');
+    else if(p.id==='p3')this.addApproval({icon:'event',type:'ETKİNLİK OLUŞTUR',what:'“Başvuru son saati” · Bugün 17:00',why:'Mailde son tarih tespit edildi.',change:'Takvime 1 etkinlik · 30 dk önce hatırlatma'});
+    else if(p.id==='p4'){i===1?this.setState({replyMode:'mehmet',stack:[...this.state.stack,'reply'],sent:false,sending:false}):this.toast("Yarın 09:00'da hatırlatırım",'notifications');}
+    else this.toast('Kargo takibi açıldı · Teslimatta haber veririm','package_2');
+  }
+  feedAct(f){if(f.go==='mail'||f.go==='prep')this.push(f.go);else if(f.go==='followup')this.setState({replyMode:'mehmet',stack:[...this.state.stack,'reply'],sent:false,sending:false});else if(f.go==='cal')this.addApproval({icon:'event',type:'ETKİNLİK OLUŞTUR',what:'“Başvuru son saati” · Bugün 17:00',why:'Mailde son tarih tespit edildi.',change:'Takvime 1 etkinlik · 30 dk önce hatırlatma'});else if(f.go==='remind')this.openSheet('remind',f);else this.toast(f.action+' · Kaynak açıldı','open_in_new');}
+  approveSend(){if(this.state.sending)return;this.setState({sending:true});setTimeout(()=>{this.setState({sending:false,sent:true,successOn:false});setTimeout(()=>this.setState({successOn:true}),30);},900);}
+  finishSend(){const id=this.state.replyMode==='ahmet'?'p1':'p4';this.setState(s=>({stack:[],sent:false,prios:s.prios.filter(p=>p.id!==id),approvals:s.approvals.map(a=>a.id==='a1'&&id==='p4'?{...a,status:'approved'}:a)}));this.toast('Mail gönderildi · '+(id==='p1'?'Ahmet Yılmaz':'Mehmet Yılmaz'),'send');}
+  ask(q){const a=QA[q];this.setState(s=>({chat:[...s.chat,{role:'user',text:q}],typing:true}));setTimeout(()=>this.setState(s=>({typing:false,chat:[...s.chat,{role:'ai',text:a.text,card:a.card,rows:a.rows}]})),1000);}
+  togglePlay(){const on=!this.state.playing;this.setState({playing:on});clearInterval(this.tick);if(on)this.tick=setInterval(()=>this.setState(s=>{const n=s.pos+1;if(n>=134){clearInterval(this.tick);return{pos:0,playing:false};}return{pos:n};}),1000);}
+  renderVals(){
+    const s=this.state,name=this.props.userName||'Yunus';
+    const screen=s.stack.length?s.stack[s.stack.length-1]:s.tab;
+    const is=k=>screen===k;
+    const el=React.createElement;
+    const bar=(i,h,c,on,extra)=>el('div',{key:i,style:{width:4,borderRadius:2,background:c,height:h,transformOrigin:'center',animation:`dabar ${(0.7+((i*7)%5)*0.12).toFixed(2)}s ${(i*0.06).toFixed(2)}s ease-in-out infinite alternate`,animationPlayState:on?'running':'paused',...extra}});
+    const wave=el('div',{style:{display:'flex',gap:5,alignItems:'center',height:72}},Array.from({length:34},(_,i)=>bar(i,14+((i*13)%7)*8,i/34<s.pos/134?'#fff':'rgba(255,255,255,.35)',s.playing)));
+    const voiceWave=el('div',{style:{display:'flex',gap:4,alignItems:'center',height:44}},Array.from({length:22},(_,i)=>bar(i,10+((i*11)%6)*6,'rgba(255,255,255,.85)',s.voice)));
+    const voicePulse=el('span',{style:{position:'absolute',inset:0,borderRadius:'50%',background:'rgba(255,255,255,.35)',animation:'dapulse 1.6s ease-out infinite'}});
+    const typingDots=[0,1,2].map(i=>el('span',{key:i,style:{width:7,height:7,borderRadius:4,background:'#9B978E',animation:`dabar .8s ${i*0.15}s ease-in-out infinite alternate`}}));
+    const sendSpinner=s.sending?el('span',{style:{width:16,height:16,borderRadius:'50%',border:'2px solid rgba(255,255,255,.4)',borderTopColor:'#fff',animation:'daspin .8s linear infinite'}}):null;
+    const prios=s.prios.map(p=>({...p,bbg:TONES[p.tone][0],bfg:TONES[p.tone][1],op:p.removing?0:1,tf:p.removing?'scale(.96) translateY(-6px)':'none',onDone:()=>this.done(p.id),onMore:()=>this.openSheet('correct',p),onOpen:()=>p.go&&this.push(p.go),onA1:()=>this.act(p,1),onA2:()=>this.act(p,2)}));
+    const feedAll=FEED.filter(f=>s.akisFilter==='Tümü'||(s.akisFilter==='Önemli'?f.imp:f.cat===s.akisFilter));
+    const feed=feedAll.map(f=>({...f,bbg:TONES[f.tone][0],bfg:TONES[f.tone][1],onAct:()=>this.feedAct(f)}));
+    const filters=FILTERS.map(l=>({label:l,bg:l===s.akisFilter?'#1A1917':'#fff',fg:l===s.akisFilter?'#fff':'#6B6860',go:()=>this.setState({akisFilter:l})}));
+    const tones=TONE_LIST.map(t=>({label:t,bg:t===s.tone?'#fff':'transparent',fg:t===s.tone?'#1A1917':'#6B6860',sh:t===s.tone?'0 1px 3px rgba(27,25,23,.12)':'none',go:()=>this.setState({tone:t})}));
+    const tabs=TABS.map(t=>({...t,color:s.tab===t.id?'#5B5CE2':'#9B978E',fill:s.tab===t.id?"'FILL' 1,'wght' 500":"'FILL' 0,'wght' 400",go:()=>this.setState({tab:t.id,stack:[]})}));
+    const withBorders=list=>list.map(sec=>({...sec,rows:sec.rows.map((r,i)=>({...r,border:i?'1px solid rgba(27,25,23,.06)':'0'}))}));
+    const chapters=CHAPTERS.map((c,i)=>{const starts=[0,18,50,74,95,112];return{...c,n:String(i+1).padStart(2,'0'),op:s.pos>=starts[i]&&(i===5||s.pos<starts[i+1])?1:.55,go:()=>this.setState({pos:starts[i]})};});
+    const chapterName=(()=>{const starts=[0,18,50,74,95,112];let n=CHAPTERS[0].t;starts.forEach((st,i)=>{if(s.pos>=st)n=CHAPTERS[i].t;});return n;})();
+    const sheetDefs={
+      remind:{title:'Ne zaman hatırlatayım?',sub:s.sheetCtx?s.sheetCtx.title:'',options:[{icon:'schedule',t:'30 dakika önce',m:'16:30'},{icon:'schedule',t:'1 saat önce',m:'16:00'},{icon:'wb_twilight',t:'Bu akşam',m:'19:00'},{icon:'wb_sunny',t:'Yarın sabah',m:'08:00'},{icon:'edit_calendar',t:'Özel zaman',m:''},{icon:'auto_awesome',t:'Uygun zamanda',m:'Takvimine göre: 12:10',ai:true}].map(o=>({...o,iconColor:o.ai?'#5B5CE2':'#6B6860',metaColor:o.ai?'#4547C9':'#9B978E',metaWeight:o.ai?600:400,go:()=>{this.closeSheet();this.toast('Hatırlatıcı kuruldu · '+(o.m||'Özel zaman'),'notifications');}}))},
+      correct:{title:'Bunu nasıl değerlendireyim?',sub:'Seçimin gelecekteki öncelikleri etkiler',options:[{icon:'remove_circle',t:'Önemli değil',r:'Bu tür konuları daha aşağıda göstereceğim.'},{icon:'trending_up',t:'Bunu daha sık göster',r:'Bu konuyu daha yüksek öncelikle izleyeceğim.'},{icon:'star',t:'Bu kişiyi VIP yap',r:(s.sheetCtx&&s.sheetCtx.source||'').split(' · ')[1]+' artık VIP.'},{icon:'visibility_off',t:'Bunu takip etme',r:'Bu konuyu artık takip etmeyeceğim.'}].map(o=>({...o,m:'',iconColor:'#6B6860',metaColor:'#9B978E',metaWeight:400,go:()=>{this.closeSheet();this.toast('Öğrendim · '+o.r,'psychology');}}))}
+    };
+    const sd=s.sheet?sheetDefs[s.sheet]:null;
+    const approvals=s.approvals.map(a=>({...a,pending:a.status==='pending',op:a.status==='rejected'?.45:1,status:a.status==='pending'?'BEKLİYOR':a.status==='approved'?'ONAYLANDI':'REDDEDİLDİ',sbg:a.status==='pending'?'#FDF2DC':a.status==='approved'?'#E4F5EA':'#F0EFEB',sfg:a.status==='pending'?'#9A6300':a.status==='approved'?'#1E7A47':'#6B6860',approve:()=>{this.setState(st=>({approvals:st.approvals.map(x=>x.id===a.id?{...x,status:'approved'}:x)}));this.toast('Onaylandı · '+a.what,'check');},reject:()=>{this.setState(st=>({approvals:st.approvals.map(x=>x.id===a.id?{...x,status:'rejected'}:x)}));this.toast('Reddedildi · Öğrendim','psychology');},edit:()=>a.icon==='send'?this.setState({replyMode:'mehmet',stack:[...s.stack,'reply'],sent:false,sending:false}):this.toast('Düzenleme Plan sekmesinde açılır','edit')}));
+    const pending=s.approvals.filter(a=>a.status==='pending').length;
+    const chat=s.chat.map(m=>({...m,align:m.role==='user'?'flex-end':'flex-start',bg:m.role==='user'?'#5B5CE2':'#fff',fg:m.role==='user'?'#fff':'#1A1917',sh:m.role==='user'?'none':'0 1px 2px rgba(27,25,23,.04),0 6px 20px rgba(27,25,23,.05)',cardTitle:m.card,rows:m.rows||[]}));
+    const dayEvents=DAY.map(e=>({...e,h:'68px',bg:e.type==='gap'?'transparent':e.type==='ai'?(s.planned?'#EDEDFC':'#F7F7FE'):e.type==='life'?'#FDF6EC':'#fff',border:e.type==='ai'?(s.planned?'1px solid #5B5CE2':'1px dashed #A9AAF5'):e.type==='gap'?'1px dashed rgba(27,25,23,.15)':'1px solid rgba(27,25,23,.06)',fg:e.type==='gap'?'#9B978E':'#1A1917',iconColor:e.type==='ai'?'#5B5CE2':e.type==='gap'?'#B8B4AA':'#6B6860',metaColor:e.type==='ai'?'#4547C9':'#9B978E'}));
+    const days=[{d:'Pzt',n:'1'},{d:'Sal',n:'2'},{d:'Çar',n:'3'},{d:'Per',n:'4'},{d:'Cum',n:'5',today:true},{d:'Cmt',n:'6'},{d:'Paz',n:'7'}].map((d,i)=>({...d,d:['Pzt','Sal','Çar','Per','Cum','Cmt','Paz'][i],n:String(i+1+0),bg:i===4?'#1A1917':'#fff',fg:i===4?'#fff':'#1A1917',dot:i===4?'#A9AAF5':(i<4?'#E0DED7':i===5?'#5B5CE2':'transparent')})).map((d,i)=>({...d,n:String(i+1),d:d.d}));
+    const week=WEEK.map(w=>({d:w.d,fg:w.today?'#5B5CE2':w.hot?'#C7432F':'#6B6860',bars:[{h:w.b[0]+'px',bg:w.hot?'#F3B7AE':w.today?'#5B5CE2':'#D9D6F7'},{h:w.b[1]+'px',bg:w.hot?'#E0553F':w.today?'#A9AAF5':'#EDEDFC'}]}));
+    const replyAhmet=s.replyMode==='ahmet';
+    const labels={today:'Bugün',akis:'Akış',plan:'Plan',asistan:'Asistan',briefing:'Sabah Brifingi',audio:'Sesli Brifing',prep:'Toplantı Hazırlığı',post:'Toplantı Sonrası',mail:'Mail Detayı',reply:'AI Yanıt Taslağı',approvals:'Onay Merkezi',profile:'Profil & Ayarlar',person:'Kişi Zekâsı',paywall:'Pro'};
+    return {
+      name,initial:name.charAt(0).toUpperCase(),immersive:is('briefing')||is('audio')||s.voice,
+      isToday:is('today'),isAkis:is('akis'),isPlan:is('plan'),isAsistan:is('asistan'),isBriefing:is('briefing'),isAudio:is('audio'),isPrep:is('prep'),isPost:is('post'),isMail:is('mail'),isReply:is('reply'),isApprovals:is('approvals'),isProfile:is('profile'),isPerson:is('person'),isPaywall:is('paywall'),
+      showNav:s.stack.length===0,screenLabel:labels[screen]||screen,
+      prios,count:s.prios.length,allDone:s.prios.length===0,tabs,
+      hasPending:pending>0,pendingCount:pending,approvals,approvalsSummary:pending?pending+' işlem onayını bekliyor · Hiçbiri sen onaylamadan yapılmaz':'Bekleyen işlem yok',
+      openApprovals:()=>this.push('approvals'),openProfile:()=>this.push('profile'),openBriefing:()=>this.push('briefing'),openAudio:()=>{this.push('audio');},openPerson:()=>this.push('person'),openPost:()=>this.push('post'),openRemind:()=>this.openSheet('remind',{title:'Ahmet · Revize teklif'}),openReplyAhmet:()=>this.setState({replyMode:'ahmet',stack:[...s.stack,'reply'],sent:false,sending:false}),back:()=>this.back(),
+      openCaptureToast:()=>this.toast('Ekran görüntüsü, PDF veya link ekle · Bkz. 04 Akış','add_a_photo'),toastMemory:()=>this.toast('Hafıza araması · Bkz. 06 Asistan','search'),toastLater:()=>this.toast('Tamam, başka bir boşluk önereceğim','schedule'),toastConflict:()=>this.toast('Çözüm seçenekleri · Bkz. 05 Plan','event_repeat'),toastSummary:()=>this.toast('Özet okunuyor · 2 dk','headphones'),toastTask:()=>this.addApproval({icon:'add_task',type:'GÖREV EKLE',what:"Revize teklifi hazırla · Bugün 16:00'ya kadar",why:"Ahmet'in maili 17:00 son tarihini içeriyor.",change:"Plan'a 1 görev bloğu · 45 dk"}),addCalendarApproval:()=>this.addApproval({icon:'event',type:'ETKİNLİK OLUŞTUR',what:'“Revize teklif teslimi” · Bugün 17:00',why:'Mailde son tarih tespit edildi.',change:'Takvime 1 etkinlik · 30 dk önce hatırlatma'}),toastEdit:()=>this.toast('Taslak düzenleme modunda','edit'),toastSignout:()=>this.toast('Prototipte çıkış devre dışı','logout'),saveCommit:()=>{this.back();this.toast("Taahhüt kaydedildi · Yarın hatırlatırım",'handshake');},
+      filters,feed,feedSummary:feedAll.length+' konu · '+feedAll.filter(f=>f.imp).length+' önemli',
+      setDay:()=>this.setState({planMode:'Gün'}),setWeek:()=>this.setState({planMode:'Hafta'}),isDay:s.planMode==='Gün',isWeek:s.planMode==='Hafta',
+      dayBg:s.planMode==='Gün'?'#fff':'transparent',dayFg:s.planMode==='Gün'?'#1A1917':'#6B6860',daySh:s.planMode==='Gün'?'0 1px 3px rgba(27,25,23,.12)':'none',weekBg:s.planMode==='Hafta'?'#fff':'transparent',weekFg:s.planMode==='Hafta'?'#1A1917':'#6B6860',weekSh:s.planMode==='Hafta'?'0 1px 3px rgba(27,25,23,.12)':'none',
+      days,dayEvents,week,onPlan:()=>{if(!s.planned){this.setState({planned:true});this.toast('Planlandı · Yarın 14:00–16:30 Teklif hazırlama','event_available');}},planBtnBg:s.planned?'#E4F5EA':'#5B5CE2',planBtnFg:s.planned?'#1E7A47':'#fff',planBtnIcon:s.planned?'check':'event_available',planBtnLabel:s.planned?'Planlandı':'Planla',
+      suggestions:Object.keys(QA).map(q=>({text:q,ask:()=>this.ask(q)})),chat,chatEmpty:s.chat.length===0,typing:s.typing,typingDots,
+      brief:withBorders(BRIEF),prepSections:withBorders(PREP),personSections:withBorders(PERSON),
+      wave,playing:s.playing,playIcon:s.playing?'pause':'play_arrow',togglePlay:()=>this.togglePlay(),seekBack:()=>this.setState(st=>({pos:Math.max(0,st.pos-15)})),seekFwd:()=>this.setState(st=>({pos:Math.min(134,st.pos+15)})),cycleSpeed:()=>this.setState({speed:s.speed==='1.0x'?'1.25x':s.speed==='1.25x'?'1.5x':'1.0x'}),speed:s.speed,progressPct:(s.pos/134*100).toFixed(1)+'%',elapsed:Math.floor(s.pos/60)+':'+String(s.pos%60).padStart(2,'0'),chapters,chapterName,
+      tones,tone:s.tone,toneUpper:s.tone.toUpperCase(),draft:(replyAhmet?REPLY_AHMET:REPLY_MEHMET)[s.tone],replyKicker:replyAhmet?'YANIT TASLAĞI':'TAKİP MESAJI',replyTo:replyAhmet?'Ahmet Yılmaz':'Mehmet Yılmaz',replyAv:replyAhmet?'AY':'MY',replyAvBg:replyAhmet?'#F5E1D6':'#DCE4F5',replyAvFg:replyAhmet?'#7A3E1F':'#2B3F73',
+      approveSend:()=>this.approveSend(),sendLabel:s.sending?'Gönderiliyor…':'Göndermeyi Onayla',sendSpinner,notSent:!s.sent,sent:s.sent,successScale:s.successOn?1:0.4,finishSend:()=>this.finishSend(),
+      showOriginal:s.showOriginal,originalIcon:s.showOriginal?'expand_less':'expand_more',toggleOriginal:()=>this.setState({showOriginal:!s.showOriginal}),
+      settings:SETTINGS.map((r,i)=>({...r,border:i?'1px solid rgba(27,25,23,.06)':'0',go:()=>r.go?this.push(r.go):this.toast(r.t+' · Bkz. 07 Hesap','settings')})),
+      proFeatures:PRO.map((f,i)=>({...f,border:i?'1px solid rgba(27,25,23,.06)':'0'})),setYearly:()=>this.setState({billing:'yearly'}),setMonthly:()=>this.setState({billing:'monthly'}),yearlyBorder:s.billing==='yearly'?'#5B5CE2':'rgba(27,25,23,.1)',yearlyDot:s.billing==='yearly'?'#5B5CE2':'#fff',monthlyBorder:s.billing==='monthly'?'#5B5CE2':'rgba(27,25,23,.1)',monthlyDot:s.billing==='monthly'?'#5B5CE2':'#fff',startTrial:()=>{this.back();this.toast('7 günlük deneme başladı · 12 Eylül\'de hatırlatırım','workspace_premium');},
+      sheet:!!s.sheet,sheetY:s.sheetOn?'0':'100%',dimA:s.sheetOn?'.35':'0',closeSheet:()=>this.closeSheet(),sheetTitle:sd?sd.title:'',sheetSub:sd?sd.sub:'',sheetOptions:sd?sd.options:[],
+      voice:s.voice,voiceWave,voicePulse,voiceText:s.voiceText,voiceAnswer:s.voiceAnswer,openVoice:()=>this.setState({voice:true,voiceText:'Dinliyorum…',voiceAnswer:''}),closeVoice:()=>this.setState({voice:false}),voicePrompts:VOICE.map(v=>({t:v.t,go:()=>{this.setState({voiceText:'“'+v.t+'”',voiceAnswer:''});setTimeout(()=>this.setState({voiceAnswer:v.a}),900);}})),
+      toast:s.toast,toastIcon:s.toastIcon,toastY:s.toastOn?'0':'16px',toastO:s.toastOn?1:0
+    };
+  }
+}
+</script>
+</body>
+</html>

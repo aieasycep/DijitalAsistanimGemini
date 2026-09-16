@@ -1,0 +1,10 @@
+{
+  "description": "Streamlines product design by organizing screens, navigation, user flows, and components into a comprehensive plan for efficient development approval.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

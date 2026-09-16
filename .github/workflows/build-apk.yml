@@ -46,9 +46,14 @@ jobs:
           java-version: '17'
 
 
+      - name: Install Dependencies (Mobile)
+        working-directory: apps/mobile
+        run: npm install
+
+
       - name: Generate Android Project (Expo Prebuild)
         working-directory: apps/mobile
-        run: pnpm exec expo prebuild --platform android --clean
+        run: npx expo prebuild --platform android --clean
 
       - name: Build APK (Gradle)
         working-directory: apps/mobile/android

@@ -1,0 +1,134 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint-and-typecheck:
+    name: Lint & Typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Run Linting
+        run: pnpm lint
+
+      - name: Run Typecheck
+        run: pnpm typecheck
+
+  build-web:
+    name: Build Web & Backoffice
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Restore Next.js Cache for Web
+        uses: actions/cache@v4
+        with:
+          path: |
+            apps/web/.next/cache
+          key: ${{ runner.os }}-nextjs-web-${{ hashFiles('apps/web/**.[jt]s', 'apps/web/**.[jt]sx', 'apps/web/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-web-
+
+      - name: Restore Next.js Cache for Backoffice
+        uses: actions/cache@v4
+        with:
+          path: |
+            apps/backoffice/.next/cache
+          key: ${{ runner.os }}-nextjs-backoffice-${{ hashFiles('apps/backoffice/**.[jt]s', 'apps/backoffice/**.[jt]sx', 'apps/backoffice/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-backoffice-
+
+      - name: Install Dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Build Marketing Website (apps/web)
+        run: pnpm --filter web build
+
+      - name: Build Backoffice Dashboard (apps/backoffice)
+        run: pnpm --filter backoffice build
+
+  validate-mobile:
+    name: Validate Mobile App
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      - name: TypeScript Validation
+        run: pnpm --filter mobile typecheck
+
+      - name: Expo Export Bundle Verification
+        working-directory: apps/mobile
+        env:
+          CI: "1"
+          EXPO_NO_TELEMETRY: "1"
+          EXPO_PUBLIC_DATA_MODE: "supabase"
+        run: npx expo export --no-bytecode
+
+  supabase-validate:
+    name: Validate Supabase Database
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Supabase DB Lint
+        run: |
+          supabase db lint --linked=false || supabase db lint
